@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ASTOUNDING TALES</title>
+</head>
+<body style="font-family: 'Times New Roman', Times, serif; margin: 40px; max-width: 600px; background-color: #ffffff; color: #000000;">
+
+<h1>ASTOUNDING TALES</h1>
+
+<p>A periodical of speculative fiction, future-fact, and disciplined strangeness.</p>
+
+<hr>
+
+<ul>
+<li><a href="about.html">About the Series</a></li>
+<li><a href="collaborators.html">Information for Collaborators</a></li>
+<li><a href="letters.html">Letters from the Future</a></li>
+<li><a href="404.html">The Astounding Emporium</a></li>
+</ul>
+
+<hr>
+
+<p><small>&copy; Astounding Tales. All rights reserved.<br>
+Reginald Hollis, Editor.</small></p>
+
+</body>
+</html>
