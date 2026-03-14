@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ASTOUNDING TALES - Letters from the Future</title>
+</head>
+<body style="font-family: 'Times New Roman', Times, serif; margin: 40px; max-width: 600px; background-color: #ffffff; color: #000000;">
+
+<h1>ASTOUNDING TALES</h1>
+
+<p><a href="index.html">Return to Main Page</a></p>
+
+<hr>
+
+<h2>Letters from the Future</h2>
+
+<p><i>"For those of you wondering how a premier issue already has a letters column, allow me to explain. Last November, I wired a busted ham radio to a quartz oscillator and pointed the receiver at the ionosphere to see if I could pirate the baseball playoffs. Instead, I accidentally aligned with a localized tachyon drift. Since then, the mailbox at the edge of my property has been aggressively spitting out correspondence from readers existing anywhere between 1942 and the year 2048. Half of it is fan mail. Half of it is furious hate mail. But paper is paper, and the envelopes are thick enough to keep the wood stove burning through these cold Ontario winters. Keep sending them, whenever you are. I'm cold."</i></p>
+
+<p>&mdash; Reginald Hollis</p>
+
+<hr>
+
+<h3>Submit a Dispatch</h3>
+
+<p>Please submit your dispatches from the timeline for editorial review.</p>
+
+<form>
+<p>Your correspondence:<br>
+<textarea rows="10" cols="60" name="dispatch" style="font-family: 'Times New Roman', Times, serif;"></textarea></p>
+<p><input type="submit" value="Submit Dispatch" style="font-family: 'Times New Roman', Times, serif; padding: 4px 12px;"></p>
+</form>
+
+<hr>
+
+<p><a href="index.html">Return to Main Page</a></p>
+
+</body>
+</html>
