@@ -2,68 +2,170 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ASTOUNDING TALES</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #f5f0e8;
+      color: #1a1410;
+      font-family: 'EB Garamond', 'Times New Roman', serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+    .page {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 700px;
+      padding: 48px 40px 64px;
+    }
+    .masthead { text-align: center; }
+    .logo-svg { width: 100%; display: block; margin-bottom: 18px; }
+    .rule-thick {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent);
+    }
+    .rule-thin {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent);
+    }
+    .tagline {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: #3a3028;
+      margin: 20px 0 20px;
+    }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(26,20,16,0.3) 15%, rgba(26,20,16,0.3) 85%, transparent);
+      margin-bottom: 32px;
+    }
+    nav { width: 100%; }
+    nav ul { list-style: none; border-top: 1px solid rgba(26,20,16,0.2); }
+    nav li { border-bottom: 1px solid rgba(26,20,16,0.15); }
+    nav li a {
+      display: flex;
+      align-items: baseline;
+      padding: 13px 0;
+      text-decoration: none;
+      color: #1a1410;
+      font-family: 'EB Garamond', serif;
+      font-size: 19px;
+      gap: 12px;
+      transition: color 0.15s, padding-left 0.15s;
+    }
+    nav li a:hover { color: #3a0a04; padding-left: 6px; }
+    .nav-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: rgba(26,20,16,0.4);
+      flex-shrink: 0;
+      align-self: center;
+    }
+    .nav-label { flex: 1; }
+    .nav-arrow {
+      font-size: 13px;
+      color: rgba(26,20,16,0.35);
+      opacity: 0;
+      transition: opacity 0.15s, transform 0.15s;
+      flex-shrink: 0;
+    }
+    nav li a:hover .nav-arrow { opacity: 1; transform: translateX(3px); }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid rgba(26,20,16,0.18);
+    }
+    footer p {
+      font-family: 'EB Garamond', serif;
+      font-size: 13px;
+      color: rgba(26,20,16,0.5);
+      line-height: 1.7;
+      font-style: italic;
+    }
+    footer a {
+      color: #1a1410;
+      text-decoration: none;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-top: 8px;
+      border-bottom: 1px solid rgba(26,20,16,0.25);
+      padding-bottom: 1px;
+      transition: color 0.15s;
+    }
+    footer a:hover { color: #3a0a04; }
+  </style>
 </head>
-<body style="font-family: 'Times New Roman', Times, serif; margin: 40px; max-width: 700px; background-color: #ffffff; color: #000000;">
-  <svg viewBox="0 0 700 310" xmlns="http://www.w3.org/2000/svg" style="width:50%;display:block;margin:0 auto 8px auto;">
-    <defs>
-      <pattern id="ht" width="5.5" height="5.5" patternUnits="userSpaceOnUse">
-        <circle cx="2.75" cy="2.75" r="1.75" fill="#0a0a0a"/>
-      </pattern>
-    </defs>
-    <text x="350" y="182" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="148"
-      textLength="680" lengthAdjust="spacingAndGlyphs"
-      fill="black" stroke="black" stroke-width="28" stroke-linejoin="round" paint-order="stroke fill">ASTOUNDING</text>
-    <text x="350" y="182" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="148"
-      textLength="680" lengthAdjust="spacingAndGlyphs"
-      fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="16" stroke-linejoin="round">ASTOUNDING</text>
-    <text x="350" y="182" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="148"
-      textLength="680" lengthAdjust="spacingAndGlyphs"
-      fill="none" stroke="rgba(0,0,0,0.85)" stroke-width="3.5">ASTOUNDING</text>
-    <text x="350" y="182" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="148"
-      textLength="680" lengthAdjust="spacingAndGlyphs"
-      fill="none" stroke="rgba(255,255,255,0.82)" stroke-width="5" stroke-linejoin="round">ASTOUNDING</text>
-    <text x="350" y="182" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="148"
-      textLength="680" lengthAdjust="spacingAndGlyphs" fill="#1a1a1a">ASTOUNDING</text>
-    <text x="350" y="182" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="148"
-      textLength="680" lengthAdjust="spacingAndGlyphs" fill="url(#ht)" opacity="0.48">ASTOUNDING</text>
-    <text x="350" y="182" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="148"
-      textLength="680" lengthAdjust="spacingAndGlyphs"
-      fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="2">ASTOUNDING</text>
-    <text x="350" y="295" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="90"
-      letter-spacing="38"
-      fill="black" stroke="black" stroke-width="20" stroke-linejoin="round" paint-order="stroke fill">TALES</text>
-    <text x="350" y="295" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="90"
-      letter-spacing="38"
-      fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="12" stroke-linejoin="round">TALES</text>
-    <text x="350" y="295" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="90"
-      letter-spacing="38"
-      fill="none" stroke="rgba(0,0,0,0.82)" stroke-width="3">TALES</text>
-    <text x="350" y="295" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="90"
-      letter-spacing="38"
-      fill="none" stroke="rgba(255,255,255,0.78)" stroke-width="4.5" stroke-linejoin="round">TALES</text>
-    <text x="350" y="295" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="90"
-      letter-spacing="38" fill="#1a1a1a">TALES</text>
-    <text x="350" y="295" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="90"
-      letter-spacing="38" fill="url(#ht)" opacity="0.48">TALES</text>
-    <text x="350" y="295" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="90"
-      letter-spacing="38"
-      fill="none" stroke="rgba(255,255,255,0.42)" stroke-width="1.8">TALES</text>
-  </svg>
-  <p style="text-align:center; font-family:'Libre Baskerville', Georgia, serif; font-style:italic;">A periodical of speculative fiction, future-fact, and disciplined strangeness.</p>
-  <hr>
-  <ul>
-    <li><a href="about.html">About the Series</a></li>
-    <li><a href="issue1.html">Issue One &mdash; Table of Contents</a></li>
-    <li><a href="collaborators.html">Information for Collaborators</a></li>
-    <li><a href="letters.html">Letters from the Future</a></li>
-    <li><a href="404.html">The Astounding Emporium</a></li>
-  </ul>
-  <hr>
-  <p><small>&copy; Astounding Tales. All rights reserved.<br>
-  Reginald Hollis, Editor.</small></p>
-  <p><a href="mailto:submissions@astoundingtales.ca">submissions@astoundingtales.ca</a></p>
+<body>
+<div class="page">
+  <header class="masthead">
+    <div class="rule-thick"></div>
+    <svg class="logo-svg" viewBox="0 0 700 185" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="ht" width="5.5" height="5.5" patternUnits="userSpaceOnUse">
+          <circle cx="2.75" cy="2.75" r="1.75" fill="#0a0a0a"/>
+        </pattern>
+      </defs>
+      <text x="350" y="112" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="95" textLength="680" lengthAdjust="spacingAndGlyphs" fill="black" stroke="black" stroke-width="18" stroke-linejoin="round" paint-order="stroke fill">ASTOUNDING</text>
+      <text x="350" y="112" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="95" textLength="680" lengthAdjust="spacingAndGlyphs" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="10" stroke-linejoin="round">ASTOUNDING</text>
+      <text x="350" y="112" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="95" textLength="680" lengthAdjust="spacingAndGlyphs" fill="none" stroke="rgba(0,0,0,0.85)" stroke-width="2.5">ASTOUNDING</text>
+      <text x="350" y="112" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="95" textLength="680" lengthAdjust="spacingAndGlyphs" fill="none" stroke="rgba(255,255,255,0.82)" stroke-width="3.5" stroke-linejoin="round">ASTOUNDING</text>
+      <text x="350" y="112" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="95" textLength="680" lengthAdjust="spacingAndGlyphs" fill="#1a1a1a">ASTOUNDING</text>
+      <text x="350" y="112" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="95" textLength="680" lengthAdjust="spacingAndGlyphs" fill="url(#ht)" opacity="0.48">ASTOUNDING</text>
+      <text x="350" y="112" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="95" textLength="680" lengthAdjust="spacingAndGlyphs" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.5">ASTOUNDING</text>
+      <text x="350" y="178" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="58" letter-spacing="24" fill="black" stroke="black" stroke-width="13" stroke-linejoin="round" paint-order="stroke fill">TALES</text>
+      <text x="350" y="178" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="58" letter-spacing="24" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="8" stroke-linejoin="round">TALES</text>
+      <text x="350" y="178" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="58" letter-spacing="24" fill="none" stroke="rgba(0,0,0,0.82)" stroke-width="2">TALES</text>
+      <text x="350" y="178" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="58" letter-spacing="24" fill="none" stroke="rgba(255,255,255,0.78)" stroke-width="3" stroke-linejoin="round">TALES</text>
+      <text x="350" y="178" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="58" letter-spacing="24" fill="#1a1a1a">TALES</text>
+      <text x="350" y="178" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="58" letter-spacing="24" fill="url(#ht)" opacity="0.48">TALES</text>
+      <text x="350" y="178" text-anchor="middle" font-family="'Alfa Slab One', Georgia, serif" font-size="58" letter-spacing="24" fill="none" stroke="rgba(255,255,255,0.42)" stroke-width="1.2">TALES</text>
+    </svg>
+    <div class="rule-thin"></div>
+    <p class="tagline">A periodical of speculative fiction, future-fact, and disciplined strangeness.</p>
+    <div class="divider"></div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="about.html"><span class="nav-num">I</span><span class="nav-label">About the Series</span><span class="nav-arrow">→</span></a></li>
+      <li><a href="issue1.html"><span class="nav-num">II</span><span class="nav-label">Issue One &mdash; Table of Contents</span><span class="nav-arrow">→</span></a></li>
+      <li><a href="collaborators.html"><span class="nav-num">III</span><span class="nav-label">Information for Collaborators</span><span class="nav-arrow">→</span></a></li>
+      <li><a href="letters.html"><span class="nav-num">IV</span><span class="nav-label">Letters from the Future</span><span class="nav-arrow">→</span></a></li>
+      <li><a href="404.html"><span class="nav-num">V</span><span class="nav-label">The Astounding Emporium</span><span class="nav-arrow">→</span></a></li>
+    </ul>
+  </nav>
+
+  <footer>
+    <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+    <a href="mailto:submissions@astoundingtales.ca">submissions@astoundingtales.ca</a>
+  </footer>
+</div>
 </body>
 </html>
