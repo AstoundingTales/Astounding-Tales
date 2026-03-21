@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTOUNDING TALES — Claim Your Slot</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #f5f0e8;
+            color: rgb(26, 20, 16);
+            font-family: 'EB Garamond', 'Times New Roman', serif;
+            font-size: 18px;
+            line-height: 1.75;
+            min-height: 100vh;
+        }
+
+        .page {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 48px 40px 64px;
+        }
+
+        @media (max-width: 740px) {
+            .page { padding: 32px 20px 48px; }
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .page-title {
+            font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+            font-weight: 600;
+            font-size: 48px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgb(26, 20, 16);
+            line-height: 1.1;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid rgba(26, 20, 16, 0.15);
+            margin: 20px 0;
+        }
+
+        .page-subtitle {
+            font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: rgb(58, 48, 40);
+            text-align: center;
+        }
+
+        .intro {
+            font-family: 'EB Garamond', 'Times New Roman', serif;
+            font-size: 18px;
+            line-height: 1.75;
+            color: rgb(26, 20, 16);
+            margin-bottom: 40px;
+        }
+
+        .submission-form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .field-label {
+            font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: rgb(58, 48, 40);
+        }
+
+        .field-label .optional {
+            font-weight: 400;
+            color: rgba(26, 20, 16, 0.4);
+            letter-spacing: 1px;
+        }
+
+        .field-input,
+        .field-select,
+        .field-textarea {
+            font-family: 'EB Garamond', 'Times New Roman', serif;
+            font-size: 18px;
+            line-height: 1.75;
+            color: rgb(26, 20, 16);
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(26, 20, 16, 0.15);
+            border-radius: 0;
+            padding: 8px 0;
+            transition: border-color 0.2s ease;
+            outline: none;
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .field-input:focus,
+        .field-select:focus,
+        .field-textarea:focus {
+            border-bottom-color: rgb(26, 20, 16);
+        }
+
+        .field-input::placeholder,
+        .field-textarea::placeholder {
+            color: rgba(26, 20, 16, 0.3);
+        }
+
+        .field-select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 5 5-5' stroke='rgba(26,20,16,0.4)' fill='none' stroke-width='1.2'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0 center;
+            padding-right: 24px;
+            cursor: pointer;
+        }
+
+        .field-textarea {
+            min-height: 100px;
+            resize: vertical;
+            border: 1px solid rgba(26, 20, 16, 0.15);
+            padding: 12px;
+            margin-top: 4px;
+        }
+
+        .field-textarea:focus {
+            border-color: rgb(26, 20, 16);
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        @media (max-width: 520px) {
+            .field-row { grid-template-columns: 1fr; gap: 24px; }
+        }
+
+        .submit-btn {
+            font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: rgb(26, 20, 16);
+            background: transparent;
+            border: 1px solid rgba(26, 20, 16, 0.3);
+            padding: 14px 32px;
+            cursor: pointer;
+            transition: border-color 0.2s ease, background 0.2s ease;
+            align-self: flex-start;
+            margin-top: 16px;
+        }
+
+        .submit-btn:hover {
+            border-color: rgb(26, 20, 16);
+            background: rgba(26, 20, 16, 0.04);
+        }
+
+        .submit-btn:active { background: rgba(26, 20, 16, 0.08); }
+
+        .submit-btn:disabled {
+            color: rgba(26, 20, 16, 0.3);
+            border-color: rgba(26, 20, 16, 0.1);
+            cursor: not-allowed;
+        }
+
+        .form-footer {
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(26, 20, 16, 0.15);
+            text-align: center;
+        }
+
+        .form-footer p {
+            font-family: 'EB Garamond', serif;
+            font-size: 13px;
+            color: rgba(26, 20, 16, 0.5);
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .form-footer a.email-link {
+            display: block;
+            margin-top: 8px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgb(26, 20, 16);
+            text-decoration: none;
+        }
+
+        .form-footer a.email-link:hover { text-decoration: underline; }
+
+        .form-footer .back-link {
+            display: inline-block;
+            margin-top: 16px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: rgb(58, 48, 40);
+            text-decoration: none;
+        }
+
+        .form-footer .back-link:hover { color: rgb(26, 20, 16); }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 48px 0;
+        }
+
+        .success-message.visible { display: block; }
+
+        .success-message h2 {
+            font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+            font-weight: 600;
+            font-size: 28px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgb(26, 20, 16);
+            margin-bottom: 20px;
+        }
+
+        .success-message p {
+            font-family: 'EB Garamond', 'Times New Roman', serif;
+            font-size: 18px;
+            line-height: 1.75;
+            color: rgb(26, 20, 16);
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .error-message {
+            font-family: 'EB Garamond', serif;
+            font-size: 15px;
+            color: rgb(139, 37, 0);
+            font-style: italic;
+            margin-top: 8px;
+            display: none;
+        }
+
+        .error-message.visible { display: block; }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 12px; height: 12px;
+            border: 1.5px solid rgba(26, 20, 16, 0.3);
+            border-top-color: rgb(26, 20, 16);
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header class="page-header">
+            <h1 class="page-title">Claim Your Slot</h1>
+            <hr class="divider">
+            <p class="page-subtitle">Astounding Tales — Issue One</p>
+            <hr class="divider">
+        </header>
+
+        <p class="intro">
+            You were not found by accident. The gaps in Issue One have been marked clearly. This form exists so you can claim the one that belongs to you. Tell us who you are, and which slot caught your eye. That's enough to start.
+        </p>
+
+        <form class="submission-form" id="submissionForm">
+            <div class="field-row">
+                <div class="field-group">
+                    <label class="field-label" for="name">Name</label>
+                    <input type="text" id="name" name="name" class="field-input" required>
+                </div>
+                <div class="field-group">
+                    <label class="field-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" class="field-input" required>
+                </div>
+            </div>
+
+            <div class="field-group">
+                <label class="field-label" for="slot">Which Gap Are You Claiming <span class="optional">(Optional)</span></label>
+                <select id="slot" name="slot" class="field-select">
+                    <option value="" selected>—</option>
+
+                    <optgroup label="Cover Art">
+                        <option value="Cover Art — Wraparound Artwork (Front &amp; Back Cover)" data-slug="cover">Cover Art — Wraparound Artwork (Front &amp; Back Cover)</option>
+                    </optgroup>
+
+                    <optgroup label="Comics — Recurring Artist Wanted">
+                        <option value="Fact-Check — Comic (Recurring Artist Wanted)" data-slug="fact-check">Fact-Check — Comic</option>
+                        <option value="Pursuit — Comic (Recurring Artist Wanted)" data-slug="pursuit">Pursuit — Comic</option>
+                    </optgroup>
+
+                    <optgroup label="Chapter Cover Art">
+                        <option value="Echoes in the Machine Ch. 1–4 — Cover Art" data-slug="echoes-1-4">Echoes in the Machine Ch. 1–4</option>
+                        <option value="Echoes in the Machine Ch. 5–6 — Cover Art" data-slug="echoes-5-6">Echoes in the Machine Ch. 5–6</option>
+                        <option value="Echoes in the Machine Ch. 7–9 — Cover Art" data-slug="echoes-7-9">Echoes in the Machine Ch. 7–9</option>
+                    </optgroup>
+
+                    <optgroup label="Short Story Art">
+                        <option value="Dead Channels — Short Story Splash Art" data-slug="dead-channels">Dead Channels — Splash Art</option>
+                    </optgroup>
+
+                    <optgroup label="Fake Advertisements">
+                        <option value="Fake Ad — Park Ave Smart Apartment Services" data-slug="ad-park-ave">Park Ave Smart Apartment Services</option>
+                        <option value="Fake Ad — Flo-State Surgeon General's Warning" data-slug="ad-flo-state">Flo-State Surgeon General's Warning</option>
+                        <option value="Fake Ad — Jacaranda by Asmara" data-slug="ad-jacaranda">Jacaranda by Asmara</option>
+                        <option value="Fake Ad — General Entity AM/FM Clock Radio" data-slug="ad-general-entity">General Entity AM/FM Clock Radio</option>
+                    </optgroup>
+
+                    <optgroup label="Other">
+                        <option value="Pitch an Idea for a Future Issue" data-slug="future-idea">Submit My Own Idea for a Future Issue</option>
+                        <option value="Not Sure Yet / General Interest" data-slug="other">Not Sure Yet / General Interest</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="field-group">
+                <label class="field-label" for="portfolio">Portfolio or Website <span class="optional">(Optional)</span></label>
+                <input type="url" id="portfolio" name="portfolio" class="field-input">
+            </div>
+
+            <div class="field-group">
+                <label class="field-label" for="message">Message <span class="optional">(Optional)</span></label>
+                <textarea id="message" name="message" class="field-textarea"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                Send Transmission →
+            </button>
+
+            <div class="error-message" id="formError"></div>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            <h2>Transmission Received</h2>
+            <p>We've got your signal. If the fit is right, you'll hear from the editor. In the meantime, the ink is drying.</p>
+        </div>
+
+        <footer class="form-footer">
+            <p>© Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+            <a href="mailto:submissions@astoundingtales.ca" class="email-link">submissions@astoundingtales.ca</a>
+            <br>
+            <a href="/" class="back-link">← Main Page</a>
+        </footer>
+    </div>
+
+    <script>
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw6jL6B3LqIYIvQ_-JqDxQVx6-of7Lm2lK06i5X5GcJ0sAiIRwj8Zxrdh01kwYtEnlPNA/exec';
+
+        // Pre-select slot from URL parameter (?slot=pursuit)
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const slotParam = params.get('slot');
+            if (slotParam) {
+                const select = document.getElementById('slot');
+                const options = select.querySelectorAll('option[data-slug]');
+                for (const opt of options) {
+                    if (opt.dataset.slug === slotParam.toLowerCase()) {
+                        select.value = opt.value;
+                        break;
+                    }
+                }
+            }
+        })();
+
+        const form = document.getElementById('submissionForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formError = document.getElementById('formError');
+        const successMessage = document.getElementById('successMessage');
+
+        function showError(msg) {
+            formError.textContent = msg;
+            formError.classList.add('visible');
+            setTimeout(() => formError.classList.remove('visible'), 5000);
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const slot = document.getElementById('slot').value;
+            const portfolio = document.getElementById('portfolio').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email) {
+                showError('Name and email are required.');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="loading-spinner"></span>Sending...';
+
+            try {
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        slot: slot || 'Not specified',
+                        portfolio: portfolio || '',
+                        message: message || '',
+                        timestamp: new Date().toISOString(),
+                        source: window.location.href
+                    })
+                });
+
+                form.style.display = 'none';
+                successMessage.classList.add('visible');
+
+            } catch (error) {
+                console.error('Submission error:', error);
+                showError('Transmission failed. Try emailing submissions@astoundingtales.ca directly.');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Send Transmission →';
+            }
+        });
+    </script>
+</body>
+</html>
