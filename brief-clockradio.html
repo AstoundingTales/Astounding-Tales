@@ -1,81 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ASTOUNDING TALES - Creative Brief: General Entity 7-4612BK</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTOUNDING TALES — Creative Brief: General Entity AM/FM Clock Radio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f5f0e8; color: #1a1410; font-family: 'EB Garamond', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
+    .masthead { text-align: center; }
+    .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
+    .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
+    .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
+    .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
+    .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
+    .prose p { margin-bottom: 18px; }
+    .prose em { font-style: italic; }
+    .prose strong { font-weight: 500; }
+    .prose a { color: #1a1410; text-decoration: underline; text-decoration-color: rgba(26,20,16,0.35); text-underline-offset: 3px; }
+    .prose a:hover { text-decoration-color: rgba(26,20,16,0.8); }
+
+    .section-divider { width: 60px; height: 1px; background: rgba(26,20,16,0.25); margin: 36px 0; }
+
+    .section-label {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #1a1410;
+      margin-bottom: 12px;
+    }
+
+    .comp-label {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(26,20,16,0.6);
+      margin-bottom: 6px;
+    }
+
+    .prose ul {
+      margin: 0 0 18px 0;
+      padding-left: 24px;
+    }
+    .prose ul li {
+      margin-bottom: 6px;
+    }
+
+    .callout-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 18px 0;
+    }
+    .callout-list li {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(26,20,16,0.1);
+      margin-bottom: 0;
+    }
+    .callout-list li:last-child {
+      border-bottom: none;
+    }
+    .callout-list .callout-pointer {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(26,20,16,0.5);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .fine-print {
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(26,20,16,0.55);
+      font-style: italic;
+    }
+
+    .cta-block {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(26,20,16,0.15);
+    }
+    .cta-block p {
+      font-style: italic;
+      color: rgba(26,20,16,0.7);
+      margin-bottom: 12px;
+    }
+    .cta-block a.cta-link {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: #1a1410;
+      text-decoration: none;
+      border: 1px solid rgba(26,20,16,0.3);
+      padding: 12px 24px;
+      display: inline-block;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .cta-block a.cta-link:hover {
+      border-color: #1a1410;
+      background: rgba(26,20,16,0.04);
+    }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    footer .back { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.55); text-decoration: none; }
+    footer .back:hover { color: #1a1410; }
+    footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
+    footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
+    footer a.email:hover { text-decoration: underline; }
+  </style>
 </head>
-<body style="font-family: 'Times New Roman', Times, serif; margin: 40px; max-width: 600px; background-color: #ffffff; color: #000000;">
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="rule-thick"></div>
+      <span class="page-title">Creative Brief — Fake Ad #4</span>
+      <div class="rule-thin"></div>
+      <p class="tagline">General Entity AM/FM Clock Radio &mdash; Model 7-4612BK</p>
+      <div class="divider"></div>
+    </header>
 
-<h1>ASTOUNDING TALES</h1>
+    <div class="prose">
 
-<p><a href="issue1.html">Return to Issue One</a></p>
+      <p class="section-label">The Assignment</p>
 
-<hr>
+      <p>A full-page product packaging advertisement. Period: 1983. Format: the front face of a retail box, the kind you would find on a shelf at Sears or K-Mart. The product is a clock radio. It is also a surveillance device. The packaging does not know this. The packaging is completely sincere.</p>
 
-<h2>CREATIVE BRIEF &mdash; FAKE AD #4</h2>
-<h3>General Entity AM/FM Electronic Digital Clock Radio &mdash; Model 7-4612BK</h3>
+      <p>The horror is domestic. It is sitting on a night table. The red numbers say 7:05. It has been there for years.</p>
 
-<hr>
+      <div class="section-divider"></div>
 
-<p><strong>The Assignment</strong></p>
+      <p class="section-label">Visual</p>
 
-<p>A full-page product packaging advertisement. Period: 1983. Format: the front face of a retail box, the kind you would find on a shelf at Sears or K-Mart. The product is a clock radio. It is also a surveillance device. The packaging does not know this. The packaging is completely sincere.</p>
+      <p>Gray background. Classic blue header text. The illustration of the clock itself is highly realistic but slightly faded &mdash; the degradation of packaging that has been on a shelf too long, or found at a thrift store, or pulled from a box in someone&rsquo;s basement. It must look like a real object. Not a prop. A product.</p>
 
-<p>The horror is domestic. It is sitting on a night table. The red numbers say 7:05. It has been there for years.</p>
+      <p class="comp-label">The Clock</p>
+      <p>A classic rectangular faux-woodgrain alarm clock, centre of frame. LED display reading 7:05 in red. The GE logo on the clock face and the top-left corner of the box should mimic the classic cursive script &mdash; but the loops of the letters subtly form an infinity symbol or a closed circuit. This easter egg should reward close inspection without announcing itself.</p>
 
-<hr>
+      <p class="comp-label">The Anatomy Lines</p>
+      <p>Thin blue lines radiate from the clock to labelled callouts around the frame, exactly mimicking 1980s consumer electronics schematic packaging. The lines are the visual grammar of trustworthy corporate design. Use them accordingly.</p>
 
-<p><strong>Visual</strong></p>
+      <div class="section-divider"></div>
 
-<p>Gray background. Classic blue header text. The illustration of the clock itself is highly realistic but slightly faded &mdash; the degradation of packaging that has been on a shelf too long, or found at a thrift store, or pulled from a box in someone&rsquo;s basement. It must look like a real object. Not a prop. A product.</p>
+      <p class="section-label">Header</p>
 
-<p><em>The clock:</em> A classic rectangular faux-woodgrain alarm clock, centre of frame. LED display reading 7:05 in red. The GE logo on the clock face and the top-left corner of the box should mimic the classic cursive script &mdash; but the loops of the letters subtly form an infinity symbol or a closed circuit. This easter egg should reward close inspection without announcing itself.</p>
+      <p><em>Top left:</em> General Entity<br>
+      <em>Centred:</em> AM/FM Electronic Digital Clock Radio</p>
 
-<p><em>The anatomy lines:</em> Thin blue lines radiate from the clock to labelled callouts around the frame, exactly mimicking 1980s consumer electronics schematic packaging. The lines are the visual grammar of trustworthy corporate design. Use them accordingly.</p>
+      <p>Font: clean, clinical 1980s sans-serif. Helvetica or equivalent. The text starts reading like standard consumer electronics copy and does not stop reading like that &mdash; until the reader reads it.</p>
 
-<hr>
+      <div class="section-divider"></div>
 
-<p><strong>Header</strong></p>
+      <p class="section-label">The Callouts</p>
 
-<p><em>Top left:</em> General Entity<br>
-<em>Centred:</em> AM/FM Electronic Digital Clock Radio</p>
+      <p>Each connected by a thin blue line to the corresponding feature on the clock.</p>
 
-<p>Font: clean, clinical 1980s sans-serif. Helvetica or equivalent. The text starts reading like standard consumer electronics copy and does not stop reading like that &mdash; until the reader reads it.</p>
+      <ul class="callout-list">
+        <li>
+          <span class="callout-pointer">Pointing to the display</span>
+          Large, easy-to-read red LED electronic display. Confined to seven-segment parameters. Perfect for rendering the time (7:05 AM) or displaying brief, unprompted, highly personalised observations.
+        </li>
+        <li>
+          <span class="callout-pointer">Pointing to the top buttons</span>
+          Hour/Minute Time and Awareness set pushbuttons.
+        </li>
+        <li>
+          <span class="callout-pointer">Pointing to the speaker grill</span>
+          Electronic tone Alarm with adjustable volume. Capable of standard wake tones, AM/FM radio, or the low-frequency vibration of approaching aviation rotors.
+        </li>
+        <li>
+          <span class="callout-pointer">Pointing to the snooze bar</span>
+          Snooz-Alarm&reg; control. Turns the alarm OFF for 9 minutes of extra sleep. Provides the comforting illusion that you can delay the inevitable.
+        </li>
+        <li>
+          <span class="callout-pointer">Pointing to the front panel</span>
+          Battery Back-up. Just in case you should have a power failure &mdash; or attempt to disconnect the unit from the wall. The back-up system ensures the unit retains its memory. It remembers the jacaranda. It remembers everything. (Note: Battery not included.)
+        </li>
+        <li>
+          <span class="callout-pointer">Pointing to the bottom corner</span>
+          Non-skid rubber feet. Helps prevent marring or scratching night table tops when the unit vibrates from localised data extraction.
+        </li>
+      </ul>
 
-<hr>
+      <div class="section-divider"></div>
 
-<p><strong>The Callouts</strong></p>
+      <p class="section-label">Footer &mdash; Bottom Right Corner</p>
 
-<p>Each connected by a thin blue line to the corresponding feature on the clock.</p>
+      <p><em>Standard tiny corporate manufacturing boilerplate. Render it exactly as such.</em></p>
 
-<ul>
-  <li><em>Pointing to the display:</em> Large, easy-to-read red LED electronic display. Confined to seven-segment parameters. Perfect for rendering the time (7:05 AM) or displaying brief, unprompted, highly personalised observations.</li>
-  <li><em>Pointing to the top buttons:</em> Hour/Minute Time and Awareness set pushbuttons.</li>
-  <li><em>Pointing to the speaker grill:</em> Electronic tone Alarm with adjustable volume. Capable of standard wake tones, AM/FM radio, or the low-frequency vibration of approaching aviation rotors.</li>
-  <li><em>Pointing to the snooze bar:</em> Snooz-Alarm&reg; control. Turns the alarm OFF for 9 minutes of extra sleep. Provides the comforting illusion that you can delay the inevitable.</li>
-  <li><em>Pointing to the front panel:</em> Battery Back-up. Just in case you should have a power failure &mdash; or attempt to disconnect the unit from the wall. The back-up system ensures the unit retains its memory. It remembers the jacaranda. It remembers everything. (Note: Battery not included.)</li>
-  <li><em>Pointing to the bottom corner:</em> Non-skid rubber feet. Helps prevent marring or scratching night table tops when the unit vibrates from localised data extraction.</li>
-</ul>
+      <p class="fine-print">Vertex Consumer Electronics, Inc. &nbsp; P.O. Box 1976, Indianapolis, Indiana 46206 &nbsp; Made in the Dark. &nbsp; 7-4612BK</p>
 
-<hr>
+      <div class="section-divider"></div>
 
-<p><strong>Footer &mdash; Bottom Right Corner</strong></p>
+      <p class="section-label">Tone Reference</p>
 
-<p><em>Standard tiny corporate manufacturing boilerplate. Render it exactly as such.</em></p>
+      <p>The entire piece must be indistinguishable from a genuine 1983 retail product box until the reader reads the callouts. The gray background, the blue headers, the schematic lines, the corporate footer &mdash; all of it must be period-perfect. The callouts do not escalate dramatically. They begin with normal product language and end with surveillance horror using the same flat, informational tone throughout. The Snooz-Alarm line and the battery back-up line are the spine of the piece. Everything else is scaffolding.</p>
 
-<p><small>Vertex Consumer Electronics, Inc. &nbsp; P.O. Box 1976, Indianapolis, Indiana 46206 &nbsp; Made in the Dark. &nbsp; 7-4612BK</small></p>
+      <div class="cta-block">
+        <p>This slot is open. If it belongs to you, claim it.</p>
+        <a href="submit.html?slot=ad-general-entity" class="cta-link">Claim This Slot &rarr;</a>
+      </div>
 
-<hr>
+    </div>
 
-<p><strong>Tone Reference</strong></p>
-
-<p>The entire piece must be indistinguishable from a genuine 1983 retail product box until the reader reads the callouts. The gray background, the blue headers, the schematic lines, the corporate footer &mdash; all of it must be period-perfect. The callouts do not escalate dramatically. They begin with normal product language and end with surveillance horror using the same flat, informational tone throughout. The Snooz-Alarm line and the battery back-up line are the spine of the piece. Everything else is scaffolding.</p>
-
-<hr>
-
-<p>To discuss this brief: <a href="mailto:submissions@astoundingtales.ca">submissions@astoundingtales.ca</a></p>
-
-<p><a href="issue1.html">Return to Issue One</a></p>
-
+    <footer>
+      <a href="issue1.html" class="back">&larr; Return to Issue One</a>
+      <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+      <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
+    </footer>
+  </div>
 </body>
 </html>
