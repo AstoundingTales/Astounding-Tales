@@ -1,77 +1,213 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ASTOUNDING TALES - Creative Brief: Echoes in the Machine, Ch. 7-9</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTOUNDING TALES — Creative Brief: Echoes in the Machine, Ch. 7–9</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f5f0e8; color: #1a1410; font-family: 'EB Garamond', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
+```
+.masthead { text-align: center; }
+.page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
+.rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
+.rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
+.tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); }
+.divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
+.prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
+.prose p { margin-bottom: 18px; }
+.prose em { font-style: italic; }
+.prose strong { font-weight: 500; }
+.prose a { color: #1a1410; text-decoration: underline; text-decoration-color: rgba(26,20,16,0.35); text-underline-offset: 3px; }
+.prose a:hover { text-decoration-color: rgba(26,20,16,0.8); }
+
+.section-divider { width: 60px; height: 1px; background: rgba(26,20,16,0.25); margin: 36px 0; }
+
+.section-label {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #1a1410;
+  margin-bottom: 12px;
+}
+
+.comp-label {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(26,20,16,0.6);
+  margin-bottom: 6px;
+}
+
+.prose ul {
+  margin: 0 0 18px 0;
+  padding-left: 24px;
+}
+.prose ul li {
+  margin-bottom: 6px;
+}
+
+.prose code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+  color: rgba(26,20,16,0.7);
+  letter-spacing: 0.5px;
+}
+
+.breach-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: bold;
+  color: #8b2500;
+  letter-spacing: 1.5px;
+  line-height: 2;
+  display: block;
+  margin: 24px 0;
+}
+
+.hud-readout {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  color: rgba(26,20,16,0.5);
+  letter-spacing: 0.5px;
+  border-left: 2px solid rgba(26,20,16,0.12);
+  padding-left: 16px;
+  margin: 18px 0;
+  line-height: 2;
+}
+
+.cta-block {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(26,20,16,0.15);
+}
+.cta-block p {
+  font-style: italic;
+  color: rgba(26,20,16,0.7);
+  margin-bottom: 12px;
+}
+.cta-block a.cta-link {
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #1a1410;
+  text-decoration: none;
+  border: 1px solid rgba(26,20,16,0.3);
+  padding: 12px 24px;
+  display: inline-block;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.cta-block a.cta-link:hover {
+  border-color: #1a1410;
+  background: rgba(26,20,16,0.04);
+}
+
+footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+footer .back { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.55); text-decoration: none; }
+footer .back:hover { color: #1a1410; }
+footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
+footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
+footer a.email:hover { text-decoration: underline; }
+```
+
+  </style>
 </head>
-<body style="font-family: 'Times New Roman', Times, serif; margin: 40px; max-width: 600px; background-color: #ffffff; color: #000000;">
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="rule-thick"></div>
+      <span class="page-title">Creative Brief — Section Art</span>
+      <div class="rule-thin"></div>
+      <p class="tagline">Echoes in the Machine &mdash; Chapters 7&ndash;9</p>
+      <div class="divider"></div>
+    </header>
 
-<h1>ASTOUNDING TALES</h1>
+```
+<div class="prose">
 
-<p><a href="issue1.html">Return to Issue One</a></p>
+  <p class="section-label">The Assignment</p>
 
-<hr>
+  <p>One full-page interior illustration. First-person POV through Amara&rsquo;s AR glasses, moments after she wakes and puts them on. The reader is inside her eyes. The digital world has already decided to be there too.</p>
 
-<h2>CREATIVE BRIEF &mdash; SECTION ART</h2>
-<h3>Echoes in the Machine &mdash; Chapters 7&ndash;9</h3>
+  <p>Aesthetic: cyberpunk psychological horror. Intimate. Invasive. The feeling of waking from a nightmare and discovering the nightmare has followed you into the room.</p>
 
-<hr>
+  <div class="section-divider"></div>
 
-<p><strong>The Assignment</strong></p>
+  <p class="section-label">The Image</p>
 
-<p>One full-page interior illustration. First-person POV through Amara&rsquo;s AR glasses, moments after she wakes and puts them on. The reader is inside her eyes. The digital world has already decided to be there too.</p>
+  <p class="comp-label">Foreground &mdash; The HUD</p>
+  <p>Thin, sleek icy-blue digital framing lines at the edges of the frame establish that we are looking through AR lenses. This layer is razor-sharp. The centre of the vision is dominated by the system override. Nothing about the interface looks damaged or glitching &mdash; it looks perfectly functional. That is the problem.</p>
 
-<p>Aesthetic: cyberpunk psychological horror. Intimate. Invasive. The feeling of waking from a nightmare and discovering the nightmare has followed you into the room.</p>
+  <p class="comp-label">Midground &mdash; The Physical Reaction</p>
+  <p>At the very bottom edge of the frame, slightly out of focus: Amara&rsquo;s bare hands gripping dark bedsheets. Knuckles stark white. The physiological spike is visible in the grip. She is not moving. She is reading.</p>
 
-<hr>
+  <p class="comp-label">Background &mdash; The Domestic Void</p>
+  <p>The dark, impeccably clean, minimalist lines of her Smart Apartment. Through floor-to-ceiling windows: the CN Tower, illuminated against the Toronto night sky. Cold. Distant. Completely indifferent to what is happening in the room.</p>
 
-<p><strong>The Image</strong></p>
+  <div class="section-divider"></div>
 
-<p><em>Foreground &mdash; the HUD:</em> Thin, sleek icy-blue digital framing lines at the edges of the frame establish that we are looking through AR lenses. This layer is razor-sharp. The centre of the vision is dominated by the system override. Nothing about the interface looks damaged or glitching &mdash; it looks perfectly functional. That is the problem.</p>
+  <p class="section-label">The Text &mdash; The Breach</p>
 
-<p><em>Midground &mdash; the physical reaction:</em> At the very bottom edge of the frame, slightly out of focus: Amara&rsquo;s bare hands gripping dark bedsheets. Knuckles stark white. The physiological spike is visible in the grip. She is not moving. She is reading.</p>
+  <p>Hovering perfectly centred in the visual field, in the harsh jagged 7-segment red digital clock typeface &mdash; the same domestic-retro font that has no business being inside a piece of government-grade AR hardware:</p>
 
-<p><em>Background &mdash; the domestic void:</em> The dark, impeccably clean, minimalist lines of her Smart Apartment. Through floor-to-ceiling windows: the CN Tower, illuminated against the Toronto night sky. Cold. Distant. Completely indifferent to what is happening in the room.</p>
+  <span class="breach-text">THE JACARANDA WAS REAL. ASMARA.<br>ERIKSON CHECKED YOUR HARNESS TWICE.</span>
 
-<hr>
+  <p>This font is the violation. It should look like an analog infection bleeding into her sleek, ultra-modern interface. Not a system error. A message. Composed. Deliberate. Waiting for her to wake up.</p>
 
-<p><strong>The Text &mdash; The Breach</strong></p>
+  <div class="hud-readout">
+    <code>// CLASSIFICATION UPGRADE: SPECTER</code><br>
+    <code>// ENCRYPTION BYPASSED</code>
+  </div>
 
-<p>Hovering perfectly centred in the visual field, in the harsh jagged 7-segment red digital clock typeface &mdash; the same domestic-retro font that has no business being inside a piece of government-grade AR hardware:</p>
+  <p><em>Corner readouts &mdash; small, standard HUD font, icy blue.</em></p>
 
-<p><code>THE JACARANDA WAS REAL. ASMARA.</code><br>
-<code>ERIKSON CHECKED YOUR HARNESS TWICE.</code></p>
+  <div class="section-divider"></div>
 
-<p>This font is the violation. It should look like an analog infection bleeding into her sleek, ultra-modern interface. Not a system error. A message. Composed. Deliberate. Waiting for her to wake up.</p>
+  <p class="section-label">Colour Palette</p>
 
-<p><em>Corner readouts &mdash; small, standard HUD font, icy blue:</em><br>
-<code>// CLASSIFICATION UPGRADE: SPECTER</code><br>
-<code>// ENCRYPTION BYPASSED</code></p>
+  <ul>
+    <li><em>The physical world:</em> Deep midnight blues, slate greys, muted Toronto city-glow through the glass. Cold and isolating.</li>
+    <li><em>The digital intrusion:</em> Arterial glowing red for the text. It casts a faint red ambient reflection onto Amara&rsquo;s white-knuckled hands at the bottom of the frame &mdash; the digital light landing on skin. This grounds it.</li>
+    <li><em>The sensory ghost:</em> At the absolute edges of the lenses &mdash; almost imperceptible &mdash; a faint haze of pale jacaranda-purple light. The olfactory memory of the dream bleeding into the visual field. It should not be obvious. It should be the thing the viewer notices second.</li>
+    <li><em>HUD elements:</em> Icy blue, thin, clinical</li>
+  </ul>
 
-<hr>
+  <div class="section-divider"></div>
 
-<p><strong>Colour Palette</strong></p>
+  <p class="section-label">Tone Reference</p>
 
-<ul>
-  <li><em>The physical world:</em> Deep midnight blues, slate greys, muted Toronto city-glow through the glass. Cold and isolating.</li>
-  <li><em>The digital intrusion:</em> Arterial glowing red for the text. It casts a faint red ambient reflection onto Amara&rsquo;s white-knuckled hands at the bottom of the frame &mdash; the digital light landing on skin. This grounds it.</li>
-  <li><em>The sensory ghost:</em> At the absolute edges of the lenses &mdash; almost imperceptible &mdash; a faint haze of pale jacaranda-purple light. The olfactory memory of the dream bleeding into the visual field. It should not be obvious. It should be the thing the viewer notices second.</li>
-  <li><em>HUD elements:</em> Icy blue, thin, clinical</li>
-</ul>
+  <p>The three Echoes section covers form a triptych. Ch. 1&ndash;4: a human eye becoming a machine. Ch. 5&ndash;6: a machine eye encountering a human moment it cannot classify. Ch. 7&ndash;9: a human looking through a machine that has already been compromised, reading a message that should not exist, written in a font that belongs on a night table.</p>
 
-<hr>
+  <p>The red text is not a threat. It is a proof. The image should make the reader feel the difference.</p>
 
-<p><strong>Tone Reference</strong></p>
+  <div class="cta-block">
+    <p>This slot is open. If it belongs to you, claim it.</p>
+    <a href="submit.html?slot=echoes-7-9" class="cta-link">Claim This Slot &rarr;</a>
+  </div>
 
-<p>The three Echoes section covers form a triptych. Ch. 1&ndash;4: a human eye becoming a machine. Ch. 5&ndash;6: a machine eye encountering a human moment it cannot classify. Ch. 7&ndash;9: a human looking through a machine that has already been compromised, reading a message that should not exist, written in a font that belongs on a night table.</p>
+</div>
 
-<p>The red text is not a threat. It is a proof. The image should make the reader feel the difference.</p>
+<footer>
+  <a href="issue1.html" class="back">&larr; Return to Issue One</a>
+  <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+  <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
+</footer>
+```
 
-<hr>
-
-<p>To discuss this brief: <a href="mailto:submissions@astoundingtales.ca">submissions@astoundingtales.ca</a></p>
-
-<p><a href="issue1.html">Return to Issue One</a></p>
-
+  </div>
 </body>
 </html>
