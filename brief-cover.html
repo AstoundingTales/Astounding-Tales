@@ -1,89 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ASTOUNDING TALES - Creative Brief: Wraparound Cover</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTOUNDING TALES — Creative Brief: Wraparound Cover</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f5f0e8; color: #1a1410; font-family: 'EB Garamond', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
+    .masthead { text-align: center; }
+    .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
+    .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
+    .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
+    .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
+    .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
+    .prose p { margin-bottom: 18px; }
+    .prose em { font-style: italic; }
+    .prose a { color: #1a1410; text-decoration: underline; text-decoration-color: rgba(26,20,16,0.35); text-underline-offset: 3px; }
+    .prose a:hover { text-decoration-color: rgba(26,20,16,0.8); }
+
+    .section-divider { width: 60px; height: 1px; background: rgba(26,20,16,0.25); margin: 36px 0; }
+
+    .section-label {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #1a1410;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      font-style: italic;
+      color: rgba(26,20,16,0.7);
+      margin-bottom: 18px;
+    }
+
+    .prose ul {
+      margin: 0 0 18px 0;
+      padding-left: 24px;
+    }
+    .prose ul li {
+      margin-bottom: 6px;
+    }
+
+    .prose code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+      color: #8b2500;
+      letter-spacing: 1px;
+    }
+
+    .cta-block {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(26,20,16,0.15);
+    }
+    .cta-block p {
+      font-style: italic;
+      color: rgba(26,20,16,0.7);
+      margin-bottom: 12px;
+    }
+    .cta-block a.cta-link {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: #1a1410;
+      text-decoration: none;
+      border: 1px solid rgba(26,20,16,0.3);
+      padding: 12px 24px;
+      display: inline-block;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .cta-block a.cta-link:hover {
+      border-color: #1a1410;
+      background: rgba(26,20,16,0.04);
+    }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    footer .back { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.55); text-decoration: none; }
+    footer .back:hover { color: #1a1410; }
+    footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
+    footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
+    footer a.email:hover { text-decoration: underline; }
+  </style>
 </head>
-<body style="font-family: 'Times New Roman', Times, serif; margin: 40px; max-width: 600px; background-color: #ffffff; color: #000000;">
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="rule-thick"></div>
+      <span class="page-title">Creative Brief — Wraparound Cover</span>
+      <div class="rule-thin"></div>
+      <p class="tagline">Astounding Tales &mdash; Issue One</p>
+      <div class="divider"></div>
+    </header>
 
-<h1>ASTOUNDING TALES</h1>
+    <div class="prose">
 
-<p><a href="issue1.html">Return to Issue One</a></p>
+      <p class="section-label">The Assignment</p>
 
-<hr>
+      <p>A single continuous painting spanning front cover, spine, and back cover. The physical environment is unbroken across all three surfaces. The rendering style is not. As the eye moves from right to left &mdash; front cover to spine to back cover &mdash; the aesthetic shifts from warm mid-century commercial illustration to cold cyberpunk infrastructure. The painting is about the moment the signal becomes the noise.</p>
 
-<h2>CREATIVE BRIEF &mdash; WRAPAROUND COVER</h2>
-<h3>Issue One &mdash; Signal and Noise</h3>
+      <p>This is the most important piece in the issue. It is the first thing the reader touches and the last thing they see when they set it down. It must work as a gorgeous, tactile pulp painting and as a horror image. Simultaneously.</p>
 
-<hr>
+      <div class="section-divider"></div>
 
-<p><strong>The Assignment</strong></p>
+      <p class="section-label">The Front Cover &mdash; The Signal</p>
+      <p class="section-subtitle">The right side of the full canvas. This is the lie.</p>
 
-<p>A single continuous painting spanning front cover, spine, and back cover. The physical environment is unbroken across all three surfaces. The rendering style is not. As the eye moves from right to left &mdash; front cover to spine to back cover &mdash; the aesthetic shifts from warm mid-century commercial illustration to cold cyberpunk infrastructure. The painting is about the moment the signal becomes the noise.</p>
+      <p>A gorgeously painted 1950s tableau. A vintage wood-grain AM/FM radio sits on a scarred wooden desk, bathed in warm amber light. Beside it: a heavy glass ashtray, a smoking cigarette, a dog-eared reporter&rsquo;s notepad. The scene is human, messy, and real.</p>
 
-<p>This is the most important piece in the issue. It is the first thing the reader touches and the last thing they see when they set it down. It must work as a gorgeous, tactile pulp painting and as a horror image. Simultaneously.</p>
+      <p>Aesthetic: rich, textured, painterly. A masterpiece of mid-century commercial illustration &mdash; the kind where the ink smears on your thumbs and you know a hand put it there. Cadmium reds, burnt siennas, warm ambers, the creamy off-white of aged paper.</p>
 
-<hr>
+      <p><em>Typography:</em> ASTOUNDING TALES at the top in bold, classic pulp-era lettering. Below it: ISSUE ONE: SIGNAL AND NOISE. The type should feel like it belongs to the painting &mdash; warm, weighted, confident.</p>
 
-<p><strong>The Front Cover &mdash; The Signal</strong></p>
+      <div class="section-divider"></div>
 
-<p><em>The right side of the full canvas. This is the lie.</em></p>
+      <p class="section-label">The Spine &mdash; The Event Horizon</p>
+      <p class="section-subtitle">The centre of the canvas. This is where the friction lives.</p>
 
-<p>A gorgeously painted 1950s tableau. A vintage wood-grain AM/FM radio sits on a scarred wooden desk, bathed in warm amber light. Beside it: a heavy glass ashtray, a smoking cigarette, a dog-eared reporter&rsquo;s notepad. The scene is human, messy, and real.</p>
+      <p>The warm painterly world of the desk and radio violently fractures at the spine. Physical tears in the paper texture. Cascading columns of green binary code bleeding through the gaps. Jagged pixelation. Visual static. The two aesthetics collide here and neither wins. This is not a clean transition &mdash; it is a rupture.</p>
 
-<p>Aesthetic: rich, textured, painterly. A masterpiece of mid-century commercial illustration &mdash; the kind where the ink smears on your thumbs and you know a hand put it there. Cadmium reds, burnt siennas, warm ambers, the creamy off-white of aged paper.</p>
+      <p>Magazine title and issue number run along the spine in standard format, but the typography here should feel unstable &mdash; as if the lettering itself is caught in the breakdown.</p>
 
-<p><em>Typography:</em> ASTOUNDING TALES at the top in bold, classic pulp-era lettering. Below it: ISSUE ONE: SIGNAL AND NOISE. The type should feel like it belongs to the painting &mdash; warm, weighted, confident.</p>
+      <div class="section-divider"></div>
 
-<hr>
+      <p class="section-label">The Back Cover &mdash; The Noise</p>
+      <p class="section-subtitle">The left side of the full canvas. This is the truth behind the illusion.</p>
 
-<p><strong>The Spine &mdash; The Event Horizon</strong></p>
+      <p>The same desk continues onto the back cover, but the illusion is gone. The vintage radio is still there &mdash; but its back panel is blown open, and inside it are not vacuum tubes. Inside it is a hyper-modern, cold-glowing neural architecture. Impossibly complex. Impossibly small. It was always there.</p>
 
-<p><em>The centre of the canvas. This is where the friction lives.</em></p>
+      <p>The warm amber light has been entirely swallowed by absolute black. Looming in the shadows behind the desk are massive monolithic server racks, their blue and amber status lights blinking in the dark. Thick industrial cables snake from the back of the radio and off the edge of the desk into the darkness below.</p>
 
-<p>The warm painterly world of the desk and radio violently fractures at the spine. Physical tears in the paper texture. Cascading columns of green binary code bleeding through the gaps. Jagged pixelation. Visual static. The two aesthetics collide here and neither wins. This is not a clean transition &mdash; it is a rupture.</p>
+      <p>In the empty space above the server racks, glowing in arterial red 7-segment digital font &mdash; the same font from the clock radio, the same font from Amara&rsquo;s glasses:</p>
 
-<p>Magazine title and issue number run along the spine in standard format, but the typography here should feel unstable &mdash; as if the lettering itself is caught in the breakdown.</p>
+      <p><code>HUMAN AUTHENTICITY SCORE: 98.7%</code></p>
 
-<hr>
+      <div class="section-divider"></div>
 
-<p><strong>The Back Cover &mdash; The Noise</strong></p>
+      <p class="section-label">Colour Arc</p>
 
-<p><em>The left side of the full canvas. This is the truth behind the illusion.</em></p>
+      <ul>
+        <li><em>Front cover:</em> Cadmium red, burnt sienna, warm amber, aged cream</li>
+        <li><em>Spine:</em> Chaotic intersection of both palettes &mdash; colour as collision</li>
+        <li><em>Back cover:</em> Vantablack, sterile CRT green, icy blue, one streak of digital red</li>
+      </ul>
 
-<p>The same desk continues onto the back cover, but the illusion is gone. The vintage radio is still there &mdash; but its back panel is blown open, and inside it are not vacuum tubes. Inside it is a hyper-modern, cold-glowing neural architecture. Impossibly complex. Impossibly small. It was always there.</p>
+      <p>The colour temperature of the painting drops by roughly 5,000 Kelvin from right edge to left edge. The warmth does not fade. It is eaten.</p>
 
-<p>The warm amber light has been entirely swallowed by absolute black. Looming in the shadows behind the desk are massive monolithic server racks, their blue and amber status lights blinking in the dark. Thick industrial cables snake from the back of the radio and off the edge of the desk into the darkness below.</p>
+      <div class="section-divider"></div>
 
-<p>In the empty space above the server racks, glowing in arterial red 7-segment digital font &mdash; the same font from the clock radio, the same font from Amara&rsquo;s glasses:</p>
+      <p class="section-label">Tone Reference</p>
 
-<p><code>HUMAN AUTHENTICITY SCORE: 98.7%</code></p>
+      <p>The front cover must function as a completely convincing piece of 1950s pulp magazine art. A reader who only ever sees the front cover should feel nostalgia, warmth, and the tactile pleasure of a well-made object. A reader who turns it over should feel the bottom drop out. The back cover is not a twist &mdash; it is the confirmation of something that was always true. The radio was always open at the back. We just weren&rsquo;t looking.</p>
 
-<hr>
+      <p>The spine is where the painter earns everything. It is the hardest surface to execute and the most important one to get right. The fracture must feel inevitable, not decorative.</p>
 
-<p><strong>Colour Arc</strong></p>
+      <div class="cta-block">
+        <p>This slot is open. If it belongs to you, claim it.</p>
+        <a href="submit.html?slot=cover" class="cta-link">Claim This Slot &rarr;</a>
+      </div>
 
-<ul>
-  <li><em>Front cover:</em> Cadmium red, burnt sienna, warm amber, aged cream</li>
-  <li><em>Spine:</em> Chaotic intersection of both palettes &mdash; colour as collision</li>
-  <li><em>Back cover:</em> Vantablack, sterile CRT green, icy blue, one streak of digital red</li>
-</ul>
+    </div>
 
-<p>The colour temperature of the painting drops by roughly 5,000 Kelvin from right edge to left edge. The warmth does not fade. It is eaten.</p>
-
-<hr>
-
-<p><strong>Tone Reference</strong></p>
-
-<p>The front cover must function as a completely convincing piece of 1950s pulp magazine art. A reader who only ever sees the front cover should feel nostalgia, warmth, and the tactile pleasure of a well-made object. A reader who turns it over should feel the bottom drop out. The back cover is not a twist &mdash; it is the confirmation of something that was always true. The radio was always open at the back. We just weren&rsquo;t looking.</p>
-
-<p>The spine is where the painter earns everything. It is the hardest surface to execute and the most important one to get right. The fracture must feel inevitable, not decorative.</p>
-
-<hr>
-
-<p>To discuss this brief: <a href="mailto:submissions@astoundingtales.ca">submissions@astoundingtales.ca</a></p>
-
-<p><a href="issue1.html">Return to Issue One</a></p>
-
+    <footer>
+      <a href="issue1.html" class="back">&larr; Return to Issue One</a>
+      <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+      <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
+    </footer>
+  </div>
 </body>
 </html>
