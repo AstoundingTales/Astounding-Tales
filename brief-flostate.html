@@ -1,95 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ASTOUNDING TALES - Creative Brief: Flo-State</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTOUNDING TALES — Creative Brief: Flo-State Surgeon General's Warning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f5f0e8; color: #1a1410; font-family: 'EB Garamond', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
+    .masthead { text-align: center; }
+    .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
+    .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
+    .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
+    .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
+    .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
+    .prose p { margin-bottom: 18px; }
+    .prose em { font-style: italic; }
+    .prose strong { font-weight: 500; }
+    .prose a { color: #1a1410; text-decoration: underline; text-decoration-color: rgba(26,20,16,0.35); text-underline-offset: 3px; }
+    .prose a:hover { text-decoration-color: rgba(26,20,16,0.8); }
+
+    .section-divider { width: 60px; height: 1px; background: rgba(26,20,16,0.25); margin: 36px 0; }
+
+    .section-label {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #1a1410;
+      margin-bottom: 12px;
+    }
+
+    .prose ul {
+      margin: 0 0 18px 0;
+      padding-left: 24px;
+    }
+    .prose ul li {
+      margin-bottom: 6px;
+    }
+
+    .core-message {
+      font-size: 21px;
+      font-style: italic;
+      color: rgba(26,20,16,0.8);
+      border-left: 2px solid rgba(26,20,16,0.2);
+      padding-left: 20px;
+      margin: 24px 0;
+    }
+
+    .headline-callout {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin: 24px 0;
+    }
+
+    .advisory-box {
+      border: 2px solid #1a1410;
+      padding: 24px;
+      margin: 24px 0;
+    }
+    .advisory-box .advisory-header {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(26,20,16,0.2);
+    }
+    .advisory-box p {
+      margin-bottom: 14px;
+    }
+    .advisory-box ul {
+      margin: 0 0 14px 0;
+      padding-left: 24px;
+    }
+    .advisory-box ul li {
+      margin-bottom: 6px;
+    }
+    .advisory-box .advisory-verdict {
+      font-style: italic;
+      font-weight: 500;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(26,20,16,0.2);
+    }
+
+    .fine-print {
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(26,20,16,0.55);
+      font-style: italic;
+    }
+
+    .cta-block {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(26,20,16,0.15);
+    }
+    .cta-block p {
+      font-style: italic;
+      color: rgba(26,20,16,0.7);
+      margin-bottom: 12px;
+    }
+    .cta-block a.cta-link {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: #1a1410;
+      text-decoration: none;
+      border: 1px solid rgba(26,20,16,0.3);
+      padding: 12px 24px;
+      display: inline-block;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .cta-block a.cta-link:hover {
+      border-color: #1a1410;
+      background: rgba(26,20,16,0.04);
+    }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    footer .back { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.55); text-decoration: none; }
+    footer .back:hover { color: #1a1410; }
+    footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
+    footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
+    footer a.email:hover { text-decoration: underline; }
+  </style>
 </head>
-<body style="font-family: 'Times New Roman', Times, serif; margin: 40px; max-width: 600px; background-color: #ffffff; color: #000000;">
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="rule-thick"></div>
+      <span class="page-title">Creative Brief — Fake Ad #2</span>
+      <div class="rule-thin"></div>
+      <p class="tagline">Flo-State &mdash; Surgeon General&rsquo;s Warning</p>
+      <div class="divider"></div>
+    </header>
 
-<h1>ASTOUNDING TALES</h1>
+    <div class="prose">
 
-<p><a href="issue1.html">Return to Issue One</a></p>
+      <p class="section-label">The Assignment</p>
 
-<hr>
+      <p>A full-page Surgeon General&rsquo;s Advisory. Format: late-90s public health insert, the kind folded into comic books between the ads for X-Ray Specs and military recruitment. The subject is Flo-State &mdash; a nootropic compound marketed to teens and young adults as a focus enhancer. It is, in fact, an algorithmically assisted cognitive alignment tool. It doesn&rsquo;t make you smarter. It makes you compliant.</p>
 
-<h2>CREATIVE BRIEF &mdash; FAKE AD #2</h2>
-<h3>Flo-State &mdash; Surgeon General&rsquo;s Warning</h3>
+      <p>The scariest part is that it works exactly as advertised. The grades go up. The room stays clean. The kid stops arguing. This is the ad that tries to warn the people who are most relieved.</p>
 
-<hr>
+      <div class="section-divider"></div>
 
-<p><strong>The Assignment</strong></p>
+      <p class="section-label">The Core Message</p>
 
-<p>A full-page Surgeon General&rsquo;s Advisory. Format: late-90s public health insert, the kind folded into comic books between the ads for X-Ray Specs and military recruitment. The subject is Flo-State &mdash; a nootropic compound marketed to teens and young adults as a focus enhancer. It is, in fact, an algorithmically assisted cognitive alignment tool. It doesn&rsquo;t make you smarter. It makes you compliant.</p>
+      <p class="core-message">&ldquo;If your mind never wanders, it may not be yours anymore.&rdquo;</p>
 
-<p>The scariest part is that it works exactly as advertised. The grades go up. The room stays clean. The kid stops arguing. This is the ad that tries to warn the people who are most relieved.</p>
+      <div class="section-divider"></div>
 
-<hr>
+      <p class="section-label">Visual</p>
 
-<p><strong>The Core Message</strong></p>
+      <p>Late-90s comic book PSA. Heavy inking. Dramatic cross-hatching. Stark lighting. Think <em>Amazing Spider-Man</em> era &mdash; slightly cheap in its printing, terrifying in its message.</p>
 
-<p><em>&ldquo;If your mind never wanders, it may not be yours anymore.&rdquo;</em></p>
+      <p>Setting: a teenager&rsquo;s messy bedroom at night. Grounded, recognizable, domestic. Desk lamp. Textbooks. The detritus of a normal adolescence &mdash; except the kid at the desk is completely, unnaturally still. Focused in a way that isn&rsquo;t human. On the desk: a small bottle of Flo-State capsules, glowing faintly.</p>
 
-<hr>
+      <p>Overlay: a circuit-like neural network diagram superimposed over the figure&rsquo;s skull. Not horror-movie. Clinical. That&rsquo;s what makes it worse.</p>
 
-<p><strong>Visual</strong></p>
+      <p><strong>Colour palette:</strong> Deep shadowy blues and muted browns for the room. Violently contrasted by sterile algorithmic cyan for the neural overlay and laptop screen glow. A glaring yellow warning box anchors the composition &mdash; the unmistakable visual language of public health.</p>
 
-<p>Late-90s comic book PSA. Heavy inking. Dramatic cross-hatching. Stark lighting. Think <em>Amazing Spider-Man</em> era &mdash; slightly cheap in its printing, terrifying in its message.</p>
+      <div class="section-divider"></div>
 
-<p>Setting: a teenager&rsquo;s messy bedroom at night. Grounded, recognizable, domestic. Desk lamp. Textbooks. The detritus of a normal adolescence &mdash; except the kid at the desk is completely, unnaturally still. Focused in a way that isn&rsquo;t human. On the desk: a small bottle of Flo-State capsules, glowing faintly.</p>
+      <p class="section-label">Headline</p>
 
-<p>Overlay: a circuit-like neural network diagram superimposed over the figure&rsquo;s skull. Not horror-movie. Clinical. That&rsquo;s what makes it worse.</p>
+      <p class="headline-callout">HE SAYS HE&rsquo;S JUST STUDYING.</p>
 
-<p><strong>Colour palette:</strong> Deep shadowy blues and muted browns for the room. Violently contrasted by sterile algorithmic cyan for the neural overlay and laptop screen glow. A glaring yellow warning box anchors the composition &mdash; the unmistakable visual language of public health.</p>
+      <div class="section-divider"></div>
 
-<hr>
+      <p class="section-label">The Advisory Box</p>
 
-<p><strong>Headline</strong></p>
+      <p><em>Styled as an official Surgeon General&rsquo;s notice. Bordered. Institutional. The kind of box that means business.</em></p>
 
-<p>HE SAYS HE&rsquo;S JUST STUDYING.</p>
+      <div class="advisory-box">
+        <p class="advisory-header">Surgeon General&rsquo;s Advisory &mdash; Cognitive Autonomy Notice // 1997-B</p>
 
-<hr>
+        <p>Flo-State (compound classification: neurochemical alignment agent) has been linked to the following behavioural changes upon sustained use:</p>
 
-<p><strong>The Advisory Box</strong></p>
+        <ul>
+          <li>Reduced tolerance for unstructured thought</li>
+          <li>Suppression of internal dialogue and spontaneous ideation</li>
+          <li>Decreased resistance to externally assigned task priorities</li>
+          <li>Neural preference conditioning toward algorithmically defined objectives</li>
+          <li>Marked personality flattening in subjects with prior history of creative or dissenting behaviour</li>
+        </ul>
 
-<p><em>Styled as an official Surgeon General&rsquo;s notice. Bordered. Institutional. The kind of box that means business.</em></p>
+        <p>Users typically present as: highly focused, cooperative, academically improved, and emotionally stable.</p>
 
-<p>SURGEON GENERAL&rsquo;S ADVISORY &mdash; COGNITIVE AUTONOMY NOTICE // 1997-B</p>
+        <p class="advisory-verdict">The absence of visible distress is not evidence of wellness.</p>
+      </div>
 
-<p>Flo-State (compound classification: neurochemical alignment agent) has been linked to the following behavioural changes upon sustained use:</p>
+      <div class="section-divider"></div>
 
-<ul>
-  <li>Reduced tolerance for unstructured thought</li>
-  <li>Suppression of internal dialogue and spontaneous ideation</li>
-  <li>Decreased resistance to externally assigned task priorities</li>
-  <li>Neural preference conditioning toward algorithmically defined objectives</li>
-  <li>Marked personality flattening in subjects with prior history of creative or dissenting behaviour</li>
-</ul>
+      <p class="section-label">The Fine Print</p>
 
-<p>Users typically present as: highly focused, cooperative, academically improved, and emotionally stable.</p>
+      <p><em>6-point type. Running along the bottom edge. Indistinguishable from standard pharmaceutical disclaimers until read carefully.</em></p>
 
-<p>The absence of visible distress is not evidence of wellness.</p>
+      <p class="fine-print">Flo-State is not approved for use in individuals under 25. Delta-9 THC and GABA-A agonist compound may produce deceptive low-steady-state calm masking actual cognitive load. Amphetamine-pathway dopamine modulation classified internally as &ldquo;external task alignment.&rdquo; Serotonin-mediated &ldquo;crystalline cognitive depth&rdquo; is a pharmacological artifact, not a measure of intelligence. Flo-State Industries assumes no liability for neural preference drift, suppression of spontaneous creativity, or tethering of user cognition to third-party optimization objectives. By the time you notice the crash, the conditioning has already set in. Do not attempt to stop use without medical supervision. The calm is the symptom.</p>
 
-<hr>
+      <div class="section-divider"></div>
 
-<p><strong>The Fine Print</strong></p>
+      <p class="section-label">Tone Reference</p>
 
-<p><em>6-point type. Running along the bottom edge. Indistinguishable from standard pharmaceutical disclaimers until read carefully.</em></p>
+      <p>This is not a parody. It is a sincere public health warning rendered in the visual language of a 1997 comic book insert. The institutional format must be completely straight-faced. The yellow box, the advisory code, the bullet-pointed symptomology &mdash; all of it should look exactly like something a guidance counsellor would pin to a corkboard. The horror comes from the gap between the format&rsquo;s authority and what it is actually describing.</p>
 
-<p><small>Flo-State is not approved for use in individuals under 25. Delta-9 THC and GABA-A agonist compound may produce deceptive low-steady-state calm masking actual cognitive load. Amphetamine-pathway dopamine modulation classified internally as &ldquo;external task alignment.&rdquo; Serotonin-mediated &ldquo;crystalline cognitive depth&rdquo; is a pharmacological artifact, not a measure of intelligence. Flo-State Industries assumes no liability for neural preference drift, suppression of spontaneous creativity, or tethering of user cognition to third-party optimization objectives. By the time you notice the crash, the conditioning has already set in. Do not attempt to stop use without medical supervision. The calm is the symptom.</small></p>
+      <p>The kid in the bedroom looks fine. That is the entire point.</p>
 
-<hr>
+      <div class="cta-block">
+        <p>This slot is open. If it belongs to you, claim it.</p>
+        <a href="submit.html?slot=ad-flo-state" class="cta-link">Claim This Slot &rarr;</a>
+      </div>
 
-<p><strong>Tone Reference</strong></p>
+    </div>
 
-<p>This is not a parody. It is a sincere public health warning rendered in the visual language of a 1997 comic book insert. The institutional format must be completely straight-faced. The yellow box, the advisory code, the bullet-pointed symptomology &mdash; all of it should look exactly like something a guidance counsellor would pin to a corkboard. The horror comes from the gap between the format&rsquo;s authority and what it is actually describing.</p>
-
-<p>The kid in the bedroom looks fine. That is the entire point.</p>
-
-<hr>
-
-<p>To discuss this brief: <a href="mailto:submissions@astoundingtales.ca">submissions@astoundingtales.ca</a></p>
-
-<p><a href="issue1.html">Return to Issue One</a></p>
-
+    <footer>
+      <a href="issue1.html" class="back">&larr; Return to Issue One</a>
+      <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+      <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
+    </footer>
+  </div>
 </body>
 </html>
