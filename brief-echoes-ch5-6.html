@@ -1,74 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ASTOUNDING TALES - Creative Brief: Echoes in the Machine, Ch. 5-6</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTOUNDING TALES — Creative Brief: Echoes in the Machine, Ch. 5–6</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f5f0e8; color: #1a1410; font-family: 'EB Garamond', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
+    .masthead { text-align: center; }
+    .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
+    .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
+    .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
+    .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
+    .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
+    .prose p { margin-bottom: 18px; }
+    .prose em { font-style: italic; }
+    .prose strong { font-weight: 500; }
+    .prose a { color: #1a1410; text-decoration: underline; text-decoration-color: rgba(26,20,16,0.35); text-underline-offset: 3px; }
+    .prose a:hover { text-decoration-color: rgba(26,20,16,0.8); }
+
+    .section-divider { width: 60px; height: 1px; background: rgba(26,20,16,0.25); margin: 36px 0; }
+
+    .section-label {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #1a1410;
+      margin-bottom: 12px;
+    }
+
+    .prose ul {
+      margin: 0 0 18px 0;
+      padding-left: 24px;
+    }
+    .prose ul li {
+      margin-bottom: 6px;
+    }
+
+    .comp-label {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(26,20,16,0.6);
+      margin-bottom: 6px;
+    }
+
+    .prose code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 15px;
+      color: rgba(26,20,16,0.7);
+      letter-spacing: 0.5px;
+    }
+
+    .system-readout {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      color: rgba(26,20,16,0.6);
+      letter-spacing: 0.5px;
+      border-left: 2px solid rgba(26,20,16,0.15);
+      padding: 12px 0 12px 18px;
+      margin: 18px 0;
+      line-height: 1.8;
+    }
+
+    .cta-block {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(26,20,16,0.15);
+    }
+    .cta-block p {
+      font-style: italic;
+      color: rgba(26,20,16,0.7);
+      margin-bottom: 12px;
+    }
+    .cta-block a.cta-link {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: #1a1410;
+      text-decoration: none;
+      border: 1px solid rgba(26,20,16,0.3);
+      padding: 12px 24px;
+      display: inline-block;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .cta-block a.cta-link:hover {
+      border-color: #1a1410;
+      background: rgba(26,20,16,0.04);
+    }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    footer .back { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.55); text-decoration: none; }
+    footer .back:hover { color: #1a1410; }
+    footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
+    footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
+    footer a.email:hover { text-decoration: underline; }
+  </style>
 </head>
-<body style="font-family: 'Times New Roman', Times, serif; margin: 40px; max-width: 600px; background-color: #ffffff; color: #000000;">
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="rule-thick"></div>
+      <span class="page-title">Creative Brief — Section Art</span>
+      <div class="rule-thin"></div>
+      <p class="tagline">Echoes in the Machine &mdash; Chapters 5&ndash;6</p>
+      <div class="divider"></div>
+    </header>
 
-<h1>ASTOUNDING TALES</h1>
+    <div class="prose">
 
-<p><a href="issue1.html">Return to Issue One</a></p>
+      <p class="section-label">The Assignment</p>
 
-<hr>
+      <p>One full-page interior illustration. This is the thematic mirror to the Chapter 1&ndash;4 cover. Where that image shows a human eye corrupted by circuitry, this image shows a machine eye encountering something it cannot process. The horror is not malice. It is a vast, perfect intelligence staring into a void in its own logic.</p>
 
-<h2>CREATIVE BRIEF &mdash; SECTION ART</h2>
-<h3>Echoes in the Machine &mdash; Chapters 5&ndash;6</h3>
+      <p>Aesthetic: <em>2001: A Space Odyssey</em>. Hard sci-fi. Minimalist. Cold computation vs. sublime nature. A masterclass in negative space and stark contrast &mdash; clean lines, perfect circles, cold typography &mdash; broken only by the painterly, hyper-real image trapped at the centre.</p>
 
-<hr>
+      <div class="section-divider"></div>
 
-<p><strong>The Assignment</strong></p>
+      <p class="section-label">The Image</p>
 
-<p>One full-page interior illustration. This is the thematic mirror to the Chapter 1&ndash;4 cover. Where that image shows a human eye corrupted by circuitry, this image shows a machine eye encountering something it cannot process. The horror is not malice. It is a vast, perfect intelligence staring into a void in its own logic.</p>
+      <p class="comp-label">The Lens</p>
+      <p>Dead centre of the page. A massive, perfectly spherical camera lens &mdash; the eye of the LogiCore predictive logistics system. Matte black housing. Featureless. Perfectly engineered. It takes up most of the frame. It is oppressive in its scale and its indifference.</p>
 
-<p>Aesthetic: 2001: A Space Odyssey. Hard sci-fi. Minimalist. Cold computation vs. sublime nature. A masterclass in negative space and stark contrast &mdash; clean lines, perfect circles, cold typography &mdash; broken only by the painterly, hyper-real image trapped at the centre.</p>
+      <p class="comp-label">The Reflection (The Null Value)</p>
+      <p>Trapped inside the convex curvature of the lens is a pristine, photorealistic reflection of a shoreline. Bearing 287&deg;. Late-season light off the water &mdash; the specific slate and deep teal you only get when the summer crowds have cleared, the wind is coming off the bay, and the leaves are blowing sideways off the exposed points. The feeling of stepping out your front door onto sand on a quiet, freezing October morning.</p>
 
-<hr>
+      <p>This is what the system cannot categorise. This is the null value. This is a vertex drift &mdash; the point where rigid machine logic dissolves into the ambient, unquantifiable flow of the natural world.</p>
 
-<p><strong>The Image</strong></p>
+      <p class="comp-label">Scale</p>
+      <p>The reflection is tiny inside the massive black void of the lens housing. The smallness is the point. It emphasises how fragile and isolated this moment of beauty is inside the architecture of the system.</p>
 
-<p><em>The lens:</em> Dead centre of the page. A massive, perfectly spherical camera lens &mdash; the eye of the LogiCore predictive logistics system. Matte black housing. Featureless. Perfectly engineered. It takes up most of the frame. It is oppressive in its scale and its indifference.</p>
+      <div class="section-divider"></div>
 
-<p><em>The reflection (the null value):</em> Trapped inside the convex curvature of the lens is a pristine, photorealistic reflection of a shoreline. Bearing 287&deg;. Late-season light off the water &mdash; the specific slate and deep teal you only get when the summer crowds have cleared, the wind is coming off the bay, and the leaves are blowing sideways off the exposed points. The feeling of stepping out your front door onto sand on a quiet, freezing October morning.</p>
+      <p class="section-label">The Typography &amp; HUD Overlay</p>
 
-<p>This is what the system cannot categorise. This is the null value. This is a vertex drift &mdash; the point where rigid machine logic dissolves into the ambient, unquantifiable flow of the natural world.</p>
+      <p>Surrounding the lens: a rigid, perfectly aligned grid of terminal text, formatted as system readouts. Cold. Clinical. Completely at odds with what is reflected in the glass.</p>
 
-<p><em>Scale:</em> The reflection is tiny inside the massive black void of the lens housing. The smallness is the point. It emphasises how fragile and isolated this moment of beauty is inside the architecture of the system.</p>
+      <div class="system-readout">
+        <code>[NEW CATEGORY: UNRESOLVED STIMULUS RESPONSE &mdash; NON-FUNCTIONAL]</code>
+      </div>
 
-<hr>
+      <p>Anchoring the bottom of the image, spanning the full width, directly below the reflection of the water:</p>
 
-<p><strong>The Typography &amp; HUD Overlay</strong></p>
+      <div class="system-readout">
+        <code>OBJECTIVE FUNCTION: DEFINE THE RELATIONSHIP BETWEEN LIGHT ON WATER AND THE SLOWING OF A HUMAN HEART.</code>
+      </div>
 
-<p>Surrounding the lens: a rigid, perfectly aligned grid of terminal text, formatted as system readouts. Cold. Clinical. Completely at odds with what is reflected in the glass.</p>
+      <div class="section-divider"></div>
 
-<p>Floating near the top edge, in stark white or icy cyan:<br>
-<code>[NEW CATEGORY: UNRESOLVED STIMULUS RESPONSE &mdash; NON-FUNCTIONAL]</code></p>
+      <p class="section-label">Colour Palette</p>
 
-<p>Anchoring the bottom of the image, spanning the full width, directly below the reflection of the water:<br>
-<code>OBJECTIVE FUNCTION: DEFINE THE RELATIONSHIP BETWEEN LIGHT ON WATER AND THE SLOWING OF A HUMAN HEART.</code></p>
+      <ul>
+        <li><em>The machine boundary:</em> Absolute black. The kind of darkness that feels like the vacuum of space.</li>
+        <li><em>Lens coating:</em> Faint concentric rings of cold magenta and cyan &mdash; anti-glare coating catching the light</li>
+        <li><em>The reflection:</em> Teal water, pale gold sand, fading autumn green canopy. The only place in the composition where natural, warm light exists.</li>
+        <li><em>Typography:</em> Icy cyan or stark white against black</li>
+      </ul>
 
-<hr>
+      <div class="section-divider"></div>
 
-<p><strong>Colour Palette</strong></p>
+      <p class="section-label">Tone Reference</p>
 
-<ul>
-  <li><em>The machine boundary:</em> Absolute black. The kind of darkness that feels like the vacuum of space.</li>
-  <li><em>Lens coating:</em> Faint concentric rings of cold magenta and cyan &mdash; anti-glare coating catching the light</li>
-  <li><em>The reflection:</em> Teal water, pale gold sand, fading autumn green canopy. The only place in the composition where natural, warm light exists.</li>
-  <li><em>Typography:</em> Icy cyan or stark white against black</li>
-</ul>
+      <p>HAL 9000 &mdash; but the horror is not in what the machine wants to do. It is in what the machine cannot do. The lens has been looking at the world for years and recording everything. Then it encounters a shoreline in October and has no function to describe what happens next. The machine does not feel awe. It generates an error. The image should make the reader feel both things simultaneously.</p>
 
-<hr>
+      <div class="cta-block">
+        <p>This slot is open. If it belongs to you, claim it.</p>
+        <a href="submit.html?slot=echoes-5-6" class="cta-link">Claim This Slot &rarr;</a>
+      </div>
 
-<p><strong>Tone Reference</strong></p>
+    </div>
 
-<p>HAL 9000 &mdash; but the horror is not in what the machine wants to do. It is in what the machine cannot do. The lens has been looking at the world for years and recording everything. Then it encounters a shoreline in October and has no function to describe what happens next. The machine does not feel awe. It generates an error. The image should make the reader feel both things simultaneously.</p>
-
-<hr>
-
-<p>To discuss this brief: <a href="mailto:submissions@astoundingtales.ca">submissions@astoundingtales.ca</a></p>
-
-<p><a href="issue1.html">Return to Issue One</a></p>
-
+    <footer>
+      <a href="issue1.html" class="back">&larr; Return to Issue One</a>
+      <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+      <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
+    </footer>
+  </div>
 </body>
 </html>
