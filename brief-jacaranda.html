@@ -1,74 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ASTOUNDING TALES - Creative Brief: Jacaranda by Asmara</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTOUNDING TALES — Creative Brief: Jacaranda by Asmara</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f5f0e8; color: #1a1410; font-family: 'EB Garamond', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
+    .masthead { text-align: center; }
+    .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
+    .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
+    .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
+    .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
+    .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
+    .prose p { margin-bottom: 18px; }
+    .prose em { font-style: italic; }
+    .prose strong { font-weight: 500; }
+    .prose a { color: #1a1410; text-decoration: underline; text-decoration-color: rgba(26,20,16,0.35); text-underline-offset: 3px; }
+    .prose a:hover { text-decoration-color: rgba(26,20,16,0.8); }
+
+    .section-divider { width: 60px; height: 1px; background: rgba(26,20,16,0.25); margin: 36px 0; }
+
+    .section-label {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #1a1410;
+      margin-bottom: 12px;
+    }
+
+    .comp-label {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(26,20,16,0.6);
+      margin-bottom: 6px;
+    }
+
+    .ad-copy {
+      padding: 24px 0;
+      border-left: 2px solid rgba(26,20,16,0.15);
+      padding-left: 24px;
+      margin: 18px 0;
+    }
+    .ad-copy .headline {
+      font-size: 22px;
+      font-style: italic;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .fine-print {
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(26,20,16,0.55);
+      font-style: italic;
+    }
+
+    .cta-block {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(26,20,16,0.15);
+    }
+    .cta-block p {
+      font-style: italic;
+      color: rgba(26,20,16,0.7);
+      margin-bottom: 12px;
+    }
+    .cta-block a.cta-link {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: #1a1410;
+      text-decoration: none;
+      border: 1px solid rgba(26,20,16,0.3);
+      padding: 12px 24px;
+      display: inline-block;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .cta-block a.cta-link:hover {
+      border-color: #1a1410;
+      background: rgba(26,20,16,0.04);
+    }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    footer .back { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.55); text-decoration: none; }
+    footer .back:hover { color: #1a1410; }
+    footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
+    footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
+    footer a.email:hover { text-decoration: underline; }
+  </style>
 </head>
-<body style="font-family: 'Times New Roman', Times, serif; margin: 40px; max-width: 600px; background-color: #ffffff; color: #000000;">
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="rule-thick"></div>
+      <span class="page-title">Creative Brief — Fake Ad #3</span>
+      <div class="rule-thin"></div>
+      <p class="tagline">Jacaranda by Asmara</p>
+      <div class="divider"></div>
+    </header>
 
-<h1>ASTOUNDING TALES</h1>
+    <div class="prose">
 
-<p><a href="issue1.html">Return to Issue One</a></p>
+      <p class="section-label">The Assignment</p>
 
-<hr>
+      <p>A full-page print advertisement. Period: 1955. Publication: Vogue or Harper&rsquo;s Bazaar. The product is a perfume. The image is a mid-century fashion photograph. Both are a cover story.</p>
 
-<h2>CREATIVE BRIEF &mdash; FAKE AD #3</h2>
-<h3>Jacaranda by Asmara</h3>
+      <p>The ad must work completely as a genuine piece of 1950s haute couture advertising. A reader who skims it sees glamour. A reader who looks at the details sees an extraction in progress. The design earns the reveal by being entirely straight-faced until the moment it isn&rsquo;t.</p>
 
-<hr>
+      <div class="section-divider"></div>
 
-<p><strong>The Assignment</strong></p>
+      <p class="section-label">Visual</p>
 
-<p>A full-page print advertisement. Period: 1955. Publication: Vogue or Harper&rsquo;s Bazaar. The product is a perfume. The image is a mid-century fashion photograph. Both are a cover story.</p>
+      <p>Strict black and white. No sepia, no warm tones. Pure stark monochrome with heavy, authentic film grain &mdash; the texture of high-speed 1950s night photography. Lighting: dramatic. Harsh highlights, pitch-black shadows, sharp angles.</p>
 
-<p>The ad must work completely as a genuine piece of 1950s haute couture advertising. A reader who skims it sees glamour. A reader who looks at the details sees an extraction in progress. The design earns the reveal by being entirely straight-faced until the moment it isn&rsquo;t.</p>
+      <p class="comp-label">The Subject</p>
+      <p>A stunning woman in a dark, elegant evening gown stands on a balcony at night. She is looking back over her shoulder. Her expression is caught exactly between intense focus and sudden fear &mdash; unreadable at a glance, unmistakable on close inspection.</p>
 
-<hr>
+      <p class="comp-label">The Tell</p>
+      <p>Her left hand reaches up to adjust the thick strap of her gown. The grip must not read as someone adjusting silk. It must read as someone checking the load-bearing strap of a tactical parachute harness &mdash; firm, practiced, weight-conscious. This is the hinge of the entire image. Get this wrong and the ad is just fashion. Get it right and everything else locks in.</p>
 
-<p><strong>Visual</strong></p>
+      <p class="comp-label">The Background</p>
+      <p>Far below, blurred exotic city lights dot the darkness. Above her &mdash; barely visible, slicing through heavy moody cloud &mdash; the faint, motion-blurred silhouette of rotary helicopter blades on approach.</p>
 
-<p>Strict black and white. No sepia, no warm tones. Pure stark monochrome with heavy, authentic film grain &mdash; the texture of high-speed 1950s night photography. Lighting: dramatic. Harsh highlights, pitch-black shadows, sharp angles.</p>
+      <p class="comp-label">The Product</p>
+      <p>Bottom right corner. A sleek crystalline perfume bottle catching a single harsh shard of light. It is the only clean object in the frame. It anchors the commercial fiction.</p>
 
-<p><em>The subject:</em> A stunning woman in a dark, elegant evening gown stands on a balcony at night. She is looking back over her shoulder. Her expression is caught exactly between intense focus and sudden fear &mdash; unreadable at a glance, unmistakable on close inspection.</p>
+      <div class="section-divider"></div>
 
-<p><em>The tell:</em> Her left hand reaches up to adjust the thick strap of her gown. The grip must not read as someone adjusting silk. It must read as someone checking the load-bearing strap of a tactical parachute harness &mdash; firm, practiced, weight-conscious. This is the hinge of the entire image. Get this wrong and the ad is just fashion. Get it right and everything else locks in.</p>
+      <p class="section-label">Typography &amp; Layout</p>
 
-<p><em>The background:</em> Far below, blurred exotic city lights dot the darkness. Above her &mdash; barely visible, slicing through heavy moody cloud &mdash; the faint, motion-blurred silhouette of rotary helicopter blades on approach.</p>
+      <p>Structured column layout mimicking 1950s print advertising. Bodoni or Garamond for body copy. Justified. Tight.</p>
 
-<p><em>The product:</em> Bottom right corner. A sleek crystalline perfume bottle catching a single harsh shard of light. It is the only clean object in the frame. It anchors the commercial fiction.</p>
+      <div class="section-divider"></div>
 
-<hr>
+      <p class="section-label">The Copy</p>
 
-<p><strong>Typography &amp; Layout</strong></p>
+      <div class="ad-copy">
+        <p class="headline">The scent you could never forget. Even if you tried.</p>
 
-<p>Structured column layout mimicking 1950s print advertising. Bodoni or Garamond for body copy. Justified. Tight.</p>
+        <p>Introducing JACARANDA. The bold new fragrance from the House of Asmara. Some memories are meant to be kept in the dark. But true allure cannot be contained. Jacaranda captures the thrilling contradiction of the modern woman: the sweet, floral whisper of night-blooming petals, underscored by the sudden, electric spark of a midnight departure. It is a scent for the woman who operates in secret. Just a single drop on the collarbone, and he will notice you. He will check twice. Let the essence of Jacaranda linger. Because even when the world goes quiet, the mind remembers everything.</p>
+      </div>
 
-<p><em>Headline &mdash; oversized script, sweeping, luxurious, slightly suffocating:</em><br>
-The scent you could never forget. Even if you tried.</p>
+      <div class="section-divider"></div>
 
-<p><em>Body copy:</em></p>
+      <p class="section-label">The Fine Print</p>
 
-<p>Introducing JACARANDA. The bold new fragrance from the House of Asmara. Some memories are meant to be kept in the dark. But true allure cannot be contained. Jacaranda captures the thrilling contradiction of the modern woman: the sweet, floral whisper of night-blooming petals, underscored by the sudden, electric spark of a midnight departure. It is a scent for the woman who operates in secret. Just a single drop on the collarbone, and he will notice you. He will check twice. Let the essence of Jacaranda linger. Because even when the world goes quiet, the mind remembers everything.</p>
+      <p><em>Very small, densely packed clinical sans-serif. Bottom edge of the page. It must read less like a cosmetic warning and more like an MSDS for a weaponised compound.</em></p>
 
-<hr>
+      <p class="fine-print">Fragrance profile contains synthetic floral notes, suspended in a volatile aviation-grade ethanol base. House of Asmara assumes no liability for sudden onset of nocturnal terrors, hyper-vigilance, or the feeling of being observed by non-biological entities. Scent cannot be washed off. It is already inside.</p>
 
-<p><strong>The Fine Print</strong></p>
+      <div class="section-divider"></div>
 
-<p><em>Very small, densely packed clinical sans-serif. Bottom edge of the page. It must read less like a cosmetic warning and more like an MSDS for a weaponised compound.</em></p>
+      <p class="section-label">Tone Reference</p>
 
-<p><small>Fragrance profile contains synthetic floral notes, suspended in a volatile aviation-grade ethanol base. House of Asmara assumes no liability for sudden onset of nocturnal terrors, hyper-vigilance, or the feeling of being observed by non-biological entities. Scent cannot be washed off. It is already inside.</small></p>
+      <p>The foreground sells the lie. The background reveals the truth. The fine print confirms it. Every element must be period-perfect &mdash; the fashion photography, the typography, the column structure &mdash; so that the moment of recognition hits the reader as a genuine surprise. If the image looks like a spy pastiche, it fails. If it looks like a 1955 Vogue advertisement that happens to contain a helicopter extraction, it works.</p>
 
-<hr>
+      <div class="cta-block">
+        <p>This slot is open. If it belongs to you, claim it.</p>
+        <a href="submit.html?slot=ad-jacaranda" class="cta-link">Claim This Slot &rarr;</a>
+      </div>
 
-<p><strong>Tone Reference</strong></p>
+    </div>
 
-<p>The foreground sells the lie. The background reveals the truth. The fine print confirms it. Every element must be period-perfect &mdash; the fashion photography, the typography, the column structure &mdash; so that the moment of recognition hits the reader as a genuine surprise. If the image looks like a spy pastiche, it fails. If it looks like a 1955 Vogue advertisement that happens to contain a helicopter extraction, it works.</p>
-
-<hr>
-
-<p>To discuss this brief: <a href="mailto:submissions@astoundingtales.ca">submissions@astoundingtales.ca</a></p>
-
-<p><a href="issue1.html">Return to Issue One</a></p>
-
+    <footer>
+      <a href="issue1.html" class="back">&larr; Return to Issue One</a>
+      <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+      <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
+    </footer>
+  </div>
 </body>
 </html>
