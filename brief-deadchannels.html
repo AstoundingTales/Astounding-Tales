@@ -1,68 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ASTOUNDING TALES - Creative Brief: Dead Channels</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTOUNDING TALES — Creative Brief: Dead Channels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f5f0e8; color: #1a1410; font-family: 'EB Garamond', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
+    .masthead { text-align: center; }
+    .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
+    .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
+    .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
+    .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
+    .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
+    .prose p { margin-bottom: 18px; }
+    .prose em { font-style: italic; }
+    .prose strong { font-weight: 500; }
+    .prose a { color: #1a1410; text-decoration: underline; text-decoration-color: rgba(26,20,16,0.35); text-underline-offset: 3px; }
+    .prose a:hover { text-decoration-color: rgba(26,20,16,0.8); }
+
+    .section-divider { width: 60px; height: 1px; background: rgba(26,20,16,0.25); margin: 36px 0; }
+
+    .section-label {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #1a1410;
+      margin-bottom: 12px;
+    }
+
+    .prose ul {
+      margin: 0 0 18px 0;
+      padding-left: 24px;
+    }
+    .prose ul li {
+      margin-bottom: 6px;
+    }
+
+    .comp-label {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(26,20,16,0.6);
+      margin-bottom: 6px;
+    }
+
+    .prose code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 15px;
+      color: rgba(26,20,16,0.7);
+      letter-spacing: 0.5px;
+    }
+
+    .tape-label {
+      font-style: italic;
+      border-left: 2px solid rgba(26,20,16,0.15);
+      padding-left: 18px;
+      margin: 12px 0 18px;
+      color: rgba(26,20,16,0.75);
+    }
+
+    .cta-block {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(26,20,16,0.15);
+    }
+    .cta-block p {
+      font-style: italic;
+      color: rgba(26,20,16,0.7);
+      margin-bottom: 12px;
+    }
+    .cta-block a.cta-link {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: #1a1410;
+      text-decoration: none;
+      border: 1px solid rgba(26,20,16,0.3);
+      padding: 12px 24px;
+      display: inline-block;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .cta-block a.cta-link:hover {
+      border-color: #1a1410;
+      background: rgba(26,20,16,0.04);
+    }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    footer .back { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.55); text-decoration: none; }
+    footer .back:hover { color: #1a1410; }
+    footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
+    footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
+    footer a.email:hover { text-decoration: underline; }
+  </style>
 </head>
-<body style="font-family: 'Times New Roman', Times, serif; margin: 40px; max-width: 600px; background-color: #ffffff; color: #000000;">
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="rule-thick"></div>
+      <span class="page-title">Creative Brief — Splash Art</span>
+      <div class="rule-thin"></div>
+      <p class="tagline">Dead Channels &mdash; Short Story, Issue One</p>
+      <div class="divider"></div>
+    </header>
 
-<h1>ASTOUNDING TALES</h1>
+    <div class="prose">
 
-<p><a href="issue1.html">Return to Issue One</a></p>
+      <p class="section-label">The Assignment</p>
 
-<hr>
+      <p>One full-page interior splash. This is the reader&rsquo;s first entry point into the story. The subject is Benn &mdash; a painter-turned-audio-forensics obsessive &mdash; mid-session in a cold basement studio, injecting hidden spectral data into an analog recording. We never see his face.</p>
 
-<h2>CREATIVE BRIEF &mdash; SPLASH ART</h2>
-<h3>Dead Channels &mdash; Short Story, Issue One</h3>
+      <p>Tone: cyberpunk noir. Tactile, grimy, obsessive. Someone has been awake for days. High-end cinematic storyboard meets cheap pulp print stock.</p>
 
-<hr>
+      <div class="section-divider"></div>
 
-<p><strong>The Assignment</strong></p>
+      <p class="section-label">Composition</p>
 
-<p>One full-page interior splash. This is the reader&rsquo;s first entry point into the story. The subject is Benn &mdash; a painter-turned-audio-forensics obsessive &mdash; mid-session in a cold basement studio, injecting hidden spectral data into an analog recording. We never see his face.</p>
+      <p>Over-the-shoulder POV. Benn is hunched forward, back to camera. One hand rests on a mixing console fader. The other reaches &mdash; not touching &mdash; toward the screen. The figure anchors the lower frame. Everything above belongs to the monitors.</p>
 
-<p>Tone: cyberpunk noir. Tactile, grimy, obsessive. Someone has been awake for days. High-end cinematic storyboard meets cheap pulp print stock.</p>
+      <p class="comp-label">Centre Monitor (Focal Point)</p>
+      <p>A large audio spectrogram split by a horizontal threshold line. Above the line: clean, rolling waveforms &mdash; the legitimate recording. Below the line: violent, jagged data chaos &mdash; the ghost layer, the hidden signal. The title <strong>DEAD CHANNELS</strong> is embedded within the chaotic spikes. Readable only if you look for it. Byline beneath the spectrogram as terminal metadata text: <code>[Author Name] // SESSION 4 // TAKE 7</code></p>
 
-<hr>
+      <p class="comp-label">Lower Third</p>
+      <p>A vintage reel-to-reel tape machine. Tape threaded through the heads. The tape box label is clearly visible, handwritten:</p>
+      <p class="tape-label">Session 4, Take 7. Bass and drums only. Do not distribute.</p>
 
-<p><strong>Composition</strong></p>
+      <p class="comp-label">Workbench Surface</p>
+      <p>Tangled cables. A soldering iron on its stand, tip glowing orange. Exposed circuit boards. The detritus of someone building something they shouldn&rsquo;t.</p>
 
-<p>Over-the-shoulder POV. Benn is hunched forward, back to camera. One hand rests on a mixing console fader. The other reaches &mdash; not touching &mdash; toward the screen. The figure anchors the lower frame. Everything above belongs to the monitors.</p>
+      <p class="comp-label">Background</p>
+      <p>Dark edges, deep shadow. Barely visible in the furthest corner: a large blank canvas on an easel. It has been blank for a long time.</p>
 
-<p><em>Centre monitor (focal point):</em> A large audio spectrogram split by a horizontal threshold line. Above the line: clean, rolling waveforms &mdash; the legitimate recording. Below the line: violent, jagged data chaos &mdash; the ghost layer, the hidden signal. The title <strong>DEAD CHANNELS</strong> is embedded within the chaotic spikes. Readable only if you look for it. Byline beneath the spectrogram as terminal metadata text: <code>[Author Name] // SESSION 4 // TAKE 7</code></p>
+      <p class="comp-label">Hidden Detail</p>
+      <p>On the glass of one side monitor, a faint reflection &mdash; smears of burnt sienna and cadmium red. The ghost of a painting called <em>Threshold</em>. It is the only warmth in the frame. The artist will know what it means. The casual reader may not notice it at all.</p>
 
-<p><em>Lower third:</em> A vintage reel-to-reel tape machine. Tape threaded through the heads. The tape box label is clearly visible, handwritten: <em>Session 4, Take 7. Bass and drums only. Do not distribute.</em></p>
+      <div class="section-divider"></div>
 
-<p><em>Workbench surface:</em> Tangled cables. A soldering iron on its stand, tip glowing orange. Exposed circuit boards. The detritus of someone building something they shouldn&rsquo;t.</p>
+      <p class="section-label">Colour &amp; Light</p>
 
-<p><em>Background:</em> Dark edges, deep shadow. Barely visible in the furthest corner: a large blank canvas on an easel. It has been blank for a long time.</p>
+      <ul>
+        <li><em>Room:</em> Deep shadow-blue, slate grey, black</li>
+        <li><em>Monitor glow:</em> Icy cyan-green</li>
+        <li><em>Analog gear &mdash; VU meters, solder tip:</em> Amber, orange</li>
+        <li><em>Painting reflection:</em> Faint red &mdash; the only warmth in the frame</li>
+      </ul>
 
-<p><em>Hidden detail:</em> On the glass of one side monitor, a faint reflection &mdash; smears of burnt sienna and cadmium red. The ghost of a painting called Threshold. It is the only warmth in the frame. The artist will know what it means. The casual reader may not notice it at all.</p>
+      <p>There is no overhead light. Everything is sourced from the equipment. The room exists only because the machines are on.</p>
 
-<hr>
+      <div class="section-divider"></div>
 
-<p><strong>Colour &amp; Light</strong></p>
+      <p class="section-label">Tone Reference</p>
 
-<ul>
-  <li><em>Room:</em> Deep shadow-blue, slate grey, black</li>
-  <li><em>Monitor glow:</em> Icy cyan-green</li>
-  <li><em>Analog gear &mdash; VU meters, solder tip:</em> Amber, orange</li>
-  <li><em>Painting reflection:</em> Faint red &mdash; the only warmth in the frame</li>
-</ul>
+      <p>The image should feel like forensic evidence of an obsession. Not dramatic &mdash; clinical. The horror is in the precision of the workbench, the deliberateness of the setup, the blank canvas no one is looking at. Benn is not distressed. He is completely focused. That is the problem.</p>
 
-<p>There is no overhead light. Everything is sourced from the equipment. The room exists only because the machines are on.</p>
+      <div class="cta-block">
+        <p>This slot is open. If it belongs to you, claim it.</p>
+        <a href="submit.html?slot=dead-channels" class="cta-link">Claim This Slot &rarr;</a>
+      </div>
 
-<hr>
+    </div>
 
-<p><strong>Tone Reference</strong></p>
-
-<p>The image should feel like forensic evidence of an obsession. Not dramatic &mdash; clinical. The horror is in the precision of the workbench, the deliberateness of the setup, the blank canvas no one is looking at. Benn is not distressed. He is completely focused. That is the problem.</p>
-
-<hr>
-
-<p>To discuss this brief: <a href="mailto:submissions@astoundingtales.ca">submissions@astoundingtales.ca</a></p>
-
-<p><a href="issue1.html">Return to Issue One</a></p>
-
+    <footer>
+      <a href="issue1.html" class="back">&larr; Return to Issue One</a>
+      <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+      <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
+    </footer>
+  </div>
 </body>
 </html>
