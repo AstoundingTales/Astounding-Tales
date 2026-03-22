@@ -1,88 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ASTOUNDING TALES - Creative Brief: Echoes in the Machine, Ch. 1-4</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTOUNDING TALES — Creative Brief: Echoes in the Machine, Ch. 1–4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f5f0e8; color: #1a1410; font-family: 'EB Garamond', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
+    .masthead { text-align: center; }
+    .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
+    .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
+    .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
+    .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
+    .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
+    .prose p { margin-bottom: 18px; }
+    .prose em { font-style: italic; }
+    .prose strong { font-weight: 500; }
+    .prose a { color: #1a1410; text-decoration: underline; text-decoration-color: rgba(26,20,16,0.35); text-underline-offset: 3px; }
+    .prose a:hover { text-decoration-color: rgba(26,20,16,0.8); }
+
+    .section-divider { width: 60px; height: 1px; background: rgba(26,20,16,0.25); margin: 36px 0; }
+
+    .section-label {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #1a1410;
+      margin-bottom: 12px;
+    }
+
+    .prose ul {
+      margin: 0 0 18px 0;
+      padding-left: 24px;
+    }
+    .prose ul li {
+      margin-bottom: 6px;
+    }
+
+    .overlay-text {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 20px;
+      font-weight: bold;
+      color: #8b2500;
+      letter-spacing: 2px;
+      display: block;
+      margin: 24px 0;
+    }
+
+    .cta-block {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(26,20,16,0.15);
+    }
+    .cta-block p {
+      font-style: italic;
+      color: rgba(26,20,16,0.7);
+      margin-bottom: 12px;
+    }
+    .cta-block a.cta-link {
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: #1a1410;
+      text-decoration: none;
+      border: 1px solid rgba(26,20,16,0.3);
+      padding: 12px 24px;
+      display: inline-block;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .cta-block a.cta-link:hover {
+      border-color: #1a1410;
+      background: rgba(26,20,16,0.04);
+    }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    footer .back { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.55); text-decoration: none; }
+    footer .back:hover { color: #1a1410; }
+    footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
+    footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
+    footer a.email:hover { text-decoration: underline; }
+  </style>
 </head>
-<body style="font-family: 'Times New Roman', Times, serif; margin: 40px; max-width: 600px; background-color: #ffffff; color: #000000;">
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="rule-thick"></div>
+      <span class="page-title">Creative Brief — Section Art</span>
+      <div class="rule-thin"></div>
+      <p class="tagline">Echoes in the Machine &mdash; Chapters 1&ndash;4</p>
+      <div class="divider"></div>
+    </header>
 
-<h1>ASTOUNDING TALES</h1>
+    <div class="prose">
 
-<p><a href="issue1.html">Return to Issue One</a></p>
+      <p class="section-label">The Assignment</p>
 
-<hr>
+      <p>One full-page interior illustration. This is the visual threshold the reader crosses before entering the novel. It does not illustrate a scene. It establishes a state of mind.</p>
 
-<h2>CREATIVE BRIEF &mdash; SECTION ART</h2>
-<h3>Echoes in the Machine &mdash; Chapters 1&ndash;4</h3>
+      <p>Aesthetic: near-future cyberpunk, neo-noir, cinematic realism, clinical horror. The goal is an image that feels less like a drawing and more like a high-resolution photograph taken by a forensic drone &mdash; biological detail so extreme it starts to look alien.</p>
 
-<hr>
+      <div class="section-divider"></div>
 
-<p><strong>The Assignment</strong></p>
+      <p class="section-label">The Image</p>
 
-<p>One full-page interior illustration. This is the visual threshold the reader crosses before entering the novel. It does not illustrate a scene. It establishes a state of mind.</p>
+      <p>An extreme macro close-up of a dead man&rsquo;s eye. The entire canvas is consumed by it. Claustrophobic. Invasive. There is no context, no face, no room &mdash; only the eye, filling the frame.</p>
 
-<p>Aesthetic: near-future cyberpunk, neo-noir, cinematic realism, clinical horror. The goal is an image that feels less like a drawing and more like a high-resolution photograph taken by a forensic drone &mdash; biological detail so extreme it starts to look alien.</p>
+      <p><em>The sclera:</em> No veins. No natural moisture. The dull, brushed-metal sheen of wet aluminium. It looks manufactured rather than grown.</p>
 
-<hr>
+      <p><em>The iris:</em> Flat, reflective silver. Not organic fibres &mdash; sharp, microscopic geometric pathways, like a high-density circuit board pressed into glass. Perfectly, terrifyingly precise.</p>
 
-<p><strong>The Image</strong></p>
+      <p><em>The pupil:</em> An absolute, light-consuming black hole at the centre of the silver circuitry. Nothing comes back out.</p>
 
-<p>An extreme macro close-up of a dead man&rsquo;s eye. The entire canvas is consumed by it. Claustrophobic. Invasive. There is no context, no face, no room &mdash; only the eye, filling the frame.</p>
+      <div class="section-divider"></div>
 
-<p><em>The sclera:</em> No veins. No natural moisture. The dull, brushed-metal sheen of wet aluminium. It looks manufactured rather than grown.</p>
+      <p class="section-label">The Reflection</p>
 
-<p><em>The iris:</em> Flat, reflective silver. Not organic fibres &mdash; sharp, microscopic geometric pathways, like a high-density circuit board pressed into glass. Perfectly, terrifyingly precise.</p>
+      <p>The convex surface of the metallic eye acts as a warped dark mirror. In the faint reflection, barely readable, two figures stand in the dark of a server room:</p>
 
-<p><em>The pupil:</em> An absolute, light-consuming black hole at the centre of the silver circuitry. Nothing comes back out.</p>
+      <ul>
+        <li><em>Amara:</em> Standing rigid. Identifiable only by the faint icy-blue glow from the lenses of her AR glasses.</li>
+        <li><em>Daniel:</em> A broader, analogue silhouette standing slightly behind her, completely swallowed by shadow.</li>
+      </ul>
 
-<hr>
+      <p>Behind them, the ghostly blue and amber status lights of towering server racks bleed into the curvature of the eye. The reflection is small. The reader has to lean in to find it. That is intentional.</p>
 
-<p><strong>The Reflection</strong></p>
+      <div class="section-divider"></div>
 
-<p>The convex surface of the metallic eye acts as a warped dark mirror. In the faint reflection, barely readable, two figures stand in the dark of a server room:</p>
+      <p class="section-label">The Text Overlay</p>
 
-<ul>
-  <li><em>Amara:</em> Standing rigid. Identifiable only by the faint icy-blue glow from the lenses of her AR glasses.</li>
-  <li><em>Daniel:</em> A broader, analogue silhouette standing slightly behind her, completely swallowed by shadow.</li>
-</ul>
+      <p>Suspended in the foreground &mdash; like an AR glitch projecting directly onto the lens &mdash; a single line of text:</p>
 
-<p>Behind them, the ghostly blue and amber status lights of towering server racks bleed into the curvature of the eye. The reflection is small. The reader has to lean in to find it. That is intentional.</p>
+      <span class="overlay-text">I SEE YOU, AMARA.</span>
 
-<hr>
+      <p>Font: 7-segment digital alarm clock typeface. Jagged. Domestic-retro. The jarring contrast between that font and the hyper-advanced biometric horror beneath it is where the psychological weight lives.</p>
 
-<p><strong>The Text Overlay</strong></p>
+      <p>Colour: arterial red. It is the only warmth in the entire image. It glows with active, malicious energy against the dead cold of everything else.</p>
 
-<p>Suspended in the foreground &mdash; like an AR glitch projecting directly onto the lens &mdash; a single line of text:</p>
+      <div class="section-divider"></div>
 
-<p><strong>I SEE YOU, AMARA.</strong></p>
+      <p class="section-label">Colour Palette</p>
 
-<p>Font: 7-segment digital alarm clock typeface. Jagged. Domestic-retro. The jarring contrast between that font and the hyper-advanced biometric horror beneath it is where the psychological weight lives.</p>
+      <ul>
+        <li>Dominant: slate grey, gunmetal, forensic sterile blue</li>
+        <li>The eye and its reflection should feel like a space where all heat has died</li>
+        <li>Single contrast colour: arterial red, reserved entirely for the text overlay</li>
+      </ul>
 
-<p>Colour: arterial red. It is the only warmth in the entire image. It glows with active, malicious energy against the dead cold of everything else.</p>
+      <div class="section-divider"></div>
 
-<hr>
+      <p class="section-label">Tone Reference</p>
 
-<p><strong>Colour Palette</strong></p>
+      <p>Blade Runner 2049. The cover art of high-end modern sci-fi graphic novels. Photorealistic, not painterly. Cold light, not dramatic light. The image should make the reader feel observed before they have read a single word of the novel.</p>
 
-<ul>
-  <li>Dominant: slate grey, gunmetal, forensic sterile blue</li>
-  <li>The eye and its reflection should feel like a space where all heat has died</li>
-  <li>Single contrast colour: arterial red, reserved entirely for the text overlay</li>
-</ul>
+      <p>The red text is the only thing in the image that is alive. Everything else is evidence.</p>
 
-<hr>
+      <div class="cta-block">
+        <p>This slot is open. If it belongs to you, claim it.</p>
+        <a href="submit.html?slot=echoes-1-4" class="cta-link">Claim This Slot &rarr;</a>
+      </div>
 
-<p><strong>Tone Reference</strong></p>
+    </div>
 
-<p>Blade Runner 2049. The cover art of high-end modern sci-fi graphic novels. Photorealistic, not painterly. Cold light, not dramatic light. The image should make the reader feel observed before they have read a single word of the novel.</p>
-
-<p>The red text is the only thing in the image that is alive. Everything else is evidence.</p>
-
-<hr>
-
-<p>To discuss this brief: <a href="mailto:submissions@astoundingtales.ca">submissions@astoundingtales.ca</a></p>
-
-<p><a href="issue1.html">Return to Issue One</a></p>
-
+    <footer>
+      <a href="issue1.html" class="back">&larr; Return to Issue One</a>
+      <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+      <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
+    </footer>
+  </div>
 </body>
 </html>
