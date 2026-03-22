@@ -289,7 +289,14 @@
       You were not found by accident. The gaps in Issue One have been marked clearly. This form exists so you can claim the one that belongs to you. Tell us who you are, and which slot caught your eye. That's enough to start.
     </p>
 
-    <form class="submission-form" id="submissionForm">
+    <!-- The form submits directly to Google Apps Script via POST -->
+    <form class="submission-form" id="submissionForm"
+          method="POST"
+          action="https://script.google.com/macros/s/AKfycbxtod2VuI7kMpwoaKOpBrrpiF9wjGIuytalZLPUHvoG0LityQCqWhDkXZjDiqDzybQDOw/exec">
+
+      <input type="hidden" name="timestamp" id="hiddenTimestamp">
+      <input type="hidden" name="source" id="hiddenSource">
+
       <div class="field-row">
         <div class="field-group">
           <label class="field-label" for="name">Name</label>
@@ -304,7 +311,7 @@
       <div class="field-group">
         <label class="field-label" for="slot">Which Gap Are You Claiming <span class="optional">(Optional)</span></label>
         <select id="slot" name="slot" class="field-select">
-          <option value="" selected>—</option>
+          <option value="Not specified" selected>—</option>
 
           <optgroup label="Cover Art">
             <option value="Cover Art — Wraparound Artwork (Front &amp; Back Cover)" data-slug="cover">Cover Art — Wraparound Artwork (Front &amp; Back Cover)</option>
@@ -369,8 +376,6 @@
   </div>
 
   <script>
-   var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxtod2VuI7kMpwoaKOpBrrpiF9wjGIuytalZLPUHvoG0LityQCqWhDkXZjDiqDzybQDOw/exec';
-    
     // Pre-select slot from URL parameter (?slot=pursuit)
     (function() {
       var params = new URLSearchParams(window.location.search);
@@ -387,74 +392,21 @@
       }
     })();
 
-    var form = document.getElementById('submissionForm');
-    var submitBtn = document.getElementById('submitBtn');
-    var formError = document.getElementById('formError');
-    var successMessage = document.getElementById('successMessage');
-
-    function showError(msg) {
-      formError.textContent = msg;
-      formError.classList.add('visible');
-      setTimeout(function() { formError.classList.remove('visible'); }, 5000);
-    }
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      var name = document.getElementById('name').value.trim();
-      var email = document.getElementById('email').value.trim();
-      var slot = document.getElementById('slot').value;
-      var portfolio = document.getElementById('portfolio').value.trim();
-      var message = document.getElementById('message').value.trim();
-
-      if (!name || !email) {
-        showError('Name and email are required.');
-        return;
+    // Check if we're returning from a successful submission
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('submitted') === 'true') {
+        document.getElementById('submissionForm').style.display = 'none';
+        document.getElementById('successMessage').classList.add('visible');
       }
+    })();
 
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span class="loading-spinner"></span>Sending...';
-
-      // Create hidden iframe to receive the response
-      var iframe = document.createElement('iframe');
-      iframe.name = 'submit_target';
-      iframe.style.display = 'none';
-      document.body.appendChild(iframe);
-
-      // Create a real form that submits to the iframe
-      var hiddenForm = document.createElement('form');
-      hiddenForm.method = 'POST';
-      hiddenForm.action = GOOGLE_SCRIPT_URL;
-      hiddenForm.target = 'submit_target';
-
-      var fields = {
-        name: name,
-        email: email,
-        slot: slot || 'Not specified',
-        portfolio: portfolio,
-        message: message,
-        timestamp: new Date().toISOString(),
-        source: window.location.href
-      };
-
-      for (var key in fields) {
-        var input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = key;
-        input.value = fields[key];
-        hiddenForm.appendChild(input);
-      }
-
-      document.body.appendChild(hiddenForm);
-      hiddenForm.submit();
-
-      // Show success after a short delay
-      setTimeout(function() {
-        form.style.display = 'none';
-        successMessage.classList.add('visible');
-        hiddenForm.remove();
-        iframe.remove();
-      }, 1500);
+    // Set hidden fields and show spinner on submit
+    document.getElementById('submissionForm').addEventListener('submit', function() {
+      document.getElementById('hiddenTimestamp').value = new Date().toISOString();
+      document.getElementById('hiddenSource').value = window.location.href;
+      document.getElementById('submitBtn').disabled = true;
+      document.getElementById('submitBtn').innerHTML = '<span class="loading-spinner"></span>Sending...';
     });
   </script>
 </body>
