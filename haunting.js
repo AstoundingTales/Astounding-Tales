@@ -14,6 +14,10 @@
 (function () {
   'use strict';
 
+  // Guard against the script being loaded more than once on the same page.
+  if (window._atHauntLoaded) return;
+  window._atHauntLoaded = true;
+
   var PHASE_1_START = 20;
   var PHASE_1_END   = 40;
   var PHASE_2_TIME  = 45;
@@ -35,12 +39,12 @@
     '.at-threat-overlay .at-scan-lines{position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.04) 2px,rgba(0,0,0,.04) 4px);z-index:2}' +
     '.at-threat-overlay .at-screen-tear{position:absolute;left:0;right:0;height:4px;background:#f5f0e8;z-index:3;opacity:0}' +
 
-    /* overflow:hidden moved here from the line so glitch chars are not clipped mid-scramble */
-    '.at-threat-backdrop{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;background:rgba(0,0,0,.92);border:1px solid rgba(232,165,37,.2);border-radius:2px;padding:2rem 2.5rem;width:92%;max-width:700px;box-shadow:0 0 60px rgba(0,0,0,.5),inset 0 0 80px rgba(0,0,0,.3);opacity:0;transition:opacity .3s;overflow:hidden}' +
+    /* Centered, padded backdrop — text wraps inside it */
+    '.at-threat-backdrop{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;background:rgba(0,0,0,.92);border:1px solid rgba(232,165,37,.2);border-radius:2px;padding:2.5rem 3rem;width:88%;max-width:680px;box-shadow:0 0 60px rgba(0,0,0,.5),inset 0 0 80px rgba(0,0,0,.3);opacity:0;transition:opacity .3s;text-align:center}' +
     '.at-threat-backdrop.visible{opacity:1}' +
 
-    /* overflow:hidden removed — backdrop clips instead, lines breathe freely */
-    '.at-threat-line{font-family:"Share Tech Mono",monospace;font-size:clamp(.65rem,1.8vw,.9rem);color:#e8a525;letter-spacing:.06em;margin-bottom:.6rem;opacity:0;text-shadow:0 0 8px rgba(232,165,37,.4);white-space:nowrap}' +
+    /* white-space:normal so long lines wrap cleanly inside the box */
+    '.at-threat-line{font-family:"Share Tech Mono",monospace;font-size:clamp(.6rem,1.6vw,.85rem);color:#e8a525;letter-spacing:.06em;margin-bottom:.75rem;opacity:0;text-shadow:0 0 8px rgba(232,165,37,.4);white-space:normal;line-height:1.5;text-align:left}' +
     '.at-threat-line.visible{opacity:1}' +
 
     '.at-reveal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:200000;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(12px,3vw,24px);opacity:0;pointer-events:none;transition:opacity .05s}' +
@@ -126,9 +130,6 @@
     frame();
   }
 
-  // Real geolocation via ipapi.co — returns the visitor's actual city.
-  // Cached in sessionStorage after first fetch so the API is only called once per session.
-  // To verify it's working: DevTools → Application → Session Storage → at_haunt_city
   var visitorCity = null;
   function fetchCity() {
     var cached = sessionStorage.getItem(CITY_KEY);
@@ -199,8 +200,6 @@
       setTimeout(function () { tear.style.opacity = '0'; }, 80);
     }, 250);
 
-    // 1800ms stagger between lines, 1400ms scramble duration —
-    // gives each line time to fully resolve before the next appears.
     var LINE_STAGGER = 1800;
     var SCRAMBLE_DUR = 1400;
 
@@ -212,14 +211,13 @@
       }, 500 + i * LINE_STAGGER);
     });
 
-    // Hold all three lines fully resolved for 3 seconds before dissolving.
     var holdStart = 500 + lines.length * LINE_STAGGER + 3000;
 
     setTimeout(function () {
       lines.forEach(function (line) {
         var t = line.textContent, len = t.length, ds = Date.now();
         function dissolve() {
-          var p = (Date.now() - ds) / 1000; // slower 1000ms dissolve
+          var p = (Date.now() - ds) / 1000;
           if (p >= 1) { line.textContent = ''; line.classList.remove('visible'); return; }
           var r = '';
           for (var i = 0; i < len; i++)
@@ -235,10 +233,7 @@
     }, holdStart);
   }
 
-  // Calculate the actual render time for a line of text based on how
-  // typeLineInto works: each non-space character runs 5 flicker cycles
-  // (5 × 50ms) before the per-character delay fires. Spaces cost 60ms flat.
-  var FLICKER_MS = 5 * 50; // 250ms per character for the settle animation
+  var FLICKER_MS = 5 * 50;
   function lineRenderMs(text, delay) {
     var chars = 0, spaces = 0;
     for (var i = 0; i < text.length; i++) {
@@ -273,9 +268,6 @@
       });
     }, 700);
 
-    // Accurately account for per-character flicker settle time (250ms) plus
-    // the inter-character delay, so the hard-cut fires after the display
-    // has fully settled rather than mid-render.
     var t1 = 700 + lineRenderMs(line1, charDelay) + 400;
     var t2 = line2 ? 600 + lineRenderMs(line2, 200) + 400 : 0;
 
