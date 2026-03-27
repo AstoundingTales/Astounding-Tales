@@ -1,6 +1,6 @@
 /**
  * ASTOUNDING TALES — HAUNTING SCRIPT
- * Integration: <script src="/js/haunting.js" defer></script>
+ * Integration: <script src="/haunting.js" defer></script>
  *
  * Phase 1 (0:20-0:40) — subtle text flickers
  * Phase 2 (0:45)      — threat classification bleed
@@ -9,6 +9,7 @@
  * Timer persists across pages via sessionStorage.
  * Each phase fires once. Resets on new browser session.
  * City resolved via ipapi.co (free, no key required).
+ * Verify: DevTools → Application → Session Storage → at_haunt_city
  */
 (function () {
   'use strict';
@@ -33,10 +34,15 @@
     '.at-threat-overlay.active{opacity:1}' +
     '.at-threat-overlay .at-scan-lines{position:absolute;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.04) 2px,rgba(0,0,0,.04) 4px);z-index:2}' +
     '.at-threat-overlay .at-screen-tear{position:absolute;left:0;right:0;height:4px;background:#f5f0e8;z-index:3;opacity:0}' +
-    '.at-threat-backdrop{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;background:rgba(0,0,0,.92);border:1px solid rgba(232,165,37,.2);border-radius:2px;padding:2rem 2.5rem;width:90%;max-width:660px;box-shadow:0 0 60px rgba(0,0,0,.5),inset 0 0 80px rgba(0,0,0,.3);opacity:0;transition:opacity .3s}' +
+
+    /* overflow:hidden moved here from the line so glitch chars are not clipped mid-scramble */
+    '.at-threat-backdrop{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;background:rgba(0,0,0,.92);border:1px solid rgba(232,165,37,.2);border-radius:2px;padding:2rem 2.5rem;width:92%;max-width:700px;box-shadow:0 0 60px rgba(0,0,0,.5),inset 0 0 80px rgba(0,0,0,.3);opacity:0;transition:opacity .3s;overflow:hidden}' +
     '.at-threat-backdrop.visible{opacity:1}' +
-    '.at-threat-line{font-family:"Share Tech Mono",monospace;font-size:clamp(.65rem,1.8vw,.9rem);color:#e8a525;letter-spacing:.06em;margin-bottom:.5rem;opacity:0;text-shadow:0 0 8px rgba(232,165,37,.4);white-space:nowrap;overflow:hidden}' +
+
+    /* overflow:hidden removed — backdrop clips instead, lines breathe freely */
+    '.at-threat-line{font-family:"Share Tech Mono",monospace;font-size:clamp(.65rem,1.8vw,.9rem);color:#e8a525;letter-spacing:.06em;margin-bottom:.6rem;opacity:0;text-shadow:0 0 8px rgba(232,165,37,.4);white-space:nowrap}' +
     '.at-threat-line.visible{opacity:1}' +
+
     '.at-reveal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:200000;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(12px,3vw,24px);opacity:0;pointer-events:none;transition:opacity .05s}' +
     '.at-reveal-overlay.active{opacity:1;pointer-events:all}' +
     '.at-reveal-overlay .at-crt{position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.5) 100%);z-index:2;pointer-events:none}' +
@@ -120,6 +126,9 @@
     frame();
   }
 
+  // Real geolocation via ipapi.co — returns the visitor's actual city.
+  // Cached in sessionStorage after first fetch so the API is only called once per session.
+  // To verify it's working: DevTools → Application → Session Storage → at_haunt_city
   var visitorCity = null;
   function fetchCity() {
     var cached = sessionStorage.getItem(CITY_KEY);
@@ -127,7 +136,10 @@
     fetch('https://ipapi.co/json/')
       .then(function (r) { return r.json(); })
       .then(function (d) {
-        if (d && d.city) { visitorCity = d.city.toUpperCase(); sessionStorage.setItem(CITY_KEY, visitorCity); }
+        if (d && d.city) {
+          visitorCity = d.city.toUpperCase();
+          sessionStorage.setItem(CITY_KEY, visitorCity);
+        }
       })
       .catch(function () {});
   }
@@ -179,34 +191,48 @@
     var lines = overlay.querySelectorAll('.at-threat-line');
     var tear = document.getElementById('atScreenTear');
     overlay.classList.add('active');
-    setTimeout(function () { backdrop.classList.add('visible'); }, 200);
+    setTimeout(function () { backdrop.classList.add('visible'); }, 300);
+
     var tearInt = setInterval(function () {
       tear.style.top = Math.random() * 100 + '%'; tear.style.opacity = '1';
       tear.style.height = (2 + Math.random() * 6) + 'px';
       setTimeout(function () { tear.style.opacity = '0'; }, 80);
     }, 250);
+
+    // 1800ms stagger between lines, 1400ms scramble duration —
+    // gives each line time to fully resolve before the next appears.
+    var LINE_STAGGER = 1800;
+    var SCRAMBLE_DUR = 1400;
+
     lines.forEach(function (line, i) {
       var text = line.getAttribute('data-text');
-      setTimeout(function () { line.classList.add('visible'); scrambleText(line, text, 900); }, 600 + i * 1000);
+      setTimeout(function () {
+        line.classList.add('visible');
+        scrambleText(line, text, SCRAMBLE_DUR);
+      }, 500 + i * LINE_STAGGER);
     });
-    var total = 600 + lines.length * 1000 + 2000;
+
+    // Hold all three lines fully resolved for 3 seconds before dissolving.
+    var holdStart = 500 + lines.length * LINE_STAGGER + 3000;
+
     setTimeout(function () {
       lines.forEach(function (line) {
         var t = line.textContent, len = t.length, ds = Date.now();
         function dissolve() {
-          var p = (Date.now() - ds) / 700;
+          var p = (Date.now() - ds) / 1000; // slower 1000ms dissolve
           if (p >= 1) { line.textContent = ''; line.classList.remove('visible'); return; }
           var r = '';
-          for (var i = 0; i < len; i++) r += Math.random() < p ? ' ' : glitchChars[Math.floor(Math.random() * glitchChars.length)];
+          for (var i = 0; i < len; i++)
+            r += Math.random() < p ? ' ' : glitchChars[Math.floor(Math.random() * glitchChars.length)];
           line.textContent = r; requestAnimationFrame(dissolve);
         }
         dissolve();
       });
       setTimeout(function () {
         backdrop.classList.remove('visible');
-        setTimeout(function () { clearInterval(tearInt); overlay.classList.remove('active'); }, 300);
-      }, 800);
-    }, total);
+        setTimeout(function () { clearInterval(tearInt); overlay.classList.remove('active'); }, 400);
+      }, 1100);
+    }, holdStart);
   }
 
   // Calculate the actual render time for a line of text based on how
