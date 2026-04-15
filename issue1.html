@@ -73,7 +73,7 @@
     }
     ul.toc { list-style: none; border-top: 1px solid rgba(26,20,16,0.2); }
     ul.toc li { border-bottom: 1px solid rgba(26,20,16,0.15); }
-    ul.toc li a, ul.toc li.filled {
+    ul.toc li a, ul.toc li.filled, ul.toc li.claimed {
       display: flex;
       align-items: baseline;
       padding: 13px 0;
@@ -87,6 +87,9 @@
     ul.toc li a:hover { color: #3a0a04; padding-left: 6px; }
     ul.toc li.filled { opacity: 0.38; }
     ul.toc li.filled .toc-title { text-decoration: line-through; text-decoration-color: rgba(26,20,16,0.3); }
+    ul.toc li.claimed { opacity: 0.38; }
+    ul.toc li.claimed .toc-title { text-decoration: line-through; text-decoration-color: rgba(26,20,16,0.3); }
+    ul.toc li.claimed .toc-status { color: rgba(26,20,16,0.3); }
     .toc-title { flex: 1; }
     .toc-status {
       font-family: 'Barlow Condensed', sans-serif;
@@ -192,15 +195,15 @@
     <li><a href="brief-cover.html"><span class="toc-title">Cover Art &mdash; Wraparound Artwork (Front &amp; Back Cover)</span><span class="toc-status">Open</span></a></li>
     <li class="filled"><span class="toc-title">Table of Contents</span><span class="toc-status">Filled</span></li>
     <li class="filled"><span class="toc-title">From the Editor&rsquo;s Desk</span><span class="toc-status">Filled</span></li>
-    <li><a href="brief-parkave.html"><span class="toc-title">Fake Ad &mdash; Park Ave Smart Apartment Services</span><span class="toc-status">Open</span></a></li>
-    <li><a href="brief-factcheck.html"><span class="toc-title">Fact-Check &mdash; Comic (Recurring Artist Wanted)</span><span class="toc-status">Email for script</span></a></li>
+    <li class="claimed"><span class="toc-title">Fake Ad &mdash; Park Ave Smart Apartment Services</span><span class="toc-status">Claimed</span></li>
+    <li class="claimed"><span class="toc-title">Fact-Check &mdash; Comic (Recurring Artist Wanted)</span><span class="toc-status">Claimed</span></li>
     <li><a href="brief-echoes-ch1-4.html"><span class="toc-title">Echoes in the Machine Ch. 1&ndash;4 &mdash; Cover Art</span><span class="toc-status">Open</span></a></li>
     <li><a href="brief-flostate.html"><span class="toc-title">Fake Ad &mdash; Flo-State Surgeon General&rsquo;s Warning</span><span class="toc-status">Open</span></a></li>
     <li><a href="brief-deadchannels.html"><span class="toc-title">Dead Channels &mdash; Short Story Splash Art</span><span class="toc-status">Open</span></a></li>
     <li><a href="brief-echoes-ch5-6.html"><span class="toc-title">Echoes in the Machine Ch. 5&ndash;6 &mdash; Cover Art</span><span class="toc-status">Open</span></a></li>
     <li><a href="brief-jacaranda.html"><span class="toc-title">Fake Ad &mdash; Jacaranda by Asmara</span><span class="toc-status">Open</span></a></li>
     <li><a href="brief-pursuit.html"><span class="toc-title">Pursuit &mdash; Comic (Recurring Artist Wanted)</span><span class="toc-status">Open</span></a></li>
-    <li><a href="brief-clockradio.html"><span class="toc-title">Fake Ad &mdash; General Entity AM/FM Clock Radio</span><span class="toc-status">Open</span></a></li>
+    <li class="claimed"><span class="toc-title">Fake Ad &mdash; General Entity AM/FM Clock Radio</span><span class="toc-status">Claimed</span></li>
     <li><a href="brief-echoes-ch7-9.html"><span class="toc-title">Echoes in the Machine Ch. 7&ndash;9 &mdash; Cover Art</span><span class="toc-status">Open</span></a></li>
     <li class="filled"><span class="toc-title">Letters From the Future</span><span class="toc-status">Filled</span></li>
   </ul>
