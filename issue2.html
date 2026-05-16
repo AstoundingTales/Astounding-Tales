@@ -32,7 +32,6 @@
       max-width: 700px;
       padding: 48px 40px 64px;
     }
-    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
     .masthead { text-align: center; }
     .page-title {
       width: 100%;
@@ -74,7 +73,7 @@
     }
     ul.toc { list-style: none; border-top: 1px solid rgba(26,20,16,0.2); }
     ul.toc li { border-bottom: 1px solid rgba(26,20,16,0.15); }
-    ul.toc li a, ul.toc li.filled, ul.toc li.pending, ul.toc li.tbd {
+    ul.toc li a, ul.toc li.filled, ul.toc li.claimed, ul.toc li.open {
       display: flex;
       align-items: baseline;
       padding: 13px 0;
@@ -88,8 +87,9 @@
     ul.toc li a:hover { color: #3a0a04; padding-left: 6px; }
     ul.toc li.filled { opacity: 0.38; }
     ul.toc li.filled .toc-title { text-decoration: line-through; text-decoration-color: rgba(26,20,16,0.3); }
-    ul.toc li.pending { opacity: 0.65; }
-    ul.toc li.tbd { opacity: 0.50; font-style: italic; }
+    ul.toc li.claimed { opacity: 0.38; }
+    ul.toc li.claimed .toc-title { text-decoration: line-through; text-decoration-color: rgba(26,20,16,0.3); }
+    ul.toc li.claimed .toc-status { color: rgba(26,20,16,0.3); }
     .toc-title { flex: 1; }
     .toc-status {
       font-family: 'Barlow Condensed', sans-serif;
@@ -181,41 +181,44 @@
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="masthead">
-      <div class="rule-thick"></div>
-      <span class="page-title">Issue Two</span>
-      <div class="rule-thin"></div>
-      <p class="tagline">Value: Null &mdash; Working document. Open positions are marked.</p>
-      <div class="divider"></div>
-    </header>
+<div class="page">
 
-    <ul class="toc">
-      <li class="pending"><span class="toc-title">Front Cover &mdash; Wraparound Illustration (with Back Cover)</span><span class="toc-status">Open</span></li>
-      <li class="pending"><span class="toc-title">Fake Ad #1</span><span class="toc-status">Open</span></li>
-      <li class="pending"><span class="toc-title">The Archon &mdash; 8-Page Comic</span><span class="toc-status">Open</span></li>
-      <li class="pending"><span class="toc-title">Echoes in the Machine Ch. 10&ndash;11 &mdash; Section Art</span><span class="toc-status">Open</span></li>
-      <li><a href="brief-aicreep.html"><span class="toc-title">Fake Ad #2 &mdash; &ldquo;Recognize AI Creep&rdquo; PSA</span><span class="toc-status">Open</span></a></li>
-      <li class="pending"><span class="toc-title">The Penrose Lullaby &mdash; Short Fiction</span><span class="toc-status">Open</span></li>
-      <li class="pending"><span class="toc-title">Echoes in the Machine Ch. 12&ndash;14 &mdash; Section Art</span><span class="toc-status">Open</span></li>
-      <li class="pending"><span class="toc-title">Fake Ad #3</span><span class="toc-status">Open</span></li>
-      <li class="pending"><span class="toc-title">Country of Origin &mdash; Comic</span><span class="toc-status">Open</span></li>
-      <li class="pending"><span class="toc-title">Fake Ad #4 &mdash; Elmvale Drive-In</span><span class="toc-status">Open</span></li>
-      <li class="pending"><span class="toc-title">Echoes in the Machine Ch. 15&ndash;16 &mdash; Section Art</span><span class="toc-status">Open</span></li>
-      <li class="pending"><span class="toc-title">Back Cover &mdash; Wraparound Illustration (with Front Cover)</span><span class="toc-status">Open</span></li>
-    </ul>
+  <header class="masthead">
+    <div class="rule-thick"></div>
+    <span class="page-title">Issue Two</span>
+    <div class="rule-thin"></div>
+    <p class="tagline">Value: Null &mdash; Working document. Open positions are marked.</p>
+    <div class="divider"></div>
+  </header>
 
-    <div class="prose" style="margin-top:36px;">
-      <p class="signature"><em>I am not asking you to fill all of them. I am asking you to find the one that belongs to you.</em><br>&mdash; R.H.</p>
-      <p><a href="submit.html" class="claim-slot">Claim Your Slot &rarr;</a></p>
-    </div>
+  <ul class="toc">
+    <li><a href="brief-cover-2.html"><span class="toc-title">Cover Art &mdash; Wraparound Artwork (Front &amp; Back Cover)</span><span class="toc-status">Open</span></a></li>
+    <li class="filled"><span class="toc-title">Table of Contents</span><span class="toc-status">Filled</span></li>
+    <li class="filled"><span class="toc-title">From the Editor&rsquo;s Desk</span><span class="toc-status">Filled</span></li>
+    <li class="open"><span class="toc-title">Fake Ad #1</span><span class="toc-status">Open</span></li>
+    <li><a href="brief-Archon.html"><span class="toc-title">The Archon &mdash; 8-Page Comic</span><span class="toc-status">Open</span></a></li>
+    <li><a href="brief-echoes-ch10-11.html"><span class="toc-title">Echoes in the Machine Ch. 10&ndash;11 &mdash; Section Art</span><span class="toc-status">Open</span></a></li>
+    <li><a href="brief-aicreep.html"><span class="toc-title">Fake Ad #2 &mdash; &ldquo;Recognize AI Creep&rdquo; PSA</span><span class="toc-status">Open</span></a></li>
+    <li class="open"><span class="toc-title">The Penrose Lullaby &mdash; Short Fiction</span><span class="toc-status">Open</span></li>
+    <li><a href="brief-echoes-ch12-14.html"><span class="toc-title">Echoes in the Machine Ch. 12&ndash;14 &mdash; Section Art</span><span class="toc-status">Open</span></a></li>
+    <li class="open"><span class="toc-title">Fake Ad #3</span><span class="toc-status">Open</span></li>
+    <li><a href="CountryofOrigin.html"><span class="toc-title">Country of Origin &mdash; 8-Page Comic</span><span class="toc-status">Open</span></a></li>
+    <li class="open"><span class="toc-title">Fake Ad #4 &mdash; Elmvale Drive-In</span><span class="toc-status">Open</span></li>
+    <li><a href="brief-echoes-ch15-16.html"><span class="toc-title">Echoes in the Machine Ch. 15&ndash;16 &mdash; Section Art</span><span class="toc-status">Open</span></a></li>
+    <li class="filled"><span class="toc-title">Letters From the Future</span><span class="toc-status">Filled</span></li>
+  </ul>
 
-    <footer>
-      <a href="index.html" class="back">&larr; Main Page</a>
-      <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
-      <a href="mailto:submissions@astoundingtales.ca">submissions@astoundingtales.ca</a>
-    </footer>
+  <div class="prose" style="margin-top:36px;">
+    <p class="signature"><em>I am not asking you to fill all of them. I am asking you to find the one that belongs to you.</em><br>&mdash; R.H.</p>
+    <p><a href="submit.html" class="claim-slot">Claim Your Slot &rarr;</a></p>
   </div>
-  <script src="/haunting.js" defer></script>
-</body>
+
+  <footer>
+    <a href="index.html" class="back">&larr; Main Page</a>
+    <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+    <a href="mailto:submissions@astoundingtales.ca">submissions@astoundingtales.ca</a>
+  </footer>
+
+</div>
+<script src="/haunting.js" defer></script></body>
 </html>
