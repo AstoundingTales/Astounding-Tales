@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTOUNDING TALES &mdash; Creative Brief: The Bone Shore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f5f0e8; color: #1a1410; font-family: 'EB Garamond', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
+    .masthead { text-align: center; }
+    .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
+    .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
+    .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
+    .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); text-align: center; margin: 20px 0; }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
+    .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
+    .prose p { margin-bottom: 18px; }
+    .prose em { font-style: italic; }
+
+    .brief-section { margin-top: 36px; margin-bottom: 4px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(26,20,16,0.45); }
+    .section-rule { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.15) 0%, rgba(26,20,16,0.15) 60%, transparent); margin-bottom: 16px; }
+
+    .scene-map { margin: 16px 0; border-left: 2px solid rgba(26,20,16,0.15); }
+    .scene-map .scene-item { padding: 12px 0 12px 20px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 17px; line-height: 1.65; }
+    .scene-map .scene-item:last-child { border-bottom: none; }
+    .scene-map .scene-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(26,20,16,0.4); display: block; margin-bottom: 4px; }
+
+    .colour-block { margin: 16px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .colour-item { padding: 12px 16px; background: rgba(26,20,16,0.03); border: 1px solid rgba(26,20,16,0.1); font-size: 16px; line-height: 1.5; }
+    .colour-item .colour-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(26,20,16,0.4); display: block; margin-bottom: 4px; }
+
+    .signature { margin-top: 2em; font-size: 17px; color: rgba(26,20,16,0.65); }
+
+    .cta-block { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.15); }
+    .cta-block p { font-style: italic; color: rgba(26,20,16,0.7); margin-bottom: 12px; font-size: 18px; line-height: 1.75; }
+    .cta-block a.cta-link { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: #1a1410; text-decoration: none; border: 1px solid rgba(26,20,16,0.3); padding: 12px 24px; display: inline-block; transition: border-color 0.2s ease, background 0.2s ease; }
+    .cta-block a.cta-link:hover { border-color: #1a1410; background: rgba(26,20,16,0.04); }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    .back { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.6); text-decoration: none; display: inline-block; margin-bottom: 20px; padding: 10px 18px; border: 2px solid rgba(26,20,16,0.3); transition: color 0.15s, border-color 0.15s, background-color 0.15s; }
+    .back:hover { color: #1a1410; border-color: #1a1410; background-color: rgba(26,20,16,0.05); }
+    footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
+    footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
+    footer a.email:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="rule-thick"></div>
+      <span class="page-title">The Bone Shore</span>
+      <div class="rule-thin"></div>
+      <p class="tagline">Astounding Tales &mdash; Issue Three &mdash; Short Story, Splash Art</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="prose">
+
+      <p>The story is enclosed. One half-page illustration to open it &mdash; the visual threshold before the reader enters. Read it first.</p>
+
+      <p class="brief-section">The Assignment</p>
+      <div class="section-rule"></div>
+      <p>A half-page splash in the pulp-horror style of 1970s science fiction magazines. The dread of deep water and a desecrated shoreline. The image should feel like something that was printed on cheap paper in 1973 and has been quietly unsettling people ever since.</p>
+
+      <p class="brief-section">Composition</p>
+      <div class="section-rule"></div>
+
+      <div class="scene-map">
+        <div class="scene-item">
+          <span class="scene-label">Foreground &mdash; The Waterline</span>
+          Ossoss&aacute;n&eacute; Beach at twilight, or under a sickly overcast sky that has no business being that colour. The sand meets the lake. Where driftwood should be: skeletal fragments &mdash; ribs, femurs &mdash; partially buried in the wet sand, calcified and bleached to a stark, blinding white. They have been there long enough to belong. That is the problem.
+        </div>
+        <div class="scene-item">
+          <span class="scene-label">Background &mdash; The Water</span>
+          Far out in the dark bay, a massive, ambiguous silhouette disrupts the surface. Not fully lit. The suggestion of the Mishipeshu: perhaps the jagged saw-tooth scales of its back breaking the water, or the copper-lit reflection of eyes looking back toward shore. It is not approaching. It is watching.
+        </div>
+        <div class="scene-item">
+          <span class="scene-label">Deep Background &mdash; The Tower</span>
+          A cooling tower on the far shore, letting out steam. It should read, at first, as part of the industrial horizon. It should read, on a second look, as the thing the Mishipeshu has been watching longer than the bones have been on the beach.
+        </div>
+      </div>
+
+      <p class="brief-section">Colour &amp; Light</p>
+      <div class="section-rule"></div>
+      <div class="colour-block">
+        <div class="colour-item"><span class="colour-label">Water &amp; Sky</span>Deep, murky aquatic blues and blacks. The dark of a lake that does not want to be looked into.</div>
+        <div class="colour-item"><span class="colour-label">Tide Line</span>Sickly, radioactive seafoam green where the water meets the sand. The colour of something that should not be that colour.</div>
+        <div class="colour-item"><span class="colour-label">The Bones</span>Stark, blinding white. The only clean thing on the page.</div>
+        <div class="colour-item"><span class="colour-label">The Entity</span>Copper-lit eyes against the black water. Warm and wrong at the same distance.</div>
+      </div>
+
+      <p class="brief-section">Tone Reference</p>
+      <div class="section-rule"></div>
+      <p>The image shares a shoreline with the Ontario Hydro ad earlier in this issue. The reader who notices the connection is the reader who deserves it. Do not signal it. The bones were already there before the ad ran, and the ad ran without mentioning them by name.</p>
+
+      <p class="signature"><em>&mdash; R.H.</em></p>
+
+      <div class="cta-block">
+        <p>This slot is open. If it belongs to you, claim it.</p>
+        <a href="submit.html" class="cta-link">Claim This Slot &rarr;</a>
+      </div>
+
+    </div>
+
+    <footer>
+      <a href="issue3.html" class="back">&larr; Return to Issue Three</a>
+      <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+      <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
+    </footer>
+  </div>
+<script src="/haunting.js" defer></script>
+</body>
+</html>
