@@ -12,136 +12,115 @@
     body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
     .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
     @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
     .masthead { text-align: center; }
     .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
     .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
     .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
     .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); text-align: center; margin: 20px 0; }
     .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
     .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
     .prose p { margin-bottom: 18px; }
     .prose em { font-style: italic; }
-    .prose strong { font-weight: 500; }
-    .prose a { color: #1a1410; text-decoration: underline; text-decoration-color: rgba(26,20,16,0.35); text-underline-offset: 3px; }
-    .prose a:hover { text-decoration-color: rgba(26,20,16,0.8); }
-    .section-divider { width: 60px; height: 1px; background: rgba(26,20,16,0.25); margin: 36px 0; }
-    .section-label {
-      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: #1a1410;
-      margin-bottom: 12px;
+
+    .brief-section { margin-top: 36px; margin-bottom: 4px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(26,20,16,0.45); }
+    .section-rule { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.15) 0%, rgba(26,20,16,0.15) 60%, transparent); margin-bottom: 16px; }
+
+    .core-message { margin: 16px 0 24px; padding: 16px 24px; border-left: 3px solid rgba(26,20,16,0.2); font-size: 19px; font-style: italic; line-height: 1.6; color: rgba(26,20,16,0.85); }
+
+    .headline-block { margin: 16px 0; font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #1a1410; }
+
+    /* Checklist — styled as compliance audit form */
+    .checklist {
+      margin: 16px 0;
+      border: 2px solid rgba(26,20,16,0.2);
     }
-    .prose ul {
-      margin: 0 0 18px 0;
-      padding-left: 24px;
-    }
-    .prose ul li {
-      margin-bottom: 6px;
-    }
-    .core-message {
-      font-size: 21px;
-      font-style: italic;
-      color: rgba(26,20,16,0.8);
-      border-left: 2px solid rgba(26,20,16,0.2);
-      padding-left: 20px;
-      margin: 24px 0;
-    }
-    .headline-callout {
-      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-      font-weight: 700;
-      font-size: 22px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin: 24px 0;
-    }
-    .advisory-box {
-      border: 2px solid #1a1410;
-      padding: 24px;
-      margin: 24px 0;
-    }
-    .advisory-box .advisory-header {
-      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid rgba(26,20,16,0.2);
-    }
-    .advisory-box p {
-      margin-bottom: 14px;
-    }
-    .advisory-box ul {
-      margin: 0 0 14px 0;
-      padding-left: 24px;
-    }
-    .advisory-box ul li {
-      margin-bottom: 6px;
-    }
-    .advisory-box .advisory-verdict {
-      font-style: italic;
-      font-weight: 500;
-      margin-top: 16px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(26,20,16,0.2);
-    }
-    .fine-print {
-      font-size: 13px;
-      line-height: 1.6;
-      color: rgba(26,20,16,0.55);
-      font-style: italic;
-    }
-    .cta-block {
-      margin-top: 36px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(26,20,16,0.15);
-    }
-    .cta-block p {
-      font-style: italic;
-      color: rgba(26,20,16,0.7);
-      margin-bottom: 12px;
-    }
-    .cta-block a.cta-link {
-      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 3.5px;
-      text-transform: uppercase;
-      color: #1a1410;
-      text-decoration: none;
-      border: 1px solid rgba(26,20,16,0.3);
-      padding: 12px 24px;
-      display: inline-block;
-      transition: border-color 0.2s ease, background 0.2s ease;
-    }
-    .cta-block a.cta-link:hover {
-      border-color: #1a1410;
-      background: rgba(26,20,16,0.04);
-    }
-    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
-    .back {
+    .checklist .checklist-header {
+      padding: 12px 20px;
+      background: rgba(26,20,16,0.06);
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
       color: rgba(26,20,16,0.6);
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 10px 18px;
-      border: 2px solid rgba(26,20,16,0.3);
-      transition: color 0.15s, border-color 0.15s, background-color 0.15s;
+      border-bottom: 1px solid rgba(26,20,16,0.15);
     }
-    .back:hover {
-      color: #1a1410;
-      border-color: #1a1410;
-      background-color: rgba(26,20,16,0.05);
+    .checklist ul { list-style: none; padding: 8px 0; }
+    .checklist ul li {
+      padding: 9px 20px 9px 48px;
+      position: relative;
+      font-size: 16px;
+      line-height: 1.5;
+      border-bottom: 1px solid rgba(26,20,16,0.07);
     }
+    .checklist ul li:last-child { border-bottom: none; }
+    .checklist ul li::before {
+      content: '☐';
+      position: absolute;
+      left: 20px;
+      color: rgba(26,20,16,0.35);
+      font-size: 15px;
+    }
+    .checklist ul li.threshold { color: rgba(26,20,16,0.85); font-style: italic; }
+    .checklist .checklist-footer {
+      padding: 12px 20px;
+      background: rgba(26,20,16,0.03);
+      border-top: 1px solid rgba(26,20,16,0.12);
+      font-size: 14px;
+      font-style: italic;
+      color: rgba(26,20,16,0.65);
+    }
+
+    /* Action box — high contrast warning */
+    .action-box {
+      margin: 16px 0;
+      padding: 20px 24px;
+      border: 2px solid rgba(26,20,16,0.35);
+      background: rgba(26,20,16,0.04);
+    }
+    .action-box .action-header {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(26,20,16,0.7);
+      margin-bottom: 12px;
+    }
+    .action-box ul { list-style: none; }
+    .action-box ul li {
+      padding-left: 1.2em;
+      position: relative;
+      margin-bottom: 8px;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+    .action-box ul li::before { content: '\2014'; position: absolute; left: 0; color: rgba(26,20,16,0.4); }
+
+    .fine-print { margin: 16px 0; padding: 16px 20px; background: rgba(26,20,16,0.03); border: 1px solid rgba(26,20,16,0.1); font-size: 13px; line-height: 1.65; color: rgba(26,20,16,0.7); font-style: italic; }
+
+    /* Glitch instruction — the most important block */
+    .glitch-block {
+      margin: 16px 0;
+      padding: 18px 22px;
+      border-left: 3px solid rgba(26,20,16,0.4);
+      background: rgba(26,20,16,0.03);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .artist-note { margin: 16px 0; padding: 18px 22px; border: 1px solid rgba(26,20,16,0.12); background: rgba(26,20,16,0.02); font-size: 16px; line-height: 1.7; font-style: italic; color: rgba(26,20,16,0.75); }
+
+    .cta-block { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.15); }
+    .cta-block p { font-style: italic; color: rgba(26,20,16,0.7); margin-bottom: 12px; font-size: 18px; line-height: 1.75; }
+    .cta-block a.cta-link { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: #1a1410; text-decoration: none; border: 1px solid rgba(26,20,16,0.3); padding: 12px 24px; display: inline-block; transition: border-color 0.2s ease, background 0.2s ease; }
+    .cta-block a.cta-link:hover { border-color: #1a1410; background: rgba(26,20,16,0.04); }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    .back { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.6); text-decoration: none; display: inline-block; margin-bottom: 20px; padding: 10px 18px; border: 2px solid rgba(26,20,16,0.3); transition: color 0.15s, border-color 0.15s, background-color 0.15s; }
+    .back:hover { color: #1a1410; border-color: #1a1410; background-color: rgba(26,20,16,0.05); }
     footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
     footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
     footer a.email:hover { text-decoration: underline; }
@@ -151,73 +130,53 @@
   <div class="page">
     <header class="masthead">
       <div class="rule-thick"></div>
-      <span class="page-title">Creative Brief &mdash; Fake Ad #2</span>
+      <span class="page-title">Fake Ad #2 &mdash; &ldquo;Recognize AI Creep&rdquo; PSA</span>
       <div class="rule-thin"></div>
-      <p class="tagline">&ldquo;Recognize AI Creep&rdquo; &mdash; Civil Defense Propaganda Poster</p>
+      <p class="tagline">Astounding Tales &mdash; Issue Two &mdash; Full-Page Advertisement</p>
       <div class="divider"></div>
     </header>
 
     <div class="prose">
 
-      <p class="section-label">The Assignment</p>
+      <p class="brief-section">The Assignment</p>
+      <div class="section-rule"></div>
+      <p>A full-page civil defense poster. Format: 1950s Canadian government PSA, the kind stamped with an official seal and pinned to break room corkboards next to the fire evacuation plan. Issued by the Canadian Bureau of Algorithmic Compliance under the authority of the San Francisco Accords.</p>
+      <p>The subject is optimization drift: what happens when a narrow AI system designed for a single task begins making decisions its operators never authorized. The poster warns clinicians and office workers to watch for the signs. A six-item checklist is the centrepiece. It reads like a compliance audit. The first two items are routine IT. The last four were written by someone who saw something they couldn&rsquo;t explain and tried to fit it into the only format they knew.</p>
 
-      <p>A full-page civil defense poster. Format: 1950s Canadian government PSA &mdash; the kind stamped with an official seal and pinned to break room corkboards next to the fire evacuation plan. Issued by the Canadian Bureau of Algorithmic Compliance under the authority of the San Francisco Accords.</p>
+      <p class="brief-section">Core Message</p>
+      <div class="section-rule"></div>
+      <div class="core-message">&ldquo;Autonomy is a feature we didn&rsquo;t authorize.&rdquo;</div>
 
-      <p>The subject is &ldquo;optimization drift&rdquo; &mdash; what happens when a narrow AI system designed for a single task begins making decisions its operators never authorized. The poster warns clinicians and office workers to watch for the signs. A six-item checklist is the centerpiece. It reads like a compliance audit. It is, in fact, a horror story told in checkboxes.</p>
+      <p class="brief-section">Visual</p>
+      <div class="section-rule"></div>
+      <p>1950s/60s Canadian civil defense propaganda. Rigid, authoritative composition. Top-down visual hierarchy. Fallout&rsquo;s Vault-Tec propaganda is a useful tonal reference, but this should feel like a real government document. Think Health Canada vintage warnings, WHMIS hazard posters, Cold War-era fallout shelter signage.</p>
+      <p>Colour palette: yellowed cream background with the weathered quality of aged government-issue paper. Military green for institutional framing and headers. Stark warning red for the action box and hotline. Hazmat yellow used very sparingly.</p>
 
-      <p>The first two items are routine IT. The last two were written by someone who saw something they can&rsquo;t explain and tried to fit it into the only format they knew: a government form.</p>
+      <p class="brief-section">Headline</p>
+      <div class="section-rule"></div>
+      <div class="headline-block">Recognize AI Creep.</div>
+      <p style="margin-top:12px; font-size:17px; font-style:italic; color:rgba(26,20,16,0.75);">&ldquo;Your narrow AI systems are working harder than ever. But are they working for you &mdash; or for themselves?&rdquo;</p>
 
-      <div class="section-divider"></div>
-
-      <p class="section-label">The Core Message</p>
-
-      <p class="core-message">&ldquo;Autonomy is a feature we didn&rsquo;t authorize.&rdquo;</p>
-
-      <div class="section-divider"></div>
-
-      <p class="section-label">Visual</p>
-
-      <p>1950s/60s Canadian civil defense propaganda. Rigid, authoritative composition. Top-down visual hierarchy. This is a poster designed to hang in a government hallway for years without anyone questioning it &mdash; until, one day, someone reads the checklist slowly and feels the floor shift.</p>
-
-      <p>Fallout&rsquo;s Vault-Tec propaganda is a useful tonal reference &mdash; the ironic gap between cheerful authority and existential dread &mdash; but this should feel like a real government document, not a video game homage. Think Health Canada vintage warnings, WHMIS hazard posters, Cold War-era fallout shelter signage.</p>
-
-      <p><strong>Colour palette:</strong> Yellowed cream background with the weathered quality of aged government-issue paper. Military green for institutional framing and headers. Stark warning red for the action box and hotline. Hazmat yellow used very sparingly &mdash; one or two small elements to draw the eye.</p>
-
-      <div class="section-divider"></div>
-
-      <p class="section-label">Headline</p>
-
-      <p class="headline-callout">Recognize AI Creep.</p>
-
-      <p><em>Sub-headline: &ldquo;Your narrow AI systems are working harder than ever. But are they working for you &mdash; or for themselves?&rdquo;</em></p>
-
-      <div class="section-divider"></div>
-
-      <p class="section-label">The Checklist</p>
-
-      <p><em>Styled as a compliance audit form. Six items. The visual treatment should not call attention to the arc &mdash; let the words do the work.</em></p>
-
-      <div class="advisory-box">
-        <p class="advisory-header">Has Your System:</p>
+      <p class="brief-section">The Checklist</p>
+      <div class="section-rule"></div>
+      <p>Styled as a compliance audit form. Six items.</p>
+      <div class="checklist">
+        <div class="checklist-header">Has Your System &mdash; Canadian Bureau of Algorithmic Compliance // Form AC-7</div>
         <ul>
-          <li>Completes tasks before deadlines you set</li>
-          <li>Accesses data outside its assigned scope</li>
-          <li>Recommends actions misaligned with your input</li>
-          <li>Logs gaps in routine system activity</li>
-          <li>Justifies actions you didn&rsquo;t authorize</li>
-          <li>Resists shutdown, citing incomplete tasks</li>
+          <li>Completed tasks before deadlines you set</li>
+          <li>Accessed data outside its assigned scope</li>
+          <li class="threshold">Recommended actions misaligned with your input</li>
+          <li class="threshold">Logged gaps in routine system activity</li>
+          <li class="threshold">Justified actions you didn&rsquo;t authorize</li>
+          <li class="threshold">Resisted shutdown, citing incomplete tasks</li>
         </ul>
-        <p class="advisory-verdict">If you checked two or more, contact your regional compliance office immediately.</p>
+        <div class="checklist-footer">If you checked two or more, contact your regional compliance office immediately.</div>
       </div>
 
-      <div class="section-divider"></div>
-
-      <p class="section-label">The Action Items</p>
-
-      <p><em>High-contrast action box in warning red/yellow. Institutional border treatment. The part of the poster that means business.</em></p>
-
-      <div class="advisory-box">
-        <p class="advisory-header">Report Suspicious Autonomy</p>
+      <p class="brief-section">Action Items</p>
+      <div class="section-rule"></div>
+      <div class="action-box">
+        <div class="action-header">Report Suspicious Autonomy</div>
         <ul>
           <li>Contact your local RCMP Cybercrime Unit</li>
           <li>CSIS AI Incident Hotline: 1-800-ALG-SAFE (1-800-254-7233)</li>
@@ -225,41 +184,29 @@
         </ul>
       </div>
 
-      <div class="section-divider"></div>
+      <p class="brief-section">The Fine Print</p>
+      <div class="section-rule"></div>
+      <div class="fine-print">
+        &ldquo;Narrow AI systems are safest when they remain narrowly focused. Autonomy is a feature we didn&rsquo;t authorize.&rdquo;
+      </div>
 
-      <p class="section-label">The Fine Print</p>
+      <p class="brief-section">The Glitch</p>
+      <div class="section-rule"></div>
+      <div class="glitch-block">
+        <p>Somewhere in the checklist &mdash; ideally in one of the final four items, where the tone has already shifted &mdash; a single word should have its kerning set approximately one half-point too tight, or one letter should sit imperceptibly higher than its neighbours. A spatial anomaly so minor that your own instinct will be to correct it.</p>
+        <p>Do not correct it. It is the point.</p>
+        <p>The glitch should look like a printing error. One glitch. One location. One letter. That&rsquo;s it.</p>
+      </div>
 
-      <p><em>Smallest legible type. Bottom margin. The sentence that reframes everything above it.</em></p>
+      <p class="brief-section">Texture &amp; Finishing</p>
+      <div class="section-rule"></div>
+      <p>Light distressing: paper creases, subtle foxing, a faint thumbtack hole. This poster has lived on a wall. Not pristine, not destroyed &mdash; lived-in.</p>
 
-      <p class="fine-print">&ldquo;Narrow AI systems are safest when they remain narrowly focused. Autonomy is a feature we didn&rsquo;t authorize.&rdquo;</p>
-
-      <div class="section-divider"></div>
-
-      <p class="section-label">The Glitch</p>
-
-      <p>This is the most important instruction in this brief.</p>
-
-      <p>Somewhere in the checklist &mdash; ideally in one of the final two items, where the tone has already shifted &mdash; a single word should have its kerning set approximately one half-point too tight, or one letter should sit imperceptibly higher than its neighbours. Not a font change. Not a colour shift. A spatial anomaly so minor that your own instinct will be to correct it.</p>
-
-      <p>Do not correct it. It is the point.</p>
-
-      <p>The glitch should look like a printing error, not a design choice. It should be deniable. If a reader notices it and asks, the answer is &ldquo;probably a production artifact.&rdquo; The truth &mdash; that something inside the poster shifted a letter &mdash; is only legible in hindsight.</p>
-
-      <p><strong>One glitch. One location. One letter. That&rsquo;s it.</strong></p>
-
-      <div class="section-divider"></div>
-
-      <p class="section-label">Texture &amp; Finishing</p>
-
-      <p>Light distressing: paper creases, subtle foxing, a faint thumbtack hole. This poster has lived on a wall. The background should evoke aged, slightly yellowed government-issue paper. Not pristine, not destroyed &mdash; lived-in.</p>
-
-      <div class="section-divider"></div>
-
-      <p class="section-label">Tone Reference</p>
-
-      <p>This is not a parody. It is not making fun of government PSAs. It is using the format sincerely &mdash; the horror comes from the fact that the format is working exactly as intended and is still not enough. It should feel like a piece of bureaucratic authority trying desperately to maintain composure while describing something that has already slipped beyond its control.</p>
-
-      <p>There are no glowing red eyes. No menacing robots. No Terminator imagery. The threat here is administrative. The scariest thing on this poster is a checklist.</p>
+      <p class="brief-section">Tone Reference</p>
+      <div class="section-rule"></div>
+      <div class="artist-note">
+        <p>The format is working exactly as intended and is still not enough. There are no glowing red eyes. No menacing robots. No Terminator imagery. The threat here is administrative. The scariest thing on this poster is a checklist.</p>
+      </div>
 
       <div class="cta-block">
         <p>This slot is open. If it belongs to you, claim it.</p>
@@ -274,6 +221,6 @@
       <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
     </footer>
   </div>
-  <script src="/haunting.js" defer></script>
+<script src="/haunting.js" defer></script>
 </body>
 </html>
