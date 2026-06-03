@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTOUNDING TALES &mdash; Creative Brief: Elmvale Drive-In Theatre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f5f0e8; color: #1a1410; font-family: 'EB Garamond', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
+    .masthead { text-align: center; }
+    .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
+    .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
+    .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
+    .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); text-align: center; margin: 20px 0; }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
+    .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
+    .prose p { margin-bottom: 18px; }
+    .prose em { font-style: italic; }
+
+    .brief-section { margin-top: 36px; margin-bottom: 4px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(26,20,16,0.45); }
+    .section-rule { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.15) 0%, rgba(26,20,16,0.15) 60%, transparent); margin-bottom: 16px; }
+
+    /* Dual layer — two columns side by side */
+    .dual-layer {
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .layer-item {
+      padding: 16px 18px;
+      border: 1px solid rgba(26,20,16,0.12);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    .layer-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(26,20,16,0.4);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    /* Colour palette */
+    .colour-block { margin: 16px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .colour-item { padding: 12px 16px; background: rgba(26,20,16,0.03); border: 1px solid rgba(26,20,16,0.1); font-size: 16px; line-height: 1.5; }
+    .colour-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(26,20,16,0.4); display: block; margin-bottom: 4px; }
+
+    /* Ad copy block */
+    .copy-block { margin: 16px 0; padding: 20px 24px; border-left: 2px solid rgba(26,20,16,0.18); font-size: 17px; line-height: 1.7; }
+    .copy-block p { margin-bottom: 10px; }
+    .copy-block p:last-child { margin-bottom: 0; }
+
+    /* Fine print */
+    .fine-print { margin: 16px 0; padding: 16px 20px; background: rgba(26,20,16,0.03); border: 1px solid rgba(26,20,16,0.1); font-size: 13px; line-height: 1.65; color: rgba(26,20,16,0.7); font-style: italic; }
+
+    /* Artist note */
+    .artist-note { margin: 16px 0; padding: 18px 22px; border: 1px solid rgba(26,20,16,0.12); background: rgba(26,20,16,0.02); font-size: 16px; line-height: 1.7; font-style: italic; color: rgba(26,20,16,0.75); }
+    .artist-note p { margin-bottom: 10px; }
+    .artist-note p:last-child { margin-bottom: 0; }
+
+    .cta-block { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.15); }
+    .cta-block p { font-style: italic; color: rgba(26,20,16,0.7); margin-bottom: 12px; font-size: 18px; line-height: 1.75; }
+    .cta-block a.cta-link { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: #1a1410; text-decoration: none; border: 1px solid rgba(26,20,16,0.3); padding: 12px 24px; display: inline-block; transition: border-color 0.2s ease, background 0.2s ease; }
+    .cta-block a.cta-link:hover { border-color: #1a1410; background: rgba(26,20,16,0.04); }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    .back { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.6); text-decoration: none; display: inline-block; margin-bottom: 20px; padding: 10px 18px; border: 2px solid rgba(26,20,16,0.3); transition: color 0.15s, border-color 0.15s, background-color 0.15s; }
+    .back:hover { color: #1a1410; border-color: #1a1410; background-color: rgba(26,20,16,0.05); }
+    footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
+    footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
+    footer a.email:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="rule-thick"></div>
+      <span class="page-title">Fake Ad #3 &mdash; Elmvale Drive-In Theatre</span>
+      <div class="rule-thin"></div>
+      <p class="tagline">Astounding Tales &mdash; Issue Two &mdash; Full-Page Advertisement</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="prose">
+
+      <p class="brief-section">Position</p>
+      <div class="section-rule"></div>
+      <p>This ad must feel deeply personal, warm, and nostalgic, making the underlying decay land on an emotional level. Not an intellectual one.</p>
+
+      <p class="brief-section">The Assignment</p>
+      <div class="section-rule"></div>
+      <p>A full-page vintage advertisement for the Elmvale Drive-In Theatre, styled as a late-1970s local newspaper or amusement-page insert. Earnest, high-energy, exclamation-heavy. The real promotional language of rural Ontario entertainment in that era. It should look like something folded inside a 1979 <em>Barrie Examiner</em>.</p>
+
+      <p class="brief-section">The Dual-Layer Concept</p>
+      <div class="section-rule"></div>
+      <p>Two timelines occupy the same frame. The technique is rotoscoping: a vibrant 1970s comic-book illustration painted over a modern photograph of the abandoned drive-in. The memory is the ghost. The decay is the ground.</p>
+      <div class="dual-layer">
+        <div class="layer-item">
+          <span class="layer-label">Base Layer &mdash; Photograph</span>
+          A modern photograph of the Elmvale Drive-In site as it exists today. Cracked asphalt, overgrown weeds, rusted structural posts, a concrete snack bar shell. The empty, dead lot. This is the truth underneath everything.
+        </div>
+        <div class="layer-item">
+          <span class="layer-label">Illustrated Layer &mdash; Rotoscoped</span>
+          A vibrant, stylised 1970s comic-book illustration drawn directly over the photograph. A packed lot of period-correct vehicles — station wagons, muscle cars, custom-painted vans. Families, couples, kids on car hoods. Warmth, community, summer. This layer is dominant. It is what the reader sees first.
+        </div>
+      </div>
+      <p>The illustrated nostalgia commands attention, but the photographic reality bleeds through underneath — visible in the gaps, at the edges, in places where the illustration thins. The thing that isn&rsquo;t real anymore is demanding your attention. The thing that is real is the quiet ground beneath it.</p>
+
+      <p class="brief-section">Colour Palette</p>
+      <div class="section-rule"></div>
+      <div class="colour-block">
+        <div class="colour-item"><span class="colour-label">Illustrated Layer</span>Warm, saturated 1970s tones. Burnt oranges, mustard yellows, deep twilight blues and purples. Glowing projected light. Neon pops against dusk.</div>
+        <div class="colour-item"><span class="colour-label">Photo Layer</span>Muted, desaturated. Grays, weathered rust browns, pale overgrown greens bleeding through like a fading memory.</div>
+      </div>
+
+      <p class="brief-section">The CMYK Trick</p>
+      <div class="section-rule"></div>
+      <p>The illustrated layer should carry standard period print artifacts: halftone dot patterning, slight ink bleed at edges, faintly yellowed paper tone. Use CMYK registration shifts on the illustrated layer — slightly misaligned colour separations, the kind of registration error common in cheap 1970s newspaper printing.</p>
+      <p>On first glance it reads as authentic period character. On closer inspection the misalignment reveals the photographic base beneath. The nostalgic illustration is the thing that&rsquo;s slipping. The reality underneath is stable.</p>
+
+      <p class="brief-section">The Screen</p>
+      <div class="section-rule"></div>
+      <div class="dual-layer">
+        <div class="layer-item">
+          <span class="layer-label">Illustrated Layer</span>
+          The screen displays original, pulpy 1970s-style drive-in poster art for the double feature: a massive jaw or fin breaking dark water for <em>Blood Tide</em>; a cracked containment pod leaking light for <em>Specimen</em>. Fictional B-movies that exist only within the Astounding Tales universe.
+        </div>
+        <div class="layer-item">
+          <span class="layer-label">Photo Layer</span>
+          The screen projects only a harsh, empty white glow. Structurally intact — the one element that survived — but with nothing to show and no one to show it to. Still lit. This is the most important detail: everything around the screen died, but the projection surface didn&rsquo;t.
+        </div>
+      </div>
+
+      <p class="brief-section">Ad Copy</p>
+      <div class="section-rule"></div>
+      <div class="copy-block">
+        <p><strong>Elmvale Drive-In Theatre! Where Movie Magic Comes Alive!</strong></p>
+        <p>Tonight&rsquo;s Double Feature:<br>
+        <em>Blood Tide</em> &mdash; &ldquo;The Water Remembers.&rdquo;<br>
+        <em>Specimen</em> &mdash; &ldquo;They Brought It Back. It Brought Itself to Life.&rdquo;<br>
+        In Blazing Colour &amp; Stereophonic Sound!</p>
+        <p>Carload Special &mdash; $4.00! &nbsp; Giant Snack Bar &mdash; Popcorn, Hot Dogs, Cola!<br>
+        Gates Open at 7:30 &mdash; Show Starts at Sunset!<br>
+        Bring the Family! Enjoy the Night!<br>
+        Fri &mdash; Sat &mdash; Sun &mdash; Rain or Clear Skies!</p>
+      </div>
+
+      <p class="brief-section">The Fine Print</p>
+      <div class="section-rule"></div>
+      <div class="fine-print">
+        Hwy 27, Elmvale, ON &nbsp;// &nbsp;FRI&ndash;SAT&ndash;SUN | SUNSET. Showtimes subject to seasonal shift. No outside food permitted. Management is not responsible for items left in vehicles, fading projection quality, or structural anomalies appearing on screen after midnight. Sound broadcast via AM radio or traditional in-car speakers where available. Keep your headlights off during the performance. Some memories may linger after the gates close.
+      </div>
+
+      <p class="brief-section">Artist Notes</p>
+      <div class="section-rule"></div>
+      <div class="artist-note">
+        <p>The photo is the foundation — every structural element in the illustration should map to a real element in the photo. Reference historical photos of the drive-in&rsquo;s screen and lot. The screen is the most important element. Let the photo bleed through at the edges and margins.</p>
+        <p>Period accuracy: 1979 vehicles, 1970s fashion, Highway 27, Ontario plates, Canadian snack bar items.</p>
+        <p>Tone: sad. The decay is the inevitable passage of time. The emotional pull comes from seeing a space completely full of life and completely empty at the exact same time, in the exact same frame.</p>
+      </div>
+
+      <div class="cta-block">
+        <p>This slot is open. If it belongs to you, claim it.</p>
+        <a href="submit.html" class="cta-link">Claim This Slot &rarr;</a>
+      </div>
+
+    </div>
+
+    <footer>
+      <a href="issue2.html" class="back">&larr; Return to Issue Two</a>
+      <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+      <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
+    </footer>
+  </div>
+<script src="/haunting.js" defer></script>
+</body>
+</html>
