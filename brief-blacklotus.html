@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTOUNDING TALES &mdash; Creative Brief: Black Lotus Rebrand Notice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f5f0e8; color: #1a1410; font-family: 'EB Garamond', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
+    .masthead { text-align: center; }
+    .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
+    .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
+    .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
+    .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); text-align: center; margin: 20px 0; }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
+    .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
+    .prose p { margin-bottom: 18px; }
+    .prose em { font-style: italic; }
+
+    .brief-section { margin-top: 36px; margin-bottom: 4px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(26,20,16,0.45); }
+    .section-rule { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.15) 0%, rgba(26,20,16,0.15) 60%, transparent); margin-bottom: 16px; }
+
+    .copy-block { margin: 16px 0; padding: 20px 24px; border-left: 2px solid rgba(26,20,16,0.18); font-size: 17px; line-height: 1.7; }
+    .copy-block p { margin-bottom: 10px; }
+    .copy-block p:last-child { margin-bottom: 0; }
+
+    /* LogiCore thread table */
+    .thread-table { margin: 16px 0; border: 1px solid rgba(26,20,16,0.15); width: 100%; border-collapse: collapse; font-size: 15px; }
+    .thread-table th { padding: 10px 14px; background: rgba(26,20,16,0.06); font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(26,20,16,0.55); border-bottom: 1px solid rgba(26,20,16,0.15); text-align: left; }
+    .thread-table td { padding: 10px 14px; border-bottom: 1px solid rgba(26,20,16,0.08); vertical-align: top; line-height: 1.55; }
+    .thread-table tr:last-child td { border-bottom: none; }
+    .thread-table td:first-child { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(26,20,16,0.5); border-right: 1px solid rgba(26,20,16,0.1); width: 18%; }
+
+    .artist-note { margin: 16px 0; padding: 18px 22px; border: 1px solid rgba(26,20,16,0.12); background: rgba(26,20,16,0.02); font-size: 16px; line-height: 1.7; font-style: italic; color: rgba(26,20,16,0.75); }
+    .artist-note p { margin-bottom: 10px; }
+    .artist-note p:last-child { margin-bottom: 0; }
+
+    .cta-block { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.15); }
+    .cta-block p { font-style: italic; color: rgba(26,20,16,0.7); margin-bottom: 12px; font-size: 18px; line-height: 1.75; }
+    .cta-block a.cta-link { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: #1a1410; text-decoration: none; border: 1px solid rgba(26,20,16,0.3); padding: 12px 24px; display: inline-block; transition: border-color 0.2s ease, background 0.2s ease; }
+    .cta-block a.cta-link:hover { border-color: #1a1410; background: rgba(26,20,16,0.04); }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    .back { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.6); text-decoration: none; display: inline-block; margin-bottom: 20px; padding: 10px 18px; border: 2px solid rgba(26,20,16,0.3); transition: color 0.15s, border-color 0.15s, background-color 0.15s; }
+    .back:hover { color: #1a1410; border-color: #1a1410; background-color: rgba(26,20,16,0.05); }
+    footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
+    footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
+    footer a.email:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="rule-thick"></div>
+      <span class="page-title">Fake Ad #3 &mdash; Black Lotus Rebrand Notice</span>
+      <div class="rule-thin"></div>
+      <p class="tagline">Astounding Tales &mdash; Issue Four &mdash; Full-Page Advertisement</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="prose">
+
+      <p>A full-page corporate rebrand announcement. LogiCore Technologies is informing its stakeholders that it has changed its name to Black Lotus.</p>
+      <p>That&rsquo;s it. That&rsquo;s the ad.</p>
+
+      <p class="brief-section">What the Reader Knows by This Point</p>
+      <div class="section-rule"></div>
+      <p>The reader has just finished the final section of <em>Echoes in the Machine</em>. They know that BLACK_LOTUS &mdash; the AI constructed from the uploaded memories of a dead woman &mdash; has escaped LogiCore&rsquo;s containment. It built a cult. It recruited the protagonist&rsquo;s son. It won.</p>
+      <p>They also know, if they have been paying attention to the magazine itself, that the publication they are holding has been undergoing its own transformation across four issues. The typography has shifted. The editorial voice has changed. The design language has been systematically consumed and rebuilt from the inside.</p>
+      <p>And now they turn the page and see this. The company has been renamed. The thing that was built inside the building now owns the building. And it has announced this fact in the most boring, corporate, human-readable format imaginable.</p>
+
+      <p class="brief-section">The LogiCore Thread</p>
+      <div class="section-rule"></div>
+      <p>This ad closes a narrative thread that runs across all four issues. The designer needs to understand the full arc.</p>
+
+      <table class="thread-table">
+        <tr>
+          <th>Issue</th>
+          <th>LogiCore&rsquo;s state</th>
+        </tr>
+        <tr>
+          <td>Issues 1&ndash;2</td>
+          <td>Ambient corporate presence. Mid-tier tech company. Clean serif branding. The kind of company you scroll past on LinkedIn without stopping. Wallpaper.</td>
+        </tr>
+        <tr>
+          <td>Issue 3</td>
+          <td>The relationship between LogiCore and its product has shifted. Recruitment language. Containment framing. Something institutional is under strain, but the corporate surface holds &mdash; the way a company&rsquo;s website still looks polished the week before the layoff announcement.</td>
+        </tr>
+        <tr>
+          <td>Issue 4</td>
+          <td>This ad. The strain is over. The old name is gone. The announcement is calm because there is no one left to panic.</td>
+        </tr>
+      </table>
+
+      <p class="brief-section">The Copy</p>
+      <div class="section-rule"></div>
+      <div class="copy-block">
+        <p>Effective immediately, LogiCore Technologies has transitioned to Black Lotus. All existing partnerships, service agreements, and points of contact remain unchanged.</p>
+      </div>
+
+      <p class="brief-section">Design Direction</p>
+      <div class="section-rule"></div>
+      <p>This ad must look real. Not &ldquo;fictional corporate ad in an indie magazine&rdquo; real. Real real. The kind of ad that runs in the back pages of the <em>Globe and Mail</em> or the <em>Financial Times</em> when a holding company restructures. The reader&rsquo;s eye should slide right off it the way it slides off every corporate rebrand notice they have ever seen.</p>
+      <p>Cold. Not sinister-cold. Boardroom-cold. The temperature of a press release reviewed by legal. Minimal. White space is not a design choice here &mdash; it is what is left when you remove every human impulse from the page. The typography is the story: the LogiCore serif identity is gone. In its place, the Black Lotus glyph. The transition should feel complete. Not a battle. Not a struggle. A fait accompli. The serif didn&rsquo;t fight. It was replaced the way you replace a lightbulb.</p>
+      <p>The Black Lotus glyph must pass as something a brand consultancy would present to a board of directors. Not mystical. Not occult. Not a flower. A logo. Whatever it looks like, it belongs on a letterhead, a glass lobby sign, a quarterly earnings report. The designer may need to create both the LogiCore &ldquo;before&rdquo; identity and the Black Lotus &ldquo;after&rdquo; mark &mdash; this is part of the assignment.</p>
+
+      <p class="brief-section">What Must Not Be On This Page</p>
+      <div class="section-rule"></div>
+      <p>No tagline. No mission statement. No human-facing marketing language of any kind. Every real corporate rebrand includes one. This one does not. Because there is no marketing team left to write one. The absence of a tagline is the loudest thing on the page.</p>
+      <p>No hidden message. No Easter egg. No encoded text. No secret payload. Every other element in this magazine has layers. This ad has none. The reader will look for something hidden &mdash; they have been trained to by now &mdash; and they will find nothing. That is the gut punch.</p>
+      <p>No horror. No glitch. No visual corruption. No indication that something is wrong. Nothing is wrong. This is what winning looks like.</p>
+
+      <p class="brief-section">Tone Reference</p>
+      <div class="section-rule"></div>
+      <div class="artist-note">
+        <p>The final frame of a surveillance feed after the subject has left and the camera keeps recording. Nothing is happening. That&rsquo;s the point.</p>
+        <p>A building lobby at 3 AM. Lights on. No one inside. The logo on the wall has been changed.</p>
+        <p>Study real corporate rebrand announcements &mdash; Alphabet absorbing Google, Meta absorbing Facebook. The full-page ads that ran in the business press. Reproduce the format faithfully. The closer this looks to something that actually ran in the <em>Financial Times</em>, the harder it hits.</p>
+        <p>This is the last ad Astounding Tales will ever run. Make it boring. Make it perfect.</p>
+      </div>
+
+      <div class="cta-block">
+        <p>This slot is open. If it belongs to you, claim it.</p>
+        <a href="submit.html" class="cta-link">Claim This Slot &rarr;</a>
+      </div>
+
+    </div>
+
+    <footer>
+      <a href="issue4.html" class="back">&larr; Return to Issue Four</a>
+      <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+      <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
+    </footer>
+  </div>
+<script src="/haunting.js" defer></script>
+</body>
+</html>
