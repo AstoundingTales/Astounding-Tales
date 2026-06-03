@@ -32,6 +32,7 @@
       max-width: 700px;
       padding: 48px 40px 64px;
     }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
     .masthead { text-align: center; }
     .page-title {
       width: 100%;
@@ -73,7 +74,9 @@
     }
     ul.toc { list-style: none; border-top: 1px solid rgba(26,20,16,0.2); }
     ul.toc li { border-bottom: 1px solid rgba(26,20,16,0.15); }
-    ul.toc li a, ul.toc li.filled, ul.toc li.claimed, ul.toc li.open {
+    ul.toc li a,
+    ul.toc li.filled > span.toc-row,
+    ul.toc li.claimed > span.toc-row {
       display: flex;
       align-items: baseline;
       padding: 13px 0;
@@ -87,7 +90,7 @@
     ul.toc li a:hover { color: #3a0a04; padding-left: 6px; }
     ul.toc li.filled { opacity: 0.38; }
     ul.toc li.filled .toc-title { text-decoration: line-through; text-decoration-color: rgba(26,20,16,0.3); }
-    ul.toc li.claimed { opacity: 0.38; }
+    ul.toc li.claimed > a { opacity: 0.45; }
     ul.toc li.claimed .toc-title { text-decoration: line-through; text-decoration-color: rgba(26,20,16,0.3); }
     ul.toc li.claimed .toc-status { color: rgba(26,20,16,0.3); }
     .toc-title { flex: 1; }
@@ -192,21 +195,119 @@
   </header>
 
   <ul class="toc">
-    <li><a href="brief-cover-3.html"><span class="toc-title">Cover Art &mdash; The Antlers (Wraparound Front &amp; Back Cover)</span><span class="toc-status">Open</span></a></li>
-    <li class="claimed"><span class="toc-title">Table of Contents</span><span class="toc-status">Pending Design</span></li>
-    <li class="claimed"><span class="toc-title">From the Editor&rsquo;s Desk</span><span class="toc-status">Not Written</span></li>
-    <li><a href="brief-hydro.html"><span class="toc-title">Fake Ad #1 &mdash; Ontario Hydro, 1969</span><span class="toc-status">Open</span></a></li>
-    <li><a href="brief-pirates-1.html"><span class="toc-title">Pirates of Georgian Bay &mdash; Part 1: &ldquo;The Bay&rdquo; (6&ndash;8 Pages)</span><span class="toc-status">Open</span></a></li>
-    <li><a href="brief-echoes-ch17-18.html"><span class="toc-title">Echoes in the Machine Ch. 17&ndash;18 &mdash; Section Art</span><span class="toc-status">Open</span></a></li>
-    <li><a href="brief-tapd.html"><span class="toc-title">Fake Ad #2 &mdash; &ldquo;TAPD&rdquo; PSA</span><span class="toc-status">Open</span></a></li>
-    <li><a href="brief-boneshore.html"><span class="toc-title">The Bone Shore &mdash; Short Story Splash Art</span><span class="toc-status">Open</span></a></li>
-    <li><a href="brief-echoes-ch19-20.html"><span class="toc-title">Echoes in the Machine Ch. 19&ndash;20 &mdash; Section Art</span><span class="toc-status">Open</span></a></li>
-    <li><a href="brief-neurolink.html"><span class="toc-title">Fake Ad #3 &mdash; NeuroLink Direct&trade; BCI</span><span class="toc-status">Open</span></a></li>
-    <li><a href="brief-pirates-2.html"><span class="toc-title">Pirates of Georgian Bay &mdash; Part 2: &ldquo;The Passage&rdquo; (6&ndash;8 Pages)</span><span class="toc-status">Open</span></a></li>
-    <li><a href="brief-logicore-recruitment.html"><span class="toc-title">Fake Ad #4 &mdash; LogiCore Recruitment</span><span class="toc-status">Open</span></a></li>
-    <li><a href="brief-echoes-ch21-22.html"><span class="toc-title">Echoes in the Machine Ch. 21&ndash;22 &mdash; Section Art</span><span class="toc-status">Open</span></a></li>
-    <li class="claimed"><span class="toc-title">Letters From the Future</span><span class="toc-status">Not Written</span></li>
-    <li><a href="brief-pirates-3.html"><span class="toc-title">Pirates of Georgian Bay &mdash; Part 3: &ldquo;The Signal&rdquo; (6&ndash;8 Pages)</span><span class="toc-status">Open</span></a></li>
+
+    <!-- 1. Front Cover -->
+    <li>
+      <a href="brief-cover-3.html">
+        <span class="toc-title">Cover Art &mdash; Wraparound Artwork (Front &amp; Back Cover)</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 2. From the Editor's Desk -->
+    <li class="filled">
+      <span class="toc-row">
+        <span class="toc-title">From the Editor&rsquo;s Desk</span>
+        <span class="toc-status">Filled</span>
+      </span>
+    </li>
+
+    <!-- 3. Table of Contents -->
+    <li class="filled">
+      <span class="toc-row">
+        <span class="toc-title">Table of Contents</span>
+        <span class="toc-status">Filled</span>
+      </span>
+    </li>
+
+    <!-- 4. Fake Ad #1 — Ontario Hydro -->
+    <li>
+      <a href="brief-ontariohydro.html">
+        <span class="toc-title">Fake Ad #1 &mdash; Ontario Hydro, Douglas Point, 1969</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 5. Pirates of Nottawasaga Pt. 3 -->
+    <li>
+      <a href="brief-pirates-3.html">
+        <span class="toc-title">Pirates of Nottawasaga &mdash; Part Three, 6-Page Comic</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 6. Echoes Ch. 17–19 -->
+    <li>
+      <a href="brief-echoes-ch17-19.html">
+        <span class="toc-title">Echoes in the Machine, Ch. 17&ndash;19 &mdash; Splash Art</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 7. Fake Ad #2 — TAPD PSA -->
+    <li>
+      <a href="brief-tapd.html">
+        <span class="toc-title">Fake Ad #2 &mdash; &ldquo;TAPD&rdquo; PSA</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 8. The Bone Shore (Short Story) -->
+    <li>
+      <a href="brief-boneshore.html">
+        <span class="toc-title">The Bone Shore &mdash; Short Story, Splash Art</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 9. Echoes Ch. 20–21 -->
+    <li>
+      <a href="brief-echoes-ch20-21.html">
+        <span class="toc-title">Echoes in the Machine, Ch. 20&ndash;21 &mdash; Splash Art</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 10. Fake Ad #3 — LogiCore Recruitment -->
+    <li>
+      <a href="brief-logicore-recruitment.html">
+        <span class="toc-title">Fake Ad #3 &mdash; LogiCore Recruitment</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 11. Pursuit (Comic) -->
+    <li>
+      <a href="brief-pursuit.html">
+        <span class="toc-title">Pursuit &mdash; 5-Page Comic</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 12. Echoes Ch. 22–24 -->
+    <li>
+      <a href="brief-echoes-ch22-24.html">
+        <span class="toc-title">Echoes in the Machine, Ch. 22&ndash;24 &mdash; Splash Art</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 13. Letters From the Future -->
+    <li class="filled">
+      <span class="toc-row">
+        <span class="toc-title">Letters From the Future</span>
+        <span class="toc-status">Filled</span>
+      </span>
+    </li>
+
+    <!-- 14. Back Cover -->
+    <li class="filled">
+      <span class="toc-row">
+        <span class="toc-title">Back Cover &mdash; Wraparound Artwork (see Front Cover Brief)</span>
+        <span class="toc-status">Filled</span>
+      </span>
+    </li>
+
   </ul>
 
   <div class="prose" style="margin-top:36px;">
@@ -221,5 +322,6 @@
   </footer>
 
 </div>
-<script src="/haunting.js" defer></script></body>
+<script src="/haunting.js" defer></script>
+</body>
 </html>
