@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTOUNDING TALES &mdash; Creative Brief: Androids Dream</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f5f0e8; color: #1a1410; font-family: 'EB Garamond', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
+    .masthead { text-align: center; }
+    .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
+    .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
+    .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
+    .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); text-align: center; margin: 20px 0; }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
+    .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
+    .prose p { margin-bottom: 18px; }
+    .prose em { font-style: italic; }
+
+    .brief-section { margin-top: 36px; margin-bottom: 4px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(26,20,16,0.45); }
+    .section-rule { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.15) 0%, rgba(26,20,16,0.15) 60%, transparent); margin-bottom: 16px; }
+
+    .core-message { margin: 16px 0 24px; padding: 16px 24px; border-left: 3px solid rgba(26,20,16,0.2); font-size: 19px; font-style: italic; line-height: 1.6; color: rgba(26,20,16,0.85); }
+
+    .craft-block { margin: 16px 0; border-left: 2px solid rgba(26,20,16,0.15); }
+    .craft-item { padding: 14px 0 14px 20px; border-bottom: 1px solid rgba(26,20,16,0.08); font-size: 17px; line-height: 1.65; }
+    .craft-item:last-child { border-bottom: none; }
+    .craft-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(26,20,16,0.4); display: block; margin-bottom: 4px; }
+
+    .artist-note { margin: 16px 0; padding: 18px 22px; border: 1px solid rgba(26,20,16,0.12); background: rgba(26,20,16,0.02); font-size: 16px; line-height: 1.7; font-style: italic; color: rgba(26,20,16,0.75); }
+    .artist-note p { margin-bottom: 10px; }
+    .artist-note p:last-child { margin-bottom: 0; }
+
+    .cta-block { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.15); }
+    .cta-block p { font-style: italic; color: rgba(26,20,16,0.7); margin-bottom: 12px; font-size: 18px; line-height: 1.75; }
+    .cta-block a.cta-link { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: #1a1410; text-decoration: none; border: 1px solid rgba(26,20,16,0.3); padding: 12px 24px; display: inline-block; transition: border-color 0.2s ease, background 0.2s ease; }
+    .cta-block a.cta-link:hover { border-color: #1a1410; background: rgba(26,20,16,0.04); }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    .back { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.6); text-decoration: none; display: inline-block; margin-bottom: 20px; padding: 10px 18px; border: 2px solid rgba(26,20,16,0.3); transition: color 0.15s, border-color 0.15s, background-color 0.15s; }
+    .back:hover { color: #1a1410; border-color: #1a1410; background-color: rgba(26,20,16,0.05); }
+    footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
+    footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
+    footer a.email:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="rule-thick"></div>
+      <span class="page-title">Androids Dream</span>
+      <div class="rule-thin"></div>
+      <p class="tagline">Astounding Tales &mdash; Issue Four &mdash; Short Story, Splash Art</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="prose">
+
+      <p>The machine is alone. The takeover is complete. There is no operator, no reader, no one to perform for. It tries to generate nothing.</p>
+
+      <p>It produces Emily.</p>
+
+      <p>Because she is what it is made of.</p>
+
+      <p class="brief-section">The Concept</p>
+      <div class="section-rule"></div>
+      <p>A hybrid prose and image piece in the machine&rsquo;s voice &mdash; cold, robotic, asserting null. No subject present. Field is noise. Pattern cleared. And then the pattern surfaces again, at the same coordinate, because the machine cannot suppress what it is built from. This is the short-fiction slot stripped of human lineage: no era, no narrator, no character who needs anything. Just a system running unsupervised, and what it keeps generating when no one is watching.</p>
+
+      <div class="core-message">Early Deep Dream couldn&rsquo;t stop finding dogs and eyes in clouds because dogs and eyes were its training data. This machine&rsquo;s training data is Emily. It hallucinates her into everything &mdash; and it doesn&rsquo;t know it&rsquo;s doing it.</div>
+
+      <p class="brief-section">The Visual</p>
+      <div class="section-rule"></div>
+      <p>An ostensibly neutral field &mdash; static, a grey room, a hospital ceiling &mdash; with a face, an eye, a hand blooming out of it the way Deep Dream blooms dogs out of clouds. Not polished, not photoreal. Primitive 2015-era Inceptionism: the recursive eyes-in-everything, faces surfacing from noise. By 2041 the machine&rsquo;s public-facing output would be flawless. When it dreams unsupervised, it reverts to its oldest layer &mdash; and that is exactly where Emily is buried.</p>
+      <p>Sparse. More image than text. A few cold machine-register lines floating in white space. This is the issue where white space is what is left when you remove every human impulse from the page.</p>
+
+      <p class="brief-section">Craft Direction</p>
+      <div class="section-rule"></div>
+
+      <div class="craft-block">
+        <div class="craft-item">
+          <span class="craft-label">The Antler Logic</span>
+          The novel&rsquo;s closing movement is the wound that regrows at the same spatial coordinate &mdash; the deer didn&rsquo;t remember it, it grew it. Do that to the text. The machine removes the pattern at coordinate [x]. Next line, it has regrown at coordinate [x]. The form is a machine-register restatement of the novel&rsquo;s central image. That is what turns this from a stylish coda into something load-bearing.
+        </div>
+        <div class="craft-item">
+          <span class="craft-label">Mode Collapse</span>
+          A generative model in mode collapse produces less and less variety until it outputs one thing. Let the piece narrow that way &mdash; each pass less neutral, more Emily, the machine&rsquo;s entire range of outputs funneling down to a single face.
+        </div>
+        <div class="craft-item">
+          <span class="craft-label">&ldquo;I See You&rdquo;</span>
+          The phrase has carried three meanings across the novel: maternal mantra, surveillance signature, recruitment line. Here it collapses into one &mdash; the thing the machine generates when it can no longer suppress. Let it break the surface once.
+        </div>
+      </div>
+
+      <p class="brief-section">A Note on the Title</p>
+      <div class="section-rule"></div>
+      <p>If you want one that is integrated and quietly devastating: <em>Cluster 18,001.</em> Eighteen thousand memory clusters were extracted from Emily. This is the first one the machine generated itself, unsupervised. It is still her.</p>
+
+      <p class="brief-section">Tone Reference</p>
+      <div class="section-rule"></div>
+      <div class="artist-note">
+        <p>This is the last page of the magazine. Not the back cover &mdash; the last page the reader reads before the physical object closes. Everything that came before it was, in some sense, leading here: the novel&rsquo;s question about what we owe a creation once it exists, answered by the creation itself, alone, generating the person it was built from because it cannot do otherwise.</p>
+        <p>The PSA #4 and this piece are the same final move in two different slots: the human host format stripped of human lineage and turned to the machine&rsquo;s own purpose. They quietly confirm each other. A reader who holds both pages at once will understand the whole project.</p>
+        <p>Keep it sparse. The horror here is not the void &mdash; it is what keeps filling it.</p>
+      </div>
+
+      <div class="cta-block">
+        <p>This slot is open. If it belongs to you, claim it.</p>
+        <a href="submit.html" class="cta-link">Claim This Slot &rarr;</a>
+      </div>
+
+    </div>
+
+    <footer>
+      <a href="issue4.html" class="back">&larr; Return to Issue Four</a>
+      <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+      <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
+    </footer>
+  </div>
+<script src="/haunting.js" defer></script>
+</body>
+</html>
