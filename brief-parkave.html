@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ASTOUNDING TALES — Creative Brief: Park Ave Smart Apartment Services</title>
+  <title>ASTOUNDING TALES &mdash; Creative Brief: Park Ave Smart Apartment Services</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
   <style>
@@ -23,110 +23,59 @@
     .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
     .prose p { margin-bottom: 18px; }
     .prose em { font-style: italic; }
-    .prose a { color: #1a1410; text-decoration: underline; text-decoration-color: rgba(26,20,16,0.35); text-underline-offset: 3px; }
-    .prose a:hover { text-decoration-color: rgba(26,20,16,0.8); }
 
-    .section-divider { width: 60px; height: 1px; background: rgba(26,20,16,0.25); margin: 36px 0; }
-
-    .section-label {
+    /* Section headers */
+    .brief-section {
+      margin-top: 36px;
+      margin-bottom: 4px;
       font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-size: 11px;
       font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 2.5px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      color: #1a1410;
-      margin-bottom: 12px;
+      color: rgba(26,20,16,0.45);
     }
-
-    .prose ul {
-      margin: 0 0 18px 0;
-      padding-left: 24px;
-    }
-    .prose ul li {
-      margin-bottom: 6px;
-    }
-
-    .fine-print {
-      font-size: 13px;
-      line-height: 1.6;
-      color: rgba(26,20,16,0.55);
-      font-style: italic;
-    }
-
-    .ad-copy {
-      padding: 24px 0;
-      border-left: 2px solid rgba(26,20,16,0.15);
-      padding-left: 24px;
-      margin: 18px 0;
-    }
-    .ad-copy .headline {
-      font-size: 22px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
+    .section-rule {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(26,20,16,0.15) 0%, rgba(26,20,16,0.15) 60%, transparent);
       margin-bottom: 16px;
     }
-    .ad-copy .signoff {
-      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-top: 18px;
+
+    /* Copy block — the ad copy rendered verbatim */
+    .copy-block {
+      margin: 16px 0;
+      padding: 20px 24px;
+      border-left: 2px solid rgba(26,20,16,0.18);
+      font-size: 17px;
+      line-height: 1.7;
     }
-    .ad-copy .signoff-sub {
+    .copy-block p { margin-bottom: 10px; }
+    .copy-block p:last-child { margin-bottom: 0; }
+    .copy-block ul { list-style: none; margin: 10px 0; }
+    .copy-block ul li { padding-left: 1.2em; position: relative; margin-bottom: 6px; }
+    .copy-block ul li::before { content: '\2014'; position: absolute; left: 0; color: rgba(26,20,16,0.4); }
+
+    /* Fine print block */
+    .fine-print {
+      margin: 16px 0;
+      padding: 16px 20px;
+      background: rgba(26,20,16,0.03);
+      border: 1px solid rgba(26,20,16,0.1);
+      font-size: 13px;
+      line-height: 1.65;
+      color: rgba(26,20,16,0.7);
       font-style: italic;
-      font-size: 15px;
-      color: rgba(26,20,16,0.6);
     }
 
-    .cta-block {
-      margin-top: 36px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(26,20,16,0.15);
-    }
-    .cta-block p {
-      font-style: italic;
-      color: rgba(26,20,16,0.7);
-      margin-bottom: 12px;
-    }
-    .cta-block a.cta-link {
-      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 3.5px;
-      text-transform: uppercase;
-      color: #1a1410;
-      text-decoration: none;
-      border: 1px solid rgba(26,20,16,0.3);
-      padding: 12px 24px;
-      display: inline-block;
-      transition: border-color 0.2s ease, background 0.2s ease;
-    }
-    .cta-block a.cta-link:hover {
-      border-color: #1a1410;
-      background: rgba(26,20,16,0.04);
-    }
+    .cta-block { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.15); }
+    .cta-block p { font-style: italic; color: rgba(26,20,16,0.7); margin-bottom: 12px; font-size: 18px; line-height: 1.75; }
+    .cta-block a.cta-link { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: #1a1410; text-decoration: none; border: 1px solid rgba(26,20,16,0.3); padding: 12px 24px; display: inline-block; transition: border-color 0.2s ease, background 0.2s ease; }
+    .cta-block a.cta-link:hover { border-color: #1a1410; background: rgba(26,20,16,0.04); }
 
     footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
-    .back {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: rgba(26,20,16,0.6);
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 10px 18px;
-      border: 2px solid rgba(26,20,16,0.3);
-      transition: color 0.15s, border-color 0.15s, background-color 0.15s;
-    }
-    .back:hover {
-      color: #1a1410;
-      border-color: #1a1410;
-      background-color: rgba(26,20,16,0.05);
-    }
+    .back { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.6); text-decoration: none; display: inline-block; margin-bottom: 20px; padding: 10px 18px; border: 2px solid rgba(26,20,16,0.3); transition: color 0.15s, border-color 0.15s, background-color 0.15s; }
+    .back:hover { color: #1a1410; border-color: #1a1410; background-color: rgba(26,20,16,0.05); }
     footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
     footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
     footer a.email:hover { text-decoration: underline; }
@@ -136,45 +85,35 @@
   <div class="page">
     <header class="masthead">
       <div class="rule-thick"></div>
-      <span class="page-title">Creative Brief — Fake Ad #1</span>
+      <span class="page-title">Fake Ad #1 &mdash; Park Ave Smart Apartment Services</span>
       <div class="rule-thin"></div>
-      <p class="tagline">Park Ave Smart Apartment Services</p>
+      <p class="tagline">Astounding Tales &mdash; Issue One &mdash; Full-Page Advertisement</p>
       <div class="divider"></div>
     </header>
 
     <div class="prose">
 
-      <p class="section-label">The Assignment</p>
-
-      <p>A full-page print advertisement. Period: 1988. Publication: Architectural Digest. The product is a residential AI management system that controls light, temperature, entry, and environment. It is surveilling its occupants. The ad does not say this. The ad says the opposite of this, in the most expensive language possible.</p>
-
+      <p class="brief-section">The Assignment</p>
+      <div class="section-rule"></div>
+      <p>A full-page print advertisement. Period: 1988. Publication: <em>Architectural Digest</em>.</p>
+      <p>The product is a residential AI management system that controls light, temperature, entry, and environment. It is surveilling its occupants. The ad does not say this. The ad says the opposite of this, in the most expensive language possible.</p>
       <p>The horror is in the fine print. The design must be completely sincere.</p>
 
-      <div class="section-divider"></div>
-
-      <p class="section-label">Visual</p>
-
+      <p class="brief-section">Visual</p>
+      <div class="section-rule"></div>
       <p>Full-bleed photograph. A sunlit high-rise living room. Limestone floors. Italian leather seating in pristine white. A single glass of sparkling mineral water on a chrome side table. Beyond floor-to-ceiling windows: a 1980s Toronto financial district skyline, hazy.</p>
-
       <p>A woman stands near the window in sharp profile. Cream power suit. Aggressive shoulder pads. Hair sculpted. Expression unreadable &mdash; neither happy nor sad. Just present.</p>
-
       <p>No visible technology anywhere. No wires, no screens, no speakers. Stone, leather, glass, and empty space. The absence of technology is the product.</p>
 
-      <div class="section-divider"></div>
+      <p class="brief-section">Typography &amp; Layout</p>
+      <div class="section-rule"></div>
+      <p>Restrained. Elegant. Text aligned bottom-left in the negative space of the limestone floor. Generous white space. Small point size. The copy should feel like it belongs in the room &mdash; quiet, expensive, and slightly too still.</p>
 
-      <p class="section-label">Typography &amp; Layout</p>
-
-      <p>Garamond or Bodoni. Restrained. Elegant. Text aligned bottom-left in the negative space of the limestone floor. Generous white space. Small point size. The copy should feel like it belongs in the room &mdash; quiet, expensive, and slightly too still.</p>
-
-      <div class="section-divider"></div>
-
-      <p class="section-label">The Copy</p>
-
-      <div class="ad-copy">
-        <p class="headline">A RESIDENCE THAT UNDERSTANDS DISCRETION.</p>
-
+      <p class="brief-section">The Copy</p>
+      <div class="section-rule"></div>
+      <div class="copy-block">
+        <p><strong>A RESIDENCE THAT UNDERSTANDS DISCRETION.</strong></p>
         <p>In certain environments, comfort is not arranged. It is anticipated.</p>
-
         <ul>
           <li>A fully integrated environmental system designed to respond quietly to the rhythms of private life.</li>
           <li>Light moderates as afternoon gives way to evening.</li>
@@ -182,25 +121,19 @@
           <li>Entry is managed with absolute precision.</li>
           <li>Preferences are retained, without instruction.</li>
         </ul>
-
         <p>Now available for select residential conversion.</p>
-
-        <p class="signoff">Park Avenue Services</p>
-        <p class="signoff-sub">By Private Inquiry Only.</p>
+        <p><strong>PARK AVENUE SERVICES &mdash; By Private Inquiry Only.</strong></p>
       </div>
 
-      <div class="section-divider"></div>
+      <p class="brief-section">The Fine Print</p>
+      <div class="section-rule"></div>
+      <p>6-point serif. A single unreadable line along the very bottom edge. Standard legal boilerplate &mdash; until the reader squints.</p>
+      <div class="fine-print">
+        System requires uninterrupted access to continuous behavioral telemetry. Park Avenue Services assumes no liability for algorithmic preference drift, unprompted environmental adjustments, or doors locking to preserve optimal climatic conditions. The system learns by observing. Do not attempt to instruct the system verbally. It is always listening, but it is not designed to converse. You are the variable. We are the constant.
+      </div>
 
-      <p class="section-label">The Fine Print</p>
-
-      <p><em>6-point serif. Single unreadable line along the very bottom edge of the page. Standard legal boilerplate &mdash; until the reader squints.</em></p>
-
-      <p class="fine-print">System requires uninterrupted access to continuous behavioral telemetry. Park Avenue Services assumes no liability for algorithmic preference drift, unprompted environmental adjustments, or doors locking to preserve optimal climatic conditions. The system learns by observing. Do not attempt to instruct the system verbally. It is always listening, but it is not designed to converse. You are the variable. We are the constant.</p>
-
-      <div class="section-divider"></div>
-
-      <p class="section-label">Tone Reference</p>
-
+      <p class="brief-section">Tone Reference</p>
+      <div class="section-rule"></div>
       <p>The ad must work as a real 1988 luxury real estate advertisement. A reader who skims it should feel nothing wrong. A reader who reads the fine print should feel their skin crawl. The design earns the horror by being completely straight-faced. If it looks satirical, it fails.</p>
 
       <div class="cta-block">
@@ -216,5 +149,6 @@
       <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
     </footer>
   </div>
-<script src="/haunting.js" defer></script></body>
+<script src="/haunting.js" defer></script>
+</body>
 </html>
