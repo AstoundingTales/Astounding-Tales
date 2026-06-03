@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ASTOUNDING TALES — Creative Brief: Dead Channels</title>
+  <title>ASTOUNDING TALES &mdash; Creative Brief: Dead Channels</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
   <style>
@@ -24,54 +24,65 @@
     .prose p { margin-bottom: 18px; }
     .prose em { font-style: italic; }
 
-    .cta-block {
-      margin-top: 36px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(26,20,16,0.15);
+    .brief-section { margin-top: 36px; margin-bottom: 4px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(26,20,16,0.45); }
+    .section-rule { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.15) 0%, rgba(26,20,16,0.15) 60%, transparent); margin-bottom: 16px; }
+
+    /* Scene map — compositional elements as a structured list */
+    .scene-map {
+      margin: 16px 0;
+      border-left: 2px solid rgba(26,20,16,0.15);
     }
-    .cta-block p {
-      font-style: italic;
-      color: rgba(26,20,16,0.7);
-      margin-bottom: 12px;
+    .scene-map .scene-item {
+      padding: 12px 0 12px 20px;
+      border-bottom: 1px solid rgba(26,20,16,0.08);
+      font-size: 17px;
+      line-height: 1.65;
     }
-    .cta-block a.cta-link {
-      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 3.5px;
+    .scene-map .scene-item:last-child { border-bottom: none; }
+    .scene-map .scene-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      color: #1a1410;
-      text-decoration: none;
-      border: 1px solid rgba(26,20,16,0.3);
-      padding: 12px 24px;
-      display: inline-block;
-      transition: border-color 0.2s ease, background 0.2s ease;
-    }
-    .cta-block a.cta-link:hover {
-      border-color: #1a1410;
-      background: rgba(26,20,16,0.04);
+      color: rgba(26,20,16,0.4);
+      display: block;
+      margin-bottom: 4px;
     }
 
-    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
-    .back {
+    /* Colour palette swatches as text blocks */
+    .colour-block {
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .colour-item {
+      padding: 12px 16px;
+      background: rgba(26,20,16,0.03);
+      border: 1px solid rgba(26,20,16,0.1);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .colour-item .colour-label {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 13px;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 2.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      color: rgba(26,20,16,0.6);
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 10px 18px;
-      border: 2px solid rgba(26,20,16,0.3);
-      transition: color 0.15s, border-color 0.15s, background-color 0.15s;
+      color: rgba(26,20,16,0.4);
+      display: block;
+      margin-bottom: 4px;
     }
-    .back:hover {
-      color: #1a1410;
-      border-color: #1a1410;
-      background-color: rgba(26,20,16,0.05);
-    }
+
+    .cta-block { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.15); }
+    .cta-block p { font-style: italic; color: rgba(26,20,16,0.7); margin-bottom: 12px; font-size: 18px; line-height: 1.75; }
+    .cta-block a.cta-link { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: #1a1410; text-decoration: none; border: 1px solid rgba(26,20,16,0.3); padding: 12px 24px; display: inline-block; transition: border-color 0.2s ease, background 0.2s ease; }
+    .cta-block a.cta-link:hover { border-color: #1a1410; background: rgba(26,20,16,0.04); }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    .back { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.6); text-decoration: none; display: inline-block; margin-bottom: 20px; padding: 10px 18px; border: 2px solid rgba(26,20,16,0.3); transition: color 0.15s, border-color 0.15s, background-color 0.15s; }
+    .back:hover { color: #1a1410; border-color: #1a1410; background-color: rgba(26,20,16,0.05); }
     footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
     footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
     footer a.email:hover { text-decoration: underline; }
@@ -81,21 +92,59 @@
   <div class="page">
     <header class="masthead">
       <div class="rule-thick"></div>
-      <span class="page-title">Splash Art &mdash; Dead Channels</span>
+      <span class="page-title">Dead Channels</span>
       <div class="rule-thin"></div>
-      <p class="tagline">Astounding Tales &mdash; Issue One &mdash; Short Story</p>
+      <p class="tagline">Astounding Tales &mdash; Issue One &mdash; Short Story, Splash Art</p>
       <div class="divider"></div>
     </header>
 
     <div class="prose">
 
-      <p><em>The machines can generate ten thousand basement studios in ten seconds. They are very good at the texture of obsession. They have never felt it.</em></p>
+      <p class="brief-section">The Assignment</p>
+      <div class="section-rule"></div>
+      <p>One full-page interior splash. The reader&rsquo;s first entry point into the story. The subject is Benn, a painter-turned-audio-forensics obsessive, mid-session in a cold basement studio, injecting hidden spectral data into an analog recording. We never see his face.</p>
+      <p>Tone: cyberpunk noir. Tactile, grimy, obsessive. Someone has been awake for days. High-end cinematic storyboard meets cheap pulp print stock.</p>
 
-      <p><em>Dead Channels is enclosed. One full-page splash &mdash; the reader&rsquo;s first entry point into the story.</em></p>
+      <p class="brief-section">Composition</p>
+      <div class="section-rule"></div>
+      <p>Over-the-shoulder POV. Benn is hunched forward, back to camera. One hand rests on a mixing console fader. The other reaches, not touching, toward the screen. The figure anchors the lower frame. Everything above belongs to the monitors.</p>
 
-      <p><em>If you need more, send a transmission.</em></p>
+      <div class="scene-map">
+        <div class="scene-item">
+          <span class="scene-label">Centre Monitor &mdash; Focal Point</span>
+          A large audio spectrogram split by a horizontal threshold line. Above: clean, rolling waveforms, the legitimate recording. Below: violent, jagged data chaos, the ghost layer, the hidden signal. The title DEAD CHANNELS is embedded within the chaotic spikes. Readable only if you look for it. Byline beneath as terminal metadata text: [Author Name] // SESSION 4 // TAKE 7
+        </div>
+        <div class="scene-item">
+          <span class="scene-label">Lower Third</span>
+          A vintage reel-to-reel tape machine. Tape threaded through the heads. The tape box label is clearly visible, handwritten: Session 4, Take 7. Bass and drums only. Do not distribute.
+        </div>
+        <div class="scene-item">
+          <span class="scene-label">Workbench</span>
+          Tangled cables. A soldering iron on its stand, tip glowing orange. Exposed circuit boards. The detritus of someone building something they shouldn&rsquo;t.
+        </div>
+        <div class="scene-item">
+          <span class="scene-label">Background</span>
+          Dark edges, deep shadow. Barely visible in the furthest corner: a large blank canvas on an easel. It has been blank for a long time.
+        </div>
+        <div class="scene-item">
+          <span class="scene-label">Hidden Detail</span>
+          On the glass of one side monitor, a faint reflection: smears of burnt sienna and cadmium red. The ghost of a painting called <em>Threshold</em>. It is the only warmth in the frame. The artist will know what it means. The casual reader may not notice it at all.
+        </div>
+      </div>
 
-      <p><em>&mdash; R.H.</em></p>
+      <p class="brief-section">Colour &amp; Light</p>
+      <div class="section-rule"></div>
+      <p>There is no overhead light. Everything is sourced from the equipment. The room exists only because the machines are on.</p>
+      <div class="colour-block">
+        <div class="colour-item"><span class="colour-label">Room</span>Deep shadow-blue, slate grey, black.</div>
+        <div class="colour-item"><span class="colour-label">Monitor Glow</span>Icy cyan-green.</div>
+        <div class="colour-item"><span class="colour-label">Analog Gear</span>Amber, orange. VU meters, solder tip.</div>
+        <div class="colour-item"><span class="colour-label">Painting Reflection</span>Faint red. The only warmth in the frame.</div>
+      </div>
+
+      <p class="brief-section">Tone Reference</p>
+      <div class="section-rule"></div>
+      <p>The image should feel like forensic evidence of an obsession. Clinical. The horror is in the precision of the workbench, the deliberateness of the setup, the blank canvas no one is looking at. Benn is completely focused. That is the problem.</p>
 
       <div class="cta-block">
         <p>This slot is open. If it belongs to you, claim it.</p>
@@ -110,5 +159,6 @@
       <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
     </footer>
   </div>
-<script src="/haunting.js" defer></script></body>
+<script src="/haunting.js" defer></script>
+</body>
 </html>
