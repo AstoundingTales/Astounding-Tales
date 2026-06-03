@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTOUNDING TALES &mdash; Creative Brief: Ontario Hydro, Douglas Point, 1969</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f5f0e8; color: #1a1410; font-family: 'EB Garamond', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
+    .masthead { text-align: center; }
+    .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
+    .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
+    .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
+    .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); text-align: center; margin: 20px 0; }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
+    .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
+    .prose p { margin-bottom: 18px; }
+    .prose em { font-style: italic; }
+
+    .brief-section { margin-top: 36px; margin-bottom: 4px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(26,20,16,0.45); }
+    .section-rule { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.15) 0%, rgba(26,20,16,0.15) 60%, transparent); margin-bottom: 16px; }
+
+    .headline-block { margin: 16px 0; font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #1a1410; }
+
+    .copy-block { margin: 16px 0; padding: 20px 24px; border-left: 2px solid rgba(26,20,16,0.18); font-size: 17px; line-height: 1.7; }
+    .copy-block p { margin-bottom: 10px; }
+    .copy-block p:last-child { margin-bottom: 0; }
+
+    .fine-print { margin: 16px 0; padding: 16px 20px; background: rgba(26,20,16,0.03); border: 1px solid rgba(26,20,16,0.1); font-size: 13px; line-height: 1.65; color: rgba(26,20,16,0.7); font-style: italic; }
+
+    .artist-note { margin: 16px 0; padding: 18px 22px; border: 1px solid rgba(26,20,16,0.12); background: rgba(26,20,16,0.02); font-size: 16px; line-height: 1.7; font-style: italic; color: rgba(26,20,16,0.75); }
+    .artist-note p { margin-bottom: 10px; }
+    .artist-note p:last-child { margin-bottom: 0; }
+
+    .cta-block { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.15); }
+    .cta-block p { font-style: italic; color: rgba(26,20,16,0.7); margin-bottom: 12px; font-size: 18px; line-height: 1.75; }
+    .cta-block a.cta-link { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: #1a1410; text-decoration: none; border: 1px solid rgba(26,20,16,0.3); padding: 12px 24px; display: inline-block; transition: border-color 0.2s ease, background 0.2s ease; }
+    .cta-block a.cta-link:hover { border-color: #1a1410; background: rgba(26,20,16,0.04); }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    .back { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.6); text-decoration: none; display: inline-block; margin-bottom: 20px; padding: 10px 18px; border: 2px solid rgba(26,20,16,0.3); transition: color 0.15s, border-color 0.15s, background-color 0.15s; }
+    .back:hover { color: #1a1410; border-color: #1a1410; background-color: rgba(26,20,16,0.05); }
+    footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
+    footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
+    footer a.email:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="rule-thick"></div>
+      <span class="page-title">Fake Ad #1 &mdash; Ontario Hydro, Douglas Point, 1969</span>
+      <div class="rule-thin"></div>
+      <p class="tagline">Astounding Tales &mdash; Issue Three &mdash; Full-Page Advertisement</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="prose">
+
+      <p class="brief-section">Position</p>
+      <div class="section-rule"></div>
+      <p>This is the one ad in the magazine that is almost real. Everything else in this issue wears its era as a costume. This one is the era. A genuine aesthetic, a genuine company, a genuine moment of Canadian civic pride &mdash; and a shoreline that will appear again in this same issue, under a different light, after something has already gone wrong with it. The horror here is not in the design. It is in what the reader will understand the second time they look at the beach.</p>
+
+      <p class="brief-section">The Assignment</p>
+      <div class="section-rule"></div>
+      <p>A full-page print advertisement. Period: 1969. Format: the high-budget corporate boosterism of the era &mdash; think General Electric, think Westinghouse, think the kind of full-colour spread that ran in <em>Maclean&rsquo;s</em> or the <em>Globe and Mail Magazine</em> when a Crown corporation wanted the public to feel proud of something enormous and expensive that was being done on their behalf.</p>
+      <p>The subject is the Douglas Point Nuclear Generating Station on Lake Huron. It has just been synchronized to the Ontario grid. Ontario Hydro is announcing the future. The ad is completely sincere. The horror is entirely in the fine print, and the fine print is about the beach.</p>
+
+      <p class="brief-section">Visual</p>
+      <div class="section-rule"></div>
+      <p>Late-1960s corporate illustration style. Clean architectural rendering, optimistic lighting, the idealized drafting-table aesthetic of the atomic age. The Douglas Point reactor dome sits at the centre of the frame, gleaming white, impossibly pristine, on the edge of Lake Huron under a wide open sky.</p>
+      <p>In the foreground: a silhouetted 1960s family &mdash; father, mother, two children &mdash; standing on a beach, pointing toward the facility. The posture is pride. The gesture is inheritance. <em>We built this for you.</em></p>
+      <p>The beach beneath their feet should not look entirely like sand. On close inspection, the texture is subtly wrong &mdash; too pale, too uniform, with a faint chalky, calcified quality. Not obviously wrong. Quietly wrong. The kind of detail a reader notices on the second pass, after they have read the fine print.</p>
+      <p>Colour palette: atomic age pastels. Seafoam greens, bright sky blues, warm golden-hour yellows. The reactor dome a sterile, gleaming white. The palette should feel optimistic without reservation.</p>
+
+      <p class="brief-section">Headline &amp; Copy</p>
+      <div class="section-rule"></div>
+      <div class="headline-block">Tomorrow Is Here. And It&rsquo;s Brighter Than Ever.</div>
+      <div class="copy-block">
+        <p><em>Ontario Hydro welcomes the Douglas Point Nuclear Generating Station.</em></p>
+        <p>The future of the province is powered by the marvel of the atom. With the successful synchronization of the Douglas Point reactor, we are unlocking limitless, clean, and safe energy for every home, business, and community in Ontario. We aren&rsquo;t just splitting the atom &mdash; we&rsquo;re building a foundation for the next century of Canadian prosperity.</p>
+        <p>Safe. Reliable. Boundless.</p>
+      </div>
+
+      <p class="brief-section">The Fine Print</p>
+      <div class="section-rule"></div>
+      <p>Set in the smallest legible serif font available. A dense block along the very bottom edge of the page, indistinguishable in format from standard utility boilerplate. The casual reader will skip it entirely. That is the point.</p>
+      <div class="fine-print">
+        Ontario Hydro is committed to the prosperity of our natural waterways. In accordance with provincial guidelines, continuous environmental monitoring of the Lake Huron aquatic ecosystem is in effect. Public access to the immediate shoreline (Zone 4 &mdash; The Bone Shore) is temporarily restricted pending routine radiological calcification assessments. Anomalous skeletal deposits found on local beaches should be reported to the regional health authority. Do not collect shoreline materials for personal use.
+      </div>
+
+      <p class="brief-section">Tone Reference</p>
+      <div class="section-rule"></div>
+      <p>The ad must be indistinguishable from a real 1969 Ontario Hydro institutional advertisement on a first read. Period accuracy is not a detail &mdash; it is the mechanism. The sincerity of the design is what makes the fine print land. If the ad reads as parody, the fine print reads as a joke. If the ad reads as real, the fine print reads as a document.</p>
+      <p>The scariest sentence on the page is &ldquo;Do not collect shoreline materials for personal use.&rdquo; It should arrive quietly, in 7-point type, after the reader has already admired the dome.</p>
+
+      <p class="brief-section">Artist Notes</p>
+      <div class="section-rule"></div>
+      <div class="artist-note">
+        <p>The beach texture is the single most important visual decision in this piece. It needs to read as normal sand at a glance and as something calcified and wrong up close. The family should not appear to notice. They are pointing at the reactor. They are proud.</p>
+        <p>This ad shares a shoreline with The Bone Shore later in this same issue. The reader who notices the connection is the reader who deserves it. Do not signal the connection. Put it in plain sight.</p>
+        <p>Period reference: the 1960s Ontario Hydro visual identity was clean, confident, and institutional &mdash; the aesthetic of a Crown corporation that believed entirely in what it was doing. That belief is what the ad needs to carry. Doubt does not appear until the fine print, and even then it wears the costume of routine administrative language.</p>
+      </div>
+
+      <div class="cta-block">
+        <p>This slot is open. If it belongs to you, claim it.</p>
+        <a href="submit.html" class="cta-link">Claim This Slot &rarr;</a>
+      </div>
+
+    </div>
+
+    <footer>
+      <a href="issue3.html" class="back">&larr; Return to Issue Three</a>
+      <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+      <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
+    </footer>
+  </div>
+<script src="/haunting.js" defer></script>
+</body>
+</html>
