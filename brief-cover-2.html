@@ -12,19 +12,25 @@
     body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
     .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
     @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
     .masthead { text-align: center; }
     .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
     .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
     .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
     .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); text-align: center; margin: 20px 0; }
     .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
     .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
     .prose p { margin-bottom: 18px; }
+    .prose p:last-child { margin-bottom: 0; }
     .prose em { font-style: italic; }
-    .cta-block { margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.15); }
-    .cta-block p { font-style: italic; color: rgba(26,20,16,0.7); margin-bottom: 12px; }
+    .signature { margin-top: 2em; font-size: 17px; color: rgba(26,20,16,0.65); }
+
+    .cta-block { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.15); }
+    .cta-block p { font-style: italic; color: rgba(26,20,16,0.7); margin-bottom: 12px; font-size: 18px; line-height: 1.75; }
     .cta-block a.cta-link { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: #1a1410; text-decoration: none; border: 1px solid rgba(26,20,16,0.3); padding: 12px 24px; display: inline-block; transition: border-color 0.2s ease, background 0.2s ease; }
     .cta-block a.cta-link:hover { border-color: #1a1410; background: rgba(26,20,16,0.04); }
+
     footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
     .back { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.6); text-decoration: none; display: inline-block; margin-bottom: 20px; padding: 10px 18px; border: 2px solid rgba(26,20,16,0.3); transition: color 0.15s, border-color 0.15s, background-color 0.15s; }
     .back:hover { color: #1a1410; border-color: #1a1410; background-color: rgba(26,20,16,0.05); }
@@ -37,23 +43,22 @@
   <div class="page">
     <header class="masthead">
       <div class="rule-thick"></div>
-      <span class="page-title">Creative Brief &mdash; Wraparound Cover</span>
+      <span class="page-title">Cover Art &mdash; Wraparound Artwork</span>
       <div class="rule-thin"></div>
-      <p class="tagline">Astounding Tales &mdash; Issue Two</p>
+      <p class="tagline">Astounding Tales &mdash; Issue Two &mdash; Front &amp; Back Cover</p>
       <div class="divider"></div>
     </header>
 
     <div class="prose">
 
-      <p><em>This issue contains the continuation of a serialized novel, short fiction, two original comics, and four advertisements for things that do not exist. Between them, something is measured that returns no value.</em></p>
+      <p>The issue is called Value : Null.</p>
+      <p>That is a programming term. It means the system looked for something, found the address where it should be, and returned nothing. The slot exists. The data does not. The architecture is intact. The meaning is gone.</p>
+      <p>I want a cover that understands that condition. The negative space that has a shape. The thing that is present by its absence. Front cover, spine, back cover — one continuous surface. Something measured that returns no value, rendered so precisely that the reader feels the weight of the empty result.</p>
+      <p>I am not telling you what that looks like. If I could tell you, I would not need you.</p>
+      <p>The person who paints this issue is the loudest voice in the room — louder than the writers, louder than me. That has not changed from the first issue. What has changed is the question the cover has to answer. Issue One asked what survives transmission. Issue Two asks what is left when the answer comes back empty.</p>
+      <p>Show me what absence looks like when the system still expects a response.</p>
 
-      <p><em>Your job is to find it and put it on the cover.</em></p>
-
-      <p><em>The issue is called Value: Null. That is not an error. It is an answer. What happens when the system looks for something and finds a space where the data should be? What does absence look like when the architecture still expects a response?</em></p>
-
-      <p><em>Front cover, spine, back cover &mdash; one continuous surface. What you make of that is yours.</em></p>
-
-      <p><em>&mdash; R.H.</em></p>
+      <p class="signature"><em>R.H.</em></p>
 
       <div class="cta-block">
         <p>This slot is open. If it belongs to you, claim it.</p>
@@ -68,5 +73,6 @@
       <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
     </footer>
   </div>
-<script src="/haunting.js" defer></script></body>
+<script src="/haunting.js" defer></script>
+</body>
 </html>
