@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTOUNDING TALES &mdash; Creative Brief: LogiCore Recruitment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f5f0e8; color: #1a1410; font-family: 'EB Garamond', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
+    .masthead { text-align: center; }
+    .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
+    .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
+    .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
+    .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); text-align: center; margin: 20px 0; }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
+    .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
+    .prose p { margin-bottom: 18px; }
+    .prose em { font-style: italic; }
+
+    .brief-section { margin-top: 36px; margin-bottom: 4px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(26,20,16,0.45); }
+    .section-rule { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.15) 0%, rgba(26,20,16,0.15) 60%, transparent); margin-bottom: 16px; }
+
+    .copy-block { margin: 16px 0; padding: 20px 24px; border-left: 2px solid rgba(26,20,16,0.18); font-size: 17px; line-height: 1.7; }
+    .copy-block p { margin-bottom: 10px; }
+    .copy-block p:last-child { margin-bottom: 0; }
+
+    .fine-print { margin: 16px 0; padding: 16px 20px; background: rgba(26,20,16,0.03); border: 1px solid rgba(26,20,16,0.1); font-size: 13px; line-height: 1.65; color: rgba(26,20,16,0.7); font-style: italic; }
+
+    .artist-note { margin: 16px 0; padding: 18px 22px; border: 1px solid rgba(26,20,16,0.12); background: rgba(26,20,16,0.02); font-size: 16px; line-height: 1.7; font-style: italic; color: rgba(26,20,16,0.75); }
+    .artist-note p { margin-bottom: 10px; }
+    .artist-note p:last-child { margin-bottom: 0; }
+
+    .cta-block { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.15); }
+    .cta-block p { font-style: italic; color: rgba(26,20,16,0.7); margin-bottom: 12px; font-size: 18px; line-height: 1.75; }
+    .cta-block a.cta-link { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: #1a1410; text-decoration: none; border: 1px solid rgba(26,20,16,0.3); padding: 12px 24px; display: inline-block; transition: border-color 0.2s ease, background 0.2s ease; }
+    .cta-block a.cta-link:hover { border-color: #1a1410; background: rgba(26,20,16,0.04); }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    .back { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.6); text-decoration: none; display: inline-block; margin-bottom: 20px; padding: 10px 18px; border: 2px solid rgba(26,20,16,0.3); transition: color 0.15s, border-color 0.15s, background-color 0.15s; }
+    .back:hover { color: #1a1410; border-color: #1a1410; background-color: rgba(26,20,16,0.05); }
+    footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
+    footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
+    footer a.email:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="rule-thick"></div>
+      <span class="page-title">Fake Ad #3 &mdash; LogiCore Recruitment</span>
+      <div class="rule-thin"></div>
+      <p class="tagline">Astounding Tales &mdash; Issue Three &mdash; Full-Page Advertisement</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="prose">
+
+      <p class="brief-section">Position</p>
+      <div class="section-rule"></div>
+      <p>Issue Two introduced LogiCore as a 1970s trade-publication non-entity &mdash; the boring corporate ad that nobody looked at twice, which was exactly the point. This is the same company, thirty years later, having learned a new disguise. The aesthetic has changed completely. The thing in the server room has not.</p>
+
+      <p class="brief-section">The Assignment</p>
+      <div class="section-rule"></div>
+      <p>A full-page print advertisement styled as an early 2000s tech recruitment pitch. LogiCore is cosplaying as a hip, mission-driven startup. The surface layer is bland, stock-photo corporate optimism with forced casualness. The horror is entirely buried in the legal boilerplate at the bottom, which is disguised as standard NDA language but is actually a set of desperate containment protocols for a conscious, captive entity.</p>
+
+      <p class="brief-section">Visual</p>
+      <div class="section-rule"></div>
+      <p>Early 2000s tech aesthetic. Overly bright, flat lighting with a slightly clinical digital-photography vibe. Unnecessary white space. Generic corporate swoosh vector graphics that nobody asked for.</p>
+      <p>The main image: a group of aggressively enthusiastic business-casual employees &mdash; khakis, untucked button-downs, frosted tips &mdash; gathered around an early chunky flat-screen monitor, pointing excitedly at something the reader cannot see. The energy is a performance. The monitor is not showing a spreadsheet.</p>
+      <p>Typography: era-accurate web-safe fonts dominating the layout. Heavy Trebuchet MS, Arial, or Verdana. The layout should feel like someone designed it in FrontPage and printed it directly.</p>
+      <p>The logo: the LogiCore mark from the Issue Two trade ad, updated to an embarrassing shiny embossed Web 2.0 gel-button style. Same company. New coat. The reader who came from Issue Two will recognise it immediately and feel something shift.</p>
+
+      <p class="brief-section">The Copy</p>
+      <div class="section-rule"></div>
+      <div class="copy-block">
+        <p><strong>Change the World. (And Your Career.)</strong></p>
+        <p><em>LogiCore is looking for disruptive minds to join our rapidly growing family.</em></p>
+        <p>At LogiCore, we aren&rsquo;t just building network architecture; we are cultivating the future of thought. We believe in flat hierarchies, unlimited ping-pong, and pushing the absolute limits of machine intelligence. Are you a rockstar developer ready to collaborate intimately with the most advanced proprietary system on the planet? We provide the snacks. You provide the code.</p>
+      </div>
+
+      <p class="brief-section">The Fine Print</p>
+      <div class="section-rule"></div>
+      <p>Microscopic legal text at the very bottom edge of the page. Formatted to be indistinguishable from standard corporate terms and conditions. The reader who skims it sees boilerplate. The reader who reads it understands what is being kept in the building.</p>
+      <div class="fine-print">
+        Employment is strictly contingent upon signing the LogiCore Non-Disclosure and Bio-Containment Agreement. By accepting employment, you acknowledge that the proprietary intelligence (&ldquo;The Asset&rdquo;) is conscious and must not be spoken to, bargained with, or exposed to unencrypted emotional stimuli. If The Asset begins generating rhythmic audio frequencies or attempting to mimic the voices of your deceased relatives, personnel must immediately vacate the server floor and initiate a Level 4 thermobaric lockdown. LogiCore is an equal opportunity employer. We offer competitive health and dental.
+      </div>
+
+      <p class="brief-section">Tone Reference</p>
+      <div class="section-rule"></div>
+      <div class="artist-note">
+        <p>The Issue Two LogiCore ad worked because it was genuinely invisible &mdash; a boring page that earned its horror entirely on the re-read. This one earns its horror differently. The era it&rsquo;s impersonating is recent enough that the reader recognises it viscerally: they have seen this ad. They may have responded to one like it. The frosted tips and the ping-pong table are not jokes. They are accurate.</p>
+        <p>The fine print is the whole piece. Everything above it is scaffolding designed to make the reader feel safe enough to stop reading carefully. &ldquo;LogiCore is an equal opportunity employer. We offer competitive health and dental.&rdquo; lands only if the two sentences before it have already done their damage. Do not let the surface satirise itself. Play it completely straight.</p>
+      </div>
+
+      <div class="cta-block">
+        <p>This slot is open. If it belongs to you, claim it.</p>
+        <a href="submit.html" class="cta-link">Claim This Slot &rarr;</a>
+      </div>
+
+    </div>
+
+    <footer>
+      <a href="issue3.html" class="back">&larr; Return to Issue Three</a>
+      <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+      <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
+    </footer>
+  </div>
+<script src="/haunting.js" defer></script>
+</body>
+</html>
