@@ -32,6 +32,7 @@
       max-width: 700px;
       padding: 48px 40px 64px;
     }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
     .masthead { text-align: center; }
     .page-title {
       width: 100%;
@@ -73,7 +74,9 @@
     }
     ul.toc { list-style: none; border-top: 1px solid rgba(26,20,16,0.2); }
     ul.toc li { border-bottom: 1px solid rgba(26,20,16,0.15); }
-    ul.toc li a, ul.toc li.filled, ul.toc li.claimed, ul.toc li.open {
+    ul.toc li a,
+    ul.toc li.filled > span.toc-row,
+    ul.toc li.claimed > span.toc-row {
       display: flex;
       align-items: baseline;
       padding: 13px 0;
@@ -87,10 +90,9 @@
     ul.toc li a:hover { color: #3a0a04; padding-left: 6px; }
     ul.toc li.filled { opacity: 0.38; }
     ul.toc li.filled .toc-title { text-decoration: line-through; text-decoration-color: rgba(26,20,16,0.3); }
-    ul.toc li.claimed { opacity: 0.38; }
+    ul.toc li.claimed > a { opacity: 0.45; }
     ul.toc li.claimed .toc-title { text-decoration: line-through; text-decoration-color: rgba(26,20,16,0.3); }
     ul.toc li.claimed .toc-status { color: rgba(26,20,16,0.3); }
-    ul.toc li.filled:has(a), ul.toc li.claimed:has(a) { padding: 0; }
     .toc-title { flex: 1; }
     .toc-status {
       font-family: 'Barlow Condensed', sans-serif;
@@ -193,21 +195,127 @@
   </header>
 
   <ul class="toc">
-    <li><a href="brief-cover-4.html"><span class="toc-title">Cover Art &mdash; Wraparound Artwork (Front &amp; Back Cover)</span><span class="toc-status">Open</span></a></li>
-    <li class="claimed"><span class="toc-title">From the Editor&rsquo;s Desk</span><span class="toc-status">Not Written</span></li>
-    <li class="claimed"><span class="toc-title">Table of Contents</span><span class="toc-status">Pending Design</span></li>
-    <li><a href="brief-fakead-4-1.html"><span class="toc-title">Fake Ad #1</span><span class="toc-status">Open</span></a></li>
-    <li><a href="brief-pirates-4.html"><span class="toc-title">Pirates of Nottawasaga Pt. 4 &mdash; Comic (6 Pages)</span><span class="toc-status">Open</span></a></li>
-    <li class="claimed"><span class="toc-title">Echoes in the Machine &mdash; Section 1</span><span class="toc-status">In Progress</span></li>
-    <li class="claimed"><a href="brief-aihunter.html"><span class="toc-title">Fake Ad #2 &mdash; &ldquo;Know the Signs of an AI Hunter&rdquo; PSA</span><span class="toc-status">Concept Only</span></a></li>
-    <li class="claimed"><a href="CountryofOrigin.html"><span class="toc-title">Country of Origin &mdash; 8-Page Comic (Script Complete)</span><span class="toc-status">Script Complete</span></a></li>
-    <li class="claimed"><span class="toc-title">Echoes in the Machine &mdash; Section 2</span><span class="toc-status">In Progress</span></li>
-    <li><a href="brief-fakead-4-3.html"><span class="toc-title">Fake Ad #3</span><span class="toc-status">Open</span></a></li>
-    <li class="claimed"><a href="brief-allocated-resources.html"><span class="toc-title">Allocated Resources &mdash; 3-Page Comic (Script Complete)</span><span class="toc-status">Script Complete</span></a></li>
-    <li><a href="brief-fakead-4-4.html"><span class="toc-title">Fake Ad #4</span><span class="toc-status">Open</span></a></li>
-    <li class="claimed"><span class="toc-title">Echoes in the Machine &mdash; Section 3 (End)</span><span class="toc-status">In Progress</span></li>
-    <li class="claimed"><span class="toc-title">Letters From the Future</span><span class="toc-status">Not Written</span></li>
-    <li><a href="brief-cover-4.html"><span class="toc-title">Back Cover</span><span class="toc-status">Open</span></a></li>
+
+    <!-- 1. Front Cover -->
+    <li>
+      <a href="brief-cover-4.html">
+        <span class="toc-title">Cover Art &mdash; Wraparound Artwork (Front &amp; Back Cover)</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 2. From the Editor's Desk -->
+    <li class="filled">
+      <span class="toc-row">
+        <span class="toc-title">From the Editor&rsquo;s Desk</span>
+        <span class="toc-status">Filled</span>
+      </span>
+    </li>
+
+    <!-- 3. Table of Contents -->
+    <li class="filled">
+      <span class="toc-row">
+        <span class="toc-title">Table of Contents</span>
+        <span class="toc-status">Filled</span>
+      </span>
+    </li>
+
+    <!-- 4. Fake Ad #1 — NeuroLink Direct BCI -->
+    <li>
+      <a href="brief-neurolink.html">
+        <span class="toc-title">Fake Ad #1 &mdash; NeuroLink Direct&trade; BCI</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 5. Pirates of Nottawasaga Pt. 4 -->
+    <li>
+      <a href="brief-pirates-4.html">
+        <span class="toc-title">Pirates of Nottawasaga &mdash; Part Four, 6-Page Comic</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 6. Echoes Ch. 25–26 -->
+    <li>
+      <a href="brief-echoes-ch25-26.html">
+        <span class="toc-title">Echoes in the Machine, Ch. 25&ndash;26 &mdash; Splash Art</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 7. Fake Ad #2 — AI Hunter PSA -->
+    <li>
+      <a href="brief-aihunter.html">
+        <span class="toc-title">Fake Ad #2 &mdash; &ldquo;Know the Signs of an AI Hunter&rdquo; PSA</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 8. The Archon (Comic) -->
+    <li>
+      <a href="brief-archon.html">
+        <span class="toc-title">The Archon &mdash; 8-Page Comic</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 9. Echoes Ch. 27–29 -->
+    <li>
+      <a href="brief-echoes-ch27-29.html">
+        <span class="toc-title">Echoes in the Machine, Ch. 27&ndash;29 &mdash; Splash Art</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 10. Allocated Resources (Comic) -->
+    <li>
+      <a href="brief-allocatedresources.html">
+        <span class="toc-title">Allocated Resources &mdash; 3-Page Comic</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 11. Echoes Ch. 30 -->
+    <li>
+      <a href="brief-echoes-ch30.html">
+        <span class="toc-title">Echoes in the Machine, Ch. 30 &mdash; Splash Art</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 12. Fake Ad #3 — Black Lotus Rebrand -->
+    <li>
+      <a href="brief-blacklotus.html">
+        <span class="toc-title">Fake Ad #3 &mdash; Black Lotus Rebrand Notice</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 13. Letters From the Future -->
+    <li class="filled">
+      <span class="toc-row">
+        <span class="toc-title">Letters From the Future</span>
+        <span class="toc-status">Filled</span>
+      </span>
+    </li>
+
+    <!-- 14. Androids Dream (Short Story / Hybrid) -->
+    <li>
+      <a href="brief-androidsdream.html">
+        <span class="toc-title">Androids Dream &mdash; Short Story, Splash Art</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <!-- 15. Back Cover -->
+    <li class="filled">
+      <span class="toc-row">
+        <span class="toc-title">Back Cover &mdash; Wraparound Artwork (see Front Cover Brief)</span>
+        <span class="toc-status">Filled</span>
+      </span>
+    </li>
+
   </ul>
 
   <div class="prose" style="margin-top:36px;">
@@ -222,5 +330,6 @@
   </footer>
 
 </div>
-<script src="/haunting.js" defer></script></body>
+<script src="/haunting.js" defer></script>
+</body>
 </html>
