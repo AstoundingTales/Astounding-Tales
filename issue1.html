@@ -32,6 +32,7 @@
       max-width: 700px;
       padding: 48px 40px 64px;
     }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
     .masthead { text-align: center; }
     .page-title {
       width: 100%;
@@ -73,7 +74,9 @@
     }
     ul.toc { list-style: none; border-top: 1px solid rgba(26,20,16,0.2); }
     ul.toc li { border-bottom: 1px solid rgba(26,20,16,0.15); }
-    ul.toc li a, ul.toc li.filled, ul.toc li.claimed {
+    ul.toc li a,
+    ul.toc li.filled > span.toc-row,
+    ul.toc li.claimed > span.toc-row {
       display: flex;
       align-items: baseline;
       padding: 13px 0;
@@ -87,10 +90,9 @@
     ul.toc li a:hover { color: #3a0a04; padding-left: 6px; }
     ul.toc li.filled { opacity: 0.38; }
     ul.toc li.filled .toc-title { text-decoration: line-through; text-decoration-color: rgba(26,20,16,0.3); }
-    ul.toc li.claimed { opacity: 0.38; }
+    ul.toc li.claimed > a { opacity: 0.45; }
     ul.toc li.claimed .toc-title { text-decoration: line-through; text-decoration-color: rgba(26,20,16,0.3); }
     ul.toc li.claimed .toc-status { color: rgba(26,20,16,0.3); }
-    ul.toc li.filled:has(a), ul.toc li.claimed:has(a) { padding: 0; }
     .toc-title { flex: 1; }
     .toc-status {
       font-family: 'Barlow Condensed', sans-serif;
@@ -193,21 +195,105 @@
   </header>
 
   <ul class="toc">
-    <li><a href="brief-cover.html"><span class="toc-title">Cover Art &mdash; Wraparound Artwork (Front &amp; Back Cover)</span><span class="toc-status">Open</span></a></li>
-    <li class="filled"><span class="toc-title">From the Editor&rsquo;s Desk</span><span class="toc-status">Written</span></li>
-    <li class="claimed"><span class="toc-title">Table of Contents</span><span class="toc-status">Pending Design</span></li>
-    <li class="claimed"><a href="brief-parkave.html"><span class="toc-title">Fake Ad #1 &mdash; Park Ave Smart Apartment Services</span><span class="toc-status">In Progress</span></a></li>
-    <li><a href="brief-pirates-1.html"><span class="toc-title">Pirates of Nottawasaga Pt. 1 &mdash; Comic (6 Pages)</span><span class="toc-status">Open</span></a></li>
-    <li><a href="brief-echoes-ch1-4.html"><span class="toc-title">Echoes in the Machine Ch. 1&ndash;4 &mdash; Section Art</span><span class="toc-status">Open</span></a></li>
-    <li class="claimed"><a href="brief-flostate.html"><span class="toc-title">Fake Ad #2 &mdash; Flo-State Surgeon General&rsquo;s Warning</span><span class="toc-status">In Progress</span></a></li>
-    <li><a href="brief-deadchannels.html"><span class="toc-title">Dead Channels &mdash; Short Story Splash Art</span><span class="toc-status">Open</span></a></li>
-    <li><a href="brief-echoes-ch5-6.html"><span class="toc-title">Echoes in the Machine Ch. 5&ndash;6 &mdash; Section Art</span><span class="toc-status">Open</span></a></li>
-    <li class="claimed"><a href="brief-jacaranda.html"><span class="toc-title">Fake Ad #3 &mdash; Jacaranda by Asmara</span><span class="toc-status">In Progress</span></a></li>
-    <li class="claimed"><a href="brief-factcheck.html"><span class="toc-title">Fact-Check &mdash; Comic (4 Pages)</span><span class="toc-status">Claimed</span></a></li>
-    <li class="claimed"><a href="brief-ge-clockradio.html"><span class="toc-title">Fake Ad #4 &mdash; GE 7-4612BK Clock Radio</span><span class="toc-status">In Progress</span></a></li>
-    <li><a href="brief-echoes-ch7-9.html"><span class="toc-title">Echoes in the Machine Ch. 7&ndash;9 &mdash; Section Art</span><span class="toc-status">Open</span></a></li>
-    <li class="filled"><span class="toc-title">Letters From the Future</span><span class="toc-status">Written</span></li>
-    <li><a href="brief-cover.html"><span class="toc-title">Back Cover &mdash; Wraparound (Connected to Front)</span><span class="toc-status">Open</span></a></li>
+
+    <li>
+      <a href="brief-cover.html">
+        <span class="toc-title">Cover Art &mdash; Wraparound Artwork (Front &amp; Back Cover)</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <li class="filled">
+      <span class="toc-row">
+        <span class="toc-title">From the Editor&rsquo;s Desk</span>
+        <span class="toc-status">Filled</span>
+      </span>
+    </li>
+
+    <li class="filled">
+      <span class="toc-row">
+        <span class="toc-title">Table of Contents</span>
+        <span class="toc-status">Filled</span>
+      </span>
+    </li>
+
+    <li>
+      <a href="brief-parkave.html">
+        <span class="toc-title">Fake Ad #1 &mdash; Park Ave Smart Apartment Services</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="brief-pirates-1.html">
+        <span class="toc-title">Pirates of Nottawasaga &mdash; Part One, 6-Page Comic</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="brief-echoes-ch1-4.html">
+        <span class="toc-title">Echoes in the Machine, Ch. 1&ndash;4 &mdash; Splash Art</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="brief-flostate.html">
+        <span class="toc-title">Fake Ad #2 &mdash; Flo-State Surgeon General&rsquo;s Warning</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="brief-deadchannels.html">
+        <span class="toc-title">Dead Channels &mdash; Short Story, Splash Art</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="brief-echoes-ch5-6.html">
+        <span class="toc-title">Echoes in the Machine, Ch. 5&ndash;6 &mdash; Splash Art</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <li class="claimed">
+      <a href="brief-factcheck.html">
+        <span class="toc-title">Fact-Check &mdash; 4-Page Comic</span>
+        <span class="toc-status">Claimed &mdash; Dave Howlett</span>
+      </a>
+    </li>
+
+    <li class="claimed">
+      <a href="brief-clockradio.html">
+        <span class="toc-title">Fake Ad #3 &mdash; General Entity AM/FM Clock Radio</span>
+        <span class="toc-status">Claimed &mdash; Alyssa McBride</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="brief-echoes-ch7-9.html">
+        <span class="toc-title">Echoes in the Machine, Ch. 7&ndash;9 &mdash; Splash Art</span>
+        <span class="toc-status">Open</span>
+      </a>
+    </li>
+
+    <li class="filled">
+      <span class="toc-row">
+        <span class="toc-title">Letters From the Future</span>
+        <span class="toc-status">Filled</span>
+      </span>
+    </li>
+
+    <li class="filled">
+      <span class="toc-row">
+        <span class="toc-title">Back Cover &mdash; Wraparound Artwork (see Front Cover Brief)</span>
+        <span class="toc-status">Filled</span>
+      </span>
+    </li>
+
   </ul>
 
   <div class="prose" style="margin-top:36px;">
@@ -222,5 +308,6 @@
   </footer>
 
 </div>
-<script src="/haunting.js" defer></script></body>
+<script src="/haunting.js" defer></script>
+</body>
 </html>
