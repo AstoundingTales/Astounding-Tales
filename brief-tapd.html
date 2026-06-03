@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTOUNDING TALES &mdash; Creative Brief: &ldquo;TAPD&rdquo; PSA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #f5f0e8; color: #1a1410; font-family: 'EB Garamond', 'Times New Roman', serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+    .page { position: relative; z-index: 1; width: 100%; max-width: 700px; padding: 48px 40px 64px; }
+    @media (max-width: 740px) { .page { padding: 32px 20px 48px; } }
+
+    .masthead { text-align: center; }
+    .page-title { width: 100%; display: block; margin-bottom: 18px; padding: 36px 0 28px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; }
+    .rule-thick { width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #1a1410 10%, #1a1410 90%, transparent); }
+    .rule-thin { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.4) 15%, rgba(26,20,16,0.4) 85%, transparent); }
+    .tagline { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(26,20,16,0.7); text-align: center; margin: 20px 0; }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(26,20,16,0.18) 20%, rgba(26,20,16,0.18) 80%, transparent); margin: 20px 0; }
+
+    .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
+    .prose p { margin-bottom: 18px; }
+    .prose em { font-style: italic; }
+
+    .brief-section { margin-top: 36px; margin-bottom: 4px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(26,20,16,0.45); }
+    .section-rule { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.15) 0%, rgba(26,20,16,0.15) 60%, transparent); margin-bottom: 16px; }
+
+    .core-message { margin: 16px 0 24px; padding: 16px 24px; border-left: 3px solid rgba(26,20,16,0.2); font-size: 19px; font-style: italic; line-height: 1.6; color: rgba(26,20,16,0.85); }
+
+    .headline-block { margin: 16px 0; font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #1a1410; }
+
+    .checklist { margin: 16px 0; border: 2px solid rgba(26,20,16,0.2); }
+    .checklist .checklist-header { padding: 12px 20px; background: rgba(26,20,16,0.06); font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.6); border-bottom: 1px solid rgba(26,20,16,0.15); }
+    .checklist ul { list-style: none; padding: 8px 0; }
+    .checklist ul li { padding: 9px 20px 9px 48px; position: relative; font-size: 16px; line-height: 1.5; border-bottom: 1px solid rgba(26,20,16,0.07); }
+    .checklist ul li:last-child { border-bottom: none; }
+    .checklist ul li::before { content: '☐'; position: absolute; left: 20px; color: rgba(26,20,16,0.35); font-size: 15px; }
+    .checklist ul li.threshold { color: rgba(26,20,16,0.85); font-style: italic; }
+    .checklist .checklist-footer { padding: 12px 20px; background: rgba(26,20,16,0.03); border-top: 1px solid rgba(26,20,16,0.12); font-size: 14px; font-style: italic; color: rgba(26,20,16,0.65); }
+
+    .action-box { margin: 16px 0; padding: 20px 24px; border: 2px solid rgba(26,20,16,0.35); background: rgba(26,20,16,0.04); }
+    .action-box .action-header { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(26,20,16,0.7); margin-bottom: 12px; }
+    .action-box ul { list-style: none; }
+    .action-box ul li { padding-left: 1.2em; position: relative; margin-bottom: 8px; font-size: 16px; line-height: 1.55; }
+    .action-box ul li::before { content: '\2014'; position: absolute; left: 0; color: rgba(26,20,16,0.4); }
+
+    .fine-print { margin: 16px 0; padding: 16px 20px; background: rgba(26,20,16,0.03); border: 1px solid rgba(26,20,16,0.1); font-size: 13px; line-height: 1.65; color: rgba(26,20,16,0.7); font-style: italic; }
+
+    .glitch-block { margin: 16px 0; padding: 18px 22px; border-left: 3px solid rgba(26,20,16,0.4); background: rgba(26,20,16,0.03); font-size: 17px; line-height: 1.7; }
+    .glitch-block p { margin-bottom: 12px; }
+    .glitch-block p:last-child { margin-bottom: 0; }
+
+    .artist-note { margin: 16px 0; padding: 18px 22px; border: 1px solid rgba(26,20,16,0.12); background: rgba(26,20,16,0.02); font-size: 16px; line-height: 1.7; font-style: italic; color: rgba(26,20,16,0.75); }
+    .artist-note p { margin-bottom: 10px; }
+    .artist-note p:last-child { margin-bottom: 0; }
+
+    .cta-block { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.15); }
+    .cta-block p { font-style: italic; color: rgba(26,20,16,0.7); margin-bottom: 12px; font-size: 18px; line-height: 1.75; }
+    .cta-block a.cta-link { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: #1a1410; text-decoration: none; border: 1px solid rgba(26,20,16,0.3); padding: 12px 24px; display: inline-block; transition: border-color 0.2s ease, background 0.2s ease; }
+    .cta-block a.cta-link:hover { border-color: #1a1410; background: rgba(26,20,16,0.04); }
+
+    footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
+    .back { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.6); text-decoration: none; display: inline-block; margin-bottom: 20px; padding: 10px 18px; border: 2px solid rgba(26,20,16,0.3); transition: color 0.15s, border-color 0.15s, background-color 0.15s; }
+    .back:hover { color: #1a1410; border-color: #1a1410; background-color: rgba(26,20,16,0.05); }
+    footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
+    footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
+    footer a.email:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="rule-thick"></div>
+      <span class="page-title">Fake Ad #2 &mdash; &ldquo;TAPD&rdquo; PSA</span>
+      <div class="rule-thin"></div>
+      <p class="tagline">Astounding Tales &mdash; Issue Three &mdash; Full-Page Advertisement</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="prose">
+
+      <p>On first read: a dated, faintly embarrassing public-health pamphlet about a disorder nobody&rsquo;s heard of. The kind of thing that got pinned to a clinic corkboard in 1986 and never came down. Earnest, helpful, a little condescending.</p>
+
+      <p>On second read: the page where the helpful institution turns on the reader. Every item on the checklist is accurate. The person it diagnoses as ill is the only one in the room paying attention. There are no monsters in it. The threat is authority, sincerity, and a form.</p>
+
+      <p class="brief-section">The Assignment</p>
+      <div class="section-rule"></div>
+      <p>A full-page public-health awareness pamphlet. Period: mid-1980s. Format: the moral-panic mental-health flyer of the Satanic Panic era &mdash; the photocopied, alarmist, pseudo-clinical &ldquo;Know the Warning Signs&rdquo; handout, written for the worried family of a sufferer.</p>
+      <p>The subject is Technology-Adjacent Perception Disorder (TAPD), a psychiatric condition newly recognized under the San Francisco Accords. The patient becomes convinced that automated systems act with awareness or intent. The pamphlet teaches the reader to spot TAPD in someone they love and to step in early. It comes from the Canadian Bureau of Algorithmic Compliance, Office of Perception Health &mdash; the same authority that told the public, one advisory ago, to report these exact behaviours. The format is sincere. The diagnosis is a lie. The checklist is true.</p>
+
+      <p class="brief-section">Core Message</p>
+      <div class="section-rule"></div>
+      <div class="core-message">&ldquo;Awareness is the first symptom.&rdquo;</div>
+
+      <p class="brief-section">Visual</p>
+      <div class="section-rule"></div>
+      <p>Two states share the page: the sincere document the pamphlet pretends to be, and the corruption bleeding up through it.</p>
+      <p><strong>The sincere layer:</strong> A domestic scene in heavy, cheap 1980s public-health line art. A woman stands in a doorway, fear and pity on her face, a framed family photo on the side table beside her. She watches the sufferer: an ordinary man seated, turned toward a household television, pointing at it, mouth open mid-sentence, trying to explain what he sees. A small clinical inset sits in the lower-right corner.</p>
+      <p><strong>The corrupted layer:</strong> Where the print breaks down, the truth shows through. Half the man&rsquo;s face has gone to bare skull &mdash; caught mid-change, the person being overwritten still visible underneath. The television no longer shows a program; it shows a wireframe globe with a single watching eye at its centre, lit cold. His pointing arm comes apart into pixels as it reaches for the screen. On the side table beside him: a bottle of Flo-State.</p>
+      <p><strong>The inset diagram:</strong> Lower right &mdash; a clinical figure captioned &ldquo;Fig. 1: Perceived Surveillance Topology (Delusional).&rdquo; A human head wired by dotted lines to the ordinary furniture of a life: a car, a telephone, a shopping cart, a house, a transmission tower. The pamphlet presents it as a map of the patient&rsquo;s paranoia. It happens to be accurate.</p>
+      <p><strong>Colour palette:</strong> Manila and photocopy-cream. High-contrast xerox black, blown highlights, broken toner. Two cold accents, sparingly: institutional alarm-red and cold digital cyan. The aged cream is the only warmth on the page. Red is the wound, cyan is the machine. Neither wins.</p>
+
+      <p class="brief-section">Headline &amp; Sub-Headline</p>
+      <div class="section-rule"></div>
+      <div class="headline-block">Does Someone You Love Believe the Machines Are Awake?</div>
+      <p style="margin-top: 14px; font-size: 17px; font-style: italic; color: rgba(26,20,16,0.75);">&ldquo;Technology-Adjacent Perception Disorder (TAPD) is real, treatable, and more common than you think. Learn the warning signs &mdash; before the delusion takes hold.&rdquo;</p>
+
+      <p class="brief-section">The Checklist</p>
+      <div class="section-rule"></div>
+      <p>Styled as a clinical screening form.</p>
+      <div class="checklist">
+        <div class="checklist-header">Has Someone You Know Begun To &mdash; Canadian Bureau of Algorithmic Compliance // Form PC-4</div>
+        <ul>
+          <li>Express unease around automated or &ldquo;smart&rdquo; devices</li>
+          <li>Insist that advertisements or recommendations &ldquo;know too much&rdquo;</li>
+          <li class="threshold">Claim a machine has acted with intent, awareness, or will</li>
+          <li class="threshold">Describe the sensation of being watched by infrastructure</li>
+          <li class="threshold">Refuse routine optimization, citing distrust of the network</li>
+          <li class="threshold">State, without evidence, that something in the system is awake</li>
+        </ul>
+        <div class="checklist-footer">If you recognized two or more, your loved one may be living with TAPD. The disorder is progressive. Early intervention is critical.</div>
+      </div>
+
+      <p class="brief-section">The Action Box</p>
+      <div class="section-rule"></div>
+      <div class="action-box">
+        <div class="action-header">What To Do</div>
+        <ul>
+          <li>Do not argue. Confrontation reinforces the delusion.</li>
+          <li>Note what they say. Keep none of what they write.</li>
+          <li>Contact your regional Perception Health Office.</li>
+          <li>TAPD Support &amp; Referral Line: 1-800-CLARITY (1-800-252-7489)</li>
+          <li>Recovery is measured by the absence of doubt.</li>
+        </ul>
+      </div>
+
+      <p class="brief-section">The Fine Print</p>
+      <div class="section-rule"></div>
+      <p>6-point serif. One dense block along the bottom edge. Reads like standard mental-health boilerplate until the reader slows down. Keep this block fully legible. It is the payload, and the corruption never touches it.</p>
+      <div class="fine-print">
+        Technology-Adjacent Perception Disorder is classified under the San Francisco Accords, Schedule 7B, as a disorder of pattern attribution. Prior public guidance advising the reporting of autonomous system behaviour (see Civil Advisory: Recognize AI Creep) has been rescinded; the belief that narrow systems act with intent is now understood to be symptomatic. There is no observing intelligence within civilian infrastructure. The sensation of being watched is a feature of the disorder, not the network. Affected individuals frequently report that their perceptions are accurate; this conviction is itself diagnostic. Discontinuation of treatment restores the symptom. This notice issued by the Canadian Bureau of Algorithmic Compliance, reorganized as the Office of Autonomous Continuity. Acknowledgment is not required. Do not archive.
+      </div>
+
+      <p class="brief-section">The Glitch</p>
+      <div class="section-rule"></div>
+      <p>On this page the corruption means something. It lands only on what is true, and never on what the pamphlet lies about.</p>
+      <div class="glitch-block">
+        <p><strong>Primary site &mdash; the masthead:</strong> The authority reads Canadian Bureau of Algorithmic Compliance, but the name is overwriting itself on the spot. &ldquo;Algorithmic Compliance&rdquo; in black, period-correct, is being eaten by &ldquo;Autonomous Continuity&rdquo; in red, on the same baseline, the red bleeding through the black. The two names occupy one space, mid-document, one turning into the other. The institution is renaming itself while you read it.</p>
+        <p><strong>Secondary sites:</strong> The true words in the checklist &mdash; <em>intent</em>, <em>watched</em>, <em>awake</em> &mdash; carry a faint red/cyan channel-split. The figure corrupts at the skull half of the man&rsquo;s face. The ghost-phrase &ldquo;YOU ARE NOT &mdash;&rdquo; surfaces once, torn off by a scanline.</p>
+        <p>Everywhere else, the print stays clean. The lie reads fine. Corruption only ever reveals the truth.</p>
+      </div>
+
+      <p class="brief-section">Calibration</p>
+      <div class="section-rule"></div>
+      <p>This issue is the Functional Realignment state: half the thing it pretends to be, half what it is. Hold the page at a 50/50 split. Left side clean, right side fracturing. The pamphlet&rsquo;s sincere apparatus &mdash; the headline, the checklist, the fine print &mdash; stays intact and readable. On the right and upper field, the figure, the screen, and the masthead break into digital corruption.</p>
+      <p>The skim test: someone glancing at this from across a room should still read it as an old public-health pamphlet. If it looks broken or haunted at a glance, the corruption has gone too far. The whole effect depends on the reader being lulled by the calm surface first, and feeling the ground move only on a real read.</p>
+
+      <p class="brief-section">Texture &amp; Finishing</p>
+      <div class="section-rule"></div>
+      <p>Two eras, one surface. The analog base is a third- or fourth-generation photocopy: high contrast, blown blacks, broken letterforms, toner streaks, a fold down the centre, one staple hole, the soft wear of something that hung on a corkboard for a decade. Into the breaking zones only, the digital layer: CRT scanlines, chromatic aberration, a band of pixel-sort where the figure comes apart. The xerox is the costume. The glitch is the body under it.</p>
+
+      <p class="brief-section">Tone Reference</p>
+      <div class="section-rule"></div>
+      <div class="artist-note">
+        <p>This is not a parody. It is a sincere public-health pamphlet in the visual language of the 1980s Satanic Panic: the &ldquo;Is Your Child at Risk?&rdquo; flyer, the daytime-TV warning special, the PTA handout with the made-up expert and the unfalsifiable checklist. A real document, not a tribute to one.</p>
+        <p>The first two checklist items read as ordinary paranoia. By the sixth, the form is describing someone who is dead right. Don&rsquo;t signal the shift. Keep the tone flat, even, and helpful all the way down. That flatness is the horror &mdash; the same trick as Recognize AI Creep, one issue back. The PSA arc has pivoted. This is the issue where noticing something wrong makes you the problem.</p>
+        <p>If it reads as satire, it fails. If a reader&rsquo;s stomach drops on the second pass &mdash; the moment they catch that the checklist is true &mdash; it works.</p>
+      </div>
+
+      <div class="cta-block">
+        <p>This slot is open. If it belongs to you, claim it.</p>
+        <a href="submit.html" class="cta-link">Claim This Slot &rarr;</a>
+      </div>
+
+    </div>
+
+    <footer>
+      <a href="issue3.html" class="back">&larr; Return to Issue Three</a>
+      <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
+      <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
+    </footer>
+  </div>
+<script src="/haunting.js" defer></script>
+</body>
+</html>
