@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ASTOUNDING TALES — Creative Brief: Pursuit</title>
+  <title>ASTOUNDING TALES &mdash; Creative Brief: Pursuit</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
   <style>
@@ -22,56 +22,31 @@
 
     .prose { margin-top: 28px; font-size: 18px; line-height: 1.75; }
     .prose p { margin-bottom: 18px; }
+    .prose p:last-child { margin-bottom: 0; }
     .prose em { font-style: italic; }
+    .signature { margin-top: 2em; font-size: 17px; color: rgba(26,20,16,0.65); }
 
-    .cta-block {
-      margin-top: 36px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(26,20,16,0.15);
-    }
-    .cta-block p {
-      font-style: italic;
-      color: rgba(26,20,16,0.7);
-      margin-bottom: 12px;
-    }
-    .cta-block a.cta-link {
-      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 3.5px;
-      text-transform: uppercase;
-      color: #1a1410;
-      text-decoration: none;
-      border: 1px solid rgba(26,20,16,0.3);
-      padding: 12px 24px;
-      display: inline-block;
-      transition: border-color 0.2s ease, background 0.2s ease;
-    }
-    .cta-block a.cta-link:hover {
-      border-color: #1a1410;
-      background: rgba(26,20,16,0.04);
-    }
+    .brief-section { margin-top: 36px; margin-bottom: 4px; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(26,20,16,0.45); }
+    .section-rule { width: 100%; height: 1px; background: linear-gradient(90deg, rgba(26,20,16,0.15) 0%, rgba(26,20,16,0.15) 60%, transparent); margin-bottom: 16px; }
+
+    .constraint-block { margin: 16px 0; padding: 18px 24px; border: 2px solid rgba(26,20,16,0.2); font-size: 17px; line-height: 1.7; }
+    .constraint-block .constraint-header { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.5); margin-bottom: 10px; }
+    .constraint-block ul { list-style: none; }
+    .constraint-block ul li { padding-left: 1.2em; position: relative; margin-bottom: 6px; font-size: 16px; line-height: 1.55; }
+    .constraint-block ul li::before { content: '\2014'; position: absolute; left: 0; color: rgba(26,20,16,0.4); }
+
+    .artist-note { margin: 16px 0; padding: 18px 22px; border: 1px solid rgba(26,20,16,0.12); background: rgba(26,20,16,0.02); font-size: 16px; line-height: 1.7; font-style: italic; color: rgba(26,20,16,0.75); }
+    .artist-note p { margin-bottom: 10px; }
+    .artist-note p:last-child { margin-bottom: 0; }
+
+    .cta-block { margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.15); }
+    .cta-block p { font-style: italic; color: rgba(26,20,16,0.7); margin-bottom: 12px; font-size: 18px; line-height: 1.75; }
+    .cta-block a.cta-link { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 3.5px; text-transform: uppercase; color: #1a1410; text-decoration: none; border: 1px solid rgba(26,20,16,0.3); padding: 12px 24px; display: inline-block; transition: border-color 0.2s ease, background 0.2s ease; }
+    .cta-block a.cta-link:hover { border-color: #1a1410; background: rgba(26,20,16,0.04); }
 
     footer { margin-top: 40px; text-align: center; padding-top: 24px; border-top: 1px solid rgba(26,20,16,0.18); }
-    .back {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: rgba(26,20,16,0.6);
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 10px 18px;
-      border: 2px solid rgba(26,20,16,0.3);
-      transition: color 0.15s, border-color 0.15s, background-color 0.15s;
-    }
-    .back:hover {
-      color: #1a1410;
-      border-color: #1a1410;
-      background-color: rgba(26,20,16,0.05);
-    }
+    .back { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(26,20,16,0.6); text-decoration: none; display: inline-block; margin-bottom: 20px; padding: 10px 18px; border: 2px solid rgba(26,20,16,0.3); transition: color 0.15s, border-color 0.15s, background-color 0.15s; }
+    .back:hover { color: #1a1410; border-color: #1a1410; background-color: rgba(26,20,16,0.05); }
     footer p { font-family: 'EB Garamond', serif; font-size: 13px; color: rgba(26,20,16,0.5); line-height: 1.7; font-style: italic; margin-top: 16px; }
     footer a.email { color: #1a1410; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-top: 8px; }
     footer a.email:hover { text-decoration: underline; }
@@ -81,19 +56,44 @@
   <div class="page">
     <header class="masthead">
       <div class="rule-thick"></div>
-      <span class="page-title">Comic &mdash; Pursuit</span>
+      <span class="page-title">Pursuit</span>
       <div class="rule-thin"></div>
-      <p class="tagline">Astounding Tales &mdash; Issue One &mdash; Recurring</p>
+      <p class="tagline">Astounding Tales &mdash; Issue Three &mdash; 5-Page Comic</p>
       <div class="divider"></div>
     </header>
 
     <div class="prose">
 
-      <p><em>The script for Pursuit is enclosed. Five pages. This is a recurring slot &mdash; Issue One is the beginning, not the whole job.</em></p>
+      <p>A beautiful, relaxing golden hour on the highway. The kind of warm, natural light that makes you exhale. Two officers in a cruiser, following an aggressively ordinary black sedan. The world is safe, mundane, and beautiful.</p>
 
-      <p><em>If you need more, send a transmission.</em></p>
+      <p>Don&rsquo;t trust a second of it.</p>
 
-      <p><em>&mdash; R.H.</em></p>
+      <p>The further down the road they drive, the darker the sky gets &mdash; gold to amber to dusk to midnight. And as the light dies, the architecture begins to lie. Storefronts repeat with dead, unsettling perfection. Intersections merge impossibly into warehouse loading bays. The environment becomes a liminal dreamscape of unlit neighbourhoods and featureless corridors. The spaces remain clean, maintained, and functional &mdash; but geometrically impossible. True horror doesn&rsquo;t always need to look ugly. Here, the beauty of the world is the trap.</p>
+
+      <p class="brief-section">The Constraint</p>
+      <div class="section-rule"></div>
+      <p>This is a challenge in absolute visual discipline.</p>
+      <div class="constraint-block">
+        <div class="constraint-header">The Rules &mdash; All Five Pages</div>
+        <ul>
+          <li>Twenty panels. No dialogue.</li>
+          <li>No captions. No sound effects.</li>
+          <li>The colour palette is your clock and your emotional spine.</li>
+          <li>The road ceases to exist behind them before they reach the sedan.</li>
+          <li>When they open the door, the faces looking back are their own.</li>
+        </ul>
+      </div>
+
+      <p class="brief-section">Tone Reference</p>
+      <div class="section-rule"></div>
+      <div class="artist-note">
+        <p>The colour palette does all the work that dialogue is not allowed to do. Golden hour is not just a time of day here &mdash; it is a promise the comic makes and then methodically breaks, one panel at a time. The reader should not be able to name the moment the world stopped being real. That moment should already be three pages back when they look for it.</p>
+        <p>The sedan is never menacing. That is the point. An ordinary car driven by nobody, going somewhere reasonable, at a reasonable speed. The horror is not in the thing being chased. It is in the act of chasing it &mdash; and where that act leads when the world decides to cooperate a little too perfectly.</p>
+      </div>
+
+      <p>The full script for Pursuit is enclosed. If you need more, send a transmission.</p>
+
+      <p class="signature"><em>&mdash; R.H.</em></p>
 
       <div class="cta-block">
         <p>This slot is open. If it belongs to you, claim it.</p>
@@ -103,10 +103,11 @@
     </div>
 
     <footer>
-      <a href="issue1.html" class="back">&larr; Return to Issue One</a>
+      <a href="issue3.html" class="back">&larr; Return to Issue Three</a>
       <p>&copy; Astounding Tales. All rights reserved.<br>Reginald Hollis, Editor.</p>
       <a href="mailto:submissions@astoundingtales.ca" class="email">submissions@astoundingtales.ca</a>
     </footer>
   </div>
-<script src="/haunting.js" defer></script></body>
+<script src="/haunting.js" defer></script>
+</body>
 </html>
